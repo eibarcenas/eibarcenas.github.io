@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cover Letter — Erick Iván Bárcenas Martínez — Senior Cloud Architect">
+    <meta name="theme-color" content="#0f172a">
+    <title>Cover Letter | Erick Bárcenas</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Colors - Matching Main Site */
+            --bg-dark: #020617; 
+            --bg-card: rgba(30, 41, 59, 0.4); 
+            --border: rgba(148, 163, 184, 0.1); 
+            
+            --text-primary: #f8fafc; 
+            --text-secondary: #94a3b8; 
+            --text-accent: #38bdf8; 
+            
+            --accent-primary: #3b82f6; 
+            
+            /* Typography Scale for Reading */
+            --font-body: 'Inter', system-ui, sans-serif;
+            --font-head: 'Outfit', sans-serif;
+            
+            --container-width: 800px; /* Narrower for reading */
+            --radius-lg: 20px;
+        }
+
+        /* Reset & Base */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7; /* Increased for reading */
+            -webkit-font-smoothing: antialiased;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+            padding-bottom: 4rem;
+        }
+
+        a { color: inherit; text-decoration: none; transition: 0.2s; }
+        h1, h2, h3 { font-family: var(--font-head); line-height: 1.25; }
+
+        /* Utilities */
+        .container {
+            width: min(100% - 2rem, var(--container-width));
+            margin: 0 auto;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .btn-back:hover { color: var(--text-primary); }
+
+        .letter-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 3rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Letter Layout */
+        .letter-header {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .letter-header h1 { font-size: 1.5rem; font-weight: 700; color: #fff; }
+        .letter-header p { color: var(--text-secondary); font-size: 0.95rem; }
+        .meta-date { font-family: monospace; color: var(--text-accent); font-size: 0.9rem; }
+
+        .content p {
+            margin-bottom: 1.5rem;
+            color: #e2e8f0; /* Slightly brighter for reading */
+            font-size: 1.05rem;
+        }
+
+        .signature {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .signature b { display: block; font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .signature span { display: block; color: var(--text-secondary); font-size: 0.9rem; }
+
+        .contact-row {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .contact-link {
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+        }
+        .contact-link:hover { background: rgba(59, 130, 246, 0.1); }
+
+        @media (max-width: 600px) {
+            .letter-card { padding: 1.5rem; }
+            .letter-header { flex-direction: column; }
+        }
+        
+        @media print {
+            body { background: white; color: black; }
+            .letter-card { background: none; border: none; box-shadow: none; padding: 0; }
+            .btn-back { display: none; }
+            .content p { color: black; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <a href="ebarcenas.html" class="btn-back">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Back to Portfolio
+        </a>
+
+        <main class="letter-card">
+            <header class="letter-header">
+                <div>
+                    <h1>Erick Iván Bárcenas</h1>
+                    <p>Senior Cloud & Software Architect</p>
+                </div>
+                <div class="meta-date" id="date"></div>
+            </header>
+
+            <section class="content">
+                <p>Dear Hiring Team,</p>
+
+                <p>
+                    <strong>Architecture is about balance</strong> — between speed and stability, innovation and reliability. With over eight years of experience building cloud-native systems, I specialize in finding that balance for complex, distributed platforms on AWS and GCP.
+                </p>
+
+                <p>
+                    My career has been defined by end-to-end ownership. From designing event-driven microservices at <em>Rombo Logística</em> to orchestrating multi-region MLOps pipelines at <em>CXC</em>, I don't just write code; I design systems that scale. I have extensive experience with <strong>Python (FastAPI), Terraform, and Serverless architectures</strong>, ensuring that infrastructure is as agile as the application code it supports.
+                </p>
+
+                <p>
+                    I am particularly passionate about the intersection of <strong>DevSecOps and Data Engineering</strong>. I believe that security and observability should be first-class citizens, not afterthoughts. Whether it's implementing zero-trust security controls or building lineage-aware data pipelines with BigQuery and Dataflow, I build systems that engineering teams can trust.
+                </p>
+
+                <p>
+                    As a technical leader, I prioritize mentorship and clarity. I have successfully led migration efforts, established engineering standards, and bridged the gap between product requirements and technical reality. I thrive in environments where I can solve ambiguous problems and deliver high-impact, maintainable solutions.
+                </p>
+
+                <p>
+                    I look forward to discussing how my architectural background and engineering mindset can contribute to your team's goals.
+                </p>
+
+                <p>Sincerely,</p>
+            </section>
+
+            <div class="signature">
+                <b>Erick Iván Bárcenas</b>
+                <span>Cloud Architect & Engineer</span>
+                
+                <div class="contact-row">
+                    <a href="mailto:erick.barcenas.mtz@gmail.com" class="contact-link">✉️ erick.barcenas.mtz@gmail.com</a>
+                    <a href="https://github.com/erickbarcenas" class="contact-link" target="_blank">💻 GitHub</a>
+                    <a href="https://www.linkedin.com/in/erickbarcenas" class="contact-link" target="_blank">🔗 LinkedIn</a>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script>
+        const d = new Date();
+        document.getElementById("date").textContent = d.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+    </script>
+</body>
+</html>
