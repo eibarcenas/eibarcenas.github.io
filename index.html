@@ -1,280 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Erick Iván Bárcenas Martínez — Senior Cloud & Software Architect specializing in AWS, GCP, MLOps, and Distributed Systems.">
+    <meta name="description"
+        content="Erick Iván Bárcenas Martínez — Senior Cloud & Software Architect specializing in AWS, GCP, MLOps, and Distributed Systems.">
     <meta name="theme-color" content="#0f172a">
     <title>Erick Bárcenas | Cloud & Software Architect</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <style>
-        :root {
-            /* Colors */
-            --bg-dark: #020617; /* Slate 950 */
-            --bg-card: rgba(30, 41, 59, 0.4); /* Slate 800 alpha */
-            --bg-card-hover: rgba(30, 41, 59, 0.6);
-            --border: rgba(148, 163, 184, 0.1); /* Slate 400 alpha */
-            --border-hover: rgba(148, 163, 184, 0.25);
-            
-            --text-primary: #f8fafc; /* Slate 50 */
-            --text-secondary: #94a3b8; /* Slate 400 */
-            --text-accent: #38bdf8; /* Sky 400 */
-            
-            --accent-primary: #3b82f6; /* Blue 500 */
-            --accent-glow: rgba(59, 130, 246, 0.15);
-            --accent-secondary: #8b5cf6; /* Violet 500 */
-            
-            /* Spacing */
-            --container-width: 1100px;
-            --header-height: 80px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-        }
-
-        /* Reset & Base */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 10%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Outfit', sans-serif;
-            line-height: 1.2;
-            color: var(--text-primary);
-        }
-
-        a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
-        ul { list-style: none; }
-
-        /* Utilities */
-        .container {
-            width: min(100% - 2rem, var(--container-width));
-            margin: 0 auto;
-        }
-        
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .items-center { align-items: center; }
-        .justify-between { justify-content: space-between; }
-        .gap-2 { gap: 0.5rem; }
-        .gap-4 { gap: 1rem; }
-        .gap-8 { gap: 2rem; }
-        
-        .grid { display: grid; gap: 1.5rem; }
-        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
-        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-
-        .text-accent { color: var(--text-accent); }
-        .text-secondary { color: var(--text-secondary); }
-        .text-sm { font-size: 0.875rem; }
-        .font-mono { font-family: 'SF Mono', 'Fira Code', monospace; }
-
-        /* Components */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.25rem;
-            border-radius: 9999px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            cursor: pointer;
-            border: 1px solid transparent;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: white;
-            box-shadow: 0 4px 15px var(--accent-glow);
-        }
-        .btn-primary:hover {
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
-            transform: translateY(-1px);
-        }
-
-        .btn-outline {
-            background: rgba(255,255,255,0.03);
-            border-color: var(--border);
-            color: var(--text-primary);
-        }
-        .btn-outline:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: var(--text-secondary);
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 1.75rem;
-            backdrop-filter: blur(12px);
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-        .card:hover {
-            border-color: var(--border-hover);
-        }
-
-        .chip {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            padding: 0.25rem 0.75rem;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            white-space: nowrap;
-        }
-
-        /* Layout Specifics */
-        header {
-            padding: 2rem 0 4rem;
-        }
-
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            padding: 1rem 0;
-            gap: 1rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p.lead {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 65ch;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .section-title h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-        }
-        .section-title span {
-            font-family: monospace;
-            color: var(--accent-primary);
-            font-size: 0.9rem;
-        }
-
-        /* Projects & Experience */
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            height: 100%;
-        }
-        .project-card h3 { font-size: 1.2rem; }
-        .project-card a { color: var(--text-accent); font-size: 0.9rem; }
-        .project-card a:hover { text-decoration: underline; }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-left: 2px solid var(--border);
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 4px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent-primary);
-            box-shadow: 0 0 10px var(--accent-primary);
-        }
-        .role-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .role-title { font-size: 1.1rem; font-weight: 600; color: #fff; }
-        .role-meta { font-size: 0.9rem; color: var(--text-secondary); font-family: monospace; }
-        .role-desc { 
-            margin-bottom: 0.75rem; 
-            font-style: italic; 
-            color: #cbd5e1; 
-        }
-
-        /* Skills Grid */
-        .skill-group h3 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            margin-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.25rem;
-        }
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        footer {
-            margin-top: 4rem;
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.25rem; }
-            .section-title { flex-direction: column; gap: 0.25rem; }
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
+
 <body>
 
     <div class="container">
-        
+
         <!-- Navigation -->
         <nav class="top-nav">
-             <a href="Erick_Barcenas_Cover_Letter.html" class="btn btn-outline" style="font-size: 0.85rem;">
+            <a href="cover-letter.html" class="btn btn-outline" style="font-size: 0.85rem;">
                 📄 Read Formal Cover Letter
             </a>
-            <a href="https://github.com/erickbarcenas" target="_blank" class="btn btn-outline" aria-label="GitHub">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 4.388 9.8 10.554 11.518l.8-.3 1.04-1.2c-.34.05-.66.07-1 .07-3.1 0-4.4-2.5-4.4-2.5-.59-1.5-1.45-2-1.45-2-.95-.65.07-.64.07-.64 1.05.07 1.6 1.08 1.6 1.08 1.34 2.29 3.52 1.63 4.38 1.25.13-1 .53-1.66.96-2.04-3.55-.41-7.29-1.78-7.29-7.92 0-1.75.61-3.18 1.65-4.31-.16-.4-.72-2.03.16-4.22 0 0 1.35-.43 4.41 1.64 1.28-.36 2.65-.54 4-.54 1.35 0 2.71.18 4 .54 3.06-2.07 4.41-1.64 4.41-1.64.88 2.19.32 3.82.16 4.22 1.03 1.13 1.65 2.56 1.65 4.31 0 6.16-3.75 7.51-7.31 7.91.55.48 1.03 1.42 1.03 2.87v4.27l1.03 1.19c6.16-1.72 10.55-6.22 10.55-11.52 0-6.627-5.373-12-12-12z"/></svg>
+            <a href="https://github.com/eibarcenas" target="_blank" class="btn btn-outline" aria-label="GitHub">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 4.388 9.8 10.554 11.518l.8-.3 1.04-1.2c-.34.05-.66.07-1 .07-3.1 0-4.4-2.5-4.4-2.5-.59-1.5-1.45-2-1.45-2-.95-.65.07-.64.07-.64 1.05.07 1.6 1.08 1.6 1.08 1.34 2.29 3.52 1.63 4.38 1.25.13-1 .53-1.66.96-2.04-3.55-.41-7.29-1.78-7.29-7.92 0-1.75.61-3.18 1.65-4.31-.16-.4-.72-2.03.16-4.22 0 0 1.35-.43 4.41 1.64 1.28-.36 2.65-.54 4-.54 1.35 0 2.71.18 4 .54 3.06-2.07 4.41-1.64 4.41-1.64.88 2.19.32 3.82.16 4.22 1.03 1.13 1.65 2.56 1.65 4.31 0 6.16-3.75 7.51-7.31 7.91.55.48 1.03 1.42 1.03 2.87v4.27l1.03 1.19c6.16-1.72 10.55-6.22 10.55-11.52 0-6.627-5.373-12-12-12z" />
+                </svg>
             </a>
-            <a href="https://www.linkedin.com/in/erickbarcenas" target="_blank" class="btn btn-primary" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/eibarcenas" target="_blank" class="btn btn-primary"
+                aria-label="LinkedIn">
                 <span>Connect</span>
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M18.4 10a8.4 8.4 0 11-16.8 0 8.4 8.4 0 0116.8 0z" stroke="currentColor" stroke-width="2" fill="none"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 21l-4.35-4.35M18.4 10a8.4 8.4 0 11-16.8 0 8.4 8.4 0 0116.8 0z" stroke="currentColor"
+                        stroke-width="2" fill="none" />
+                    <path d="M0 0h24v24H0z" fill="none" />
+                </svg>
             </a>
         </nav>
 
@@ -285,11 +55,11 @@
                 Cloud Architect • DevSecOps Specialist • Data Engineer
             </h2>
             <p class="lead">
-                I assist organizations in designing and scaling <strong>cloud-native architectures</strong>. 
-                With 8+ years of experience, I bridge the gap between complex infrastructure, 
+                I assist organizations in designing and scaling <strong>cloud-native architectures</strong>.
+                With 8+ years of experience, I bridge the gap between complex infrastructure,
                 high-performance Python microservices, and MLOps platforms on <strong>AWS & GCP</strong>.
             </p>
-            
+
             <div class="flex gap-4" style="flex-wrap: wrap; margin-top: 1.5rem;">
                 <div class="chip">🚀 MLOps & Data Pipelines</div>
                 <div class="chip">🛡️ DevSecOps & Governance</div>
@@ -305,51 +75,9 @@
                     <h2>Technical Proficiency</h2>
                     <span>// STACK</span>
                 </div>
-                
-                <div class="card grid grid-2">
-                    <div class="skill-group">
-                        <h3>Core & Backend</h3>
-                        <div class="skill-list">
-                            <span class="chip">Python (FastAPI/Django)</span>
-                            <span class="chip">Node.js</span>
-                            <span class="chip">Go</span>
-                            <span class="chip">GraphQL</span>
-                            <span class="chip">Microservices</span>
-                            <span class="chip">Event-Driven Arch</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group">
-                        <h3>Cloud & Infrastructure</h3>
-                        <div class="skill-list">
-                            <span class="chip">AWS (Lambda, ECS, DynamoDB)</span>
-                            <span class="chip">GCP (Cloud Run, BigQuery, GKE)</span>
-                            <span class="chip">Terraform (IaC)</span>
-                            <span class="chip">Docker/Kubernetes</span>
-                        </div>
-                    </div>
 
-                    <div class="skill-group">
-                        <h3>Data & MLOps</h3>
-                        <div class="skill-list">
-                            <span class="chip">MLflow</span>
-                            <span class="chip">Dataflow (Beam)</span>
-                            <span class="chip">Airflow/Composer</span>
-                            <span class="chip">BigQuery</span>
-                            <span class="chip">Vector DBs (Pinecone)</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h3>DevOps & Quality</h3>
-                        <div class="skill-list">
-                            <span class="chip">GitLab CI/CD</span>
-                            <span class="chip">GitHub Actions</span>
-                            <span class="chip">Prometheus/Grafana</span>
-                            <span class="chip">Pytest/Locust</span>
-                            <span class="chip">SonarQube</span>
-                        </div>
-                    </div>
+                <div id="skills-container" class="card grid grid-2">
+                    <!-- Rendered by JS -->
                 </div>
             </section>
 
@@ -360,57 +88,8 @@
                     <span>// TIMELINE</span>
                 </div>
 
-                <div class="card">
-                    <div class="timeline-item">
-                        <div class="role-header">
-                            <div class="role-title">Cloud & MLOps Architect @ CXC</div>
-                            <div class="role-meta">Jan 2024 — Present</div>
-                        </div>
-                        <p class="role-desc">Architecting DevSecOps, MLOps, and Data Engineering Cloud Architectures (GCP + AWS).</p>
-                        <ul class="text-secondary text-sm" style="list-style: disc; padding-left: 1rem; margin-top: 0.5rem; display: grid; gap: 0.5rem;">
-                            <li>Designed cloud-native architectures serving as the foundation for multiple products.</li>
-                            <li>Built end-to-end MLOps pipelines (MLflow, Cloud Build, Artifact Registry) integrating lineage tracking.</li>
-                            <li>Orchestrated streaming/batch ETL pipelines using Dataflow, Pub/Sub, and Cloud Composer.</li>
-                            <li>Implemented comprehensive Identity & Access Management (IAM) and zero-trust security via Terraform.</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="role-header">
-                            <div class="role-title">Senior Technical Lead @ Rombo Logística</div>
-                            <div class="role-meta">Aug 2023 — Dec 2024</div>
-                        </div>
-                        <p class="role-desc">Leading backend scalability and AWS infrastructure modernization.</p>
-                        <ul class="text-secondary text-sm" style="list-style: disc; padding-left: 1rem; margin-top: 0.5rem; display: grid; gap: 0.5rem;">
-                            <li>Architected resilient AWS solutions using Lambda, ECS, SQS/SNS, and DynamoDB.</li>
-                            <li>Led the migration to a microservices architecture, improving system uptime and developer velocity.</li>
-                            <li>Mentored engineering team on clean architecture, testing strategies (Pytest/Locust), and IaC.</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="role-header">
-                            <div class="role-title">Engineering Lead @ Persistent Systems</div>
-                            <div class="role-meta">Sep 2022 — Jun 2023</div>
-                        </div>
-                        <p class="role-desc">Frontend Architecture & GraphQL Integration Specialist.</p>
-                        <ul class="text-secondary text-sm" style="list-style: disc; padding-left: 1rem; margin-top: 0.5rem; display: grid; gap: 0.5rem;">
-                            <li>Optimized data fetching layers using Apollo GraphQL federation.</li>
-                            <li>Standardized testing protocols (Jest/RTL) across distributed teams.</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="role-header">
-                            <div class="role-title">Senior Software Engineer @ Shugar App</div>
-                            <div class="role-meta">Apr 2020 — Sep 2022</div>
-                        </div>
-                        <p class="role-desc">Founding Engineer. Built MVP and scaled to production.</p>
-                        <ul class="text-secondary text-sm" style="list-style: disc; padding-left: 1rem; margin-top: 0.5rem; display: grid; gap: 0.5rem;">
-                            <li>Designed and deployed serverless backend on AWS from scratch.</li>
-                            <li>Managed full-stack delivery (React Native + Python/Node).</li>
-                        </ul>
-                    </div>
+                <div id="experience-container" class="card">
+                    <!-- Rendered by JS -->
                 </div>
             </section>
 
@@ -420,37 +99,9 @@
                     <h2>Public Projects</h2>
                     <span>// PRODUCTION</span>
                 </div>
-                
-                <div class="grid grid-3">
-                    <article class="card project-card">
-                        <h3>Shugar App</h3>
-                        <p class="text-secondary text-sm">Full-stack serverless platform for the beauty industry.</p>
-                        <a href="https://www.shugarapp.com" target="_blank">View Live →</a>
-                    </article>
-                    
-                    <article class="card project-card">
-                        <h3>Keet Global</h3>
-                        <p class="text-secondary text-sm">Logistics and supply chain management platform.</p>
-                        <a href="https://www.keet.global/home" target="_blank">View Live →</a>
-                    </article>
-                    
-                    <article class="card project-card">
-                        <h3>Grupo Chong</h3>
-                        <p class="text-secondary text-sm">Corporate web presence and internal tools.</p>
-                        <a href="https://www.grupochong.mx" target="_blank">View Live →</a>
-                    </article>
-                    
-                    <article class="card project-card">
-                        <h3>RSI Delivers</h3>
-                        <p class="text-secondary text-sm">Enterprise-scale delivery solutions.</p>
-                        <a href="https://www.rsidelivers.com" target="_blank">View Live →</a>
-                    </article>
 
-                     <article class="card project-card">
-                        <h3>Total Show</h3>
-                        <p class="text-secondary text-sm">Entertainment booking and management system.</p>
-                        <a href="https://www.totalshow.mx" target="_blank">View Live →</a>
-                    </article>
+                <div id="projects-container" class="grid grid-3">
+                    <!-- Rendered by JS -->
                 </div>
             </section>
         </main>
@@ -458,13 +109,13 @@
         <footer>
             <p>
                 © <span id="year"></span> Erick Iván Bárcenas Martínez.<br>
-                <span style="opacity:0.6; font-size: 0.8em;">Built with strict HTML/CSS. No frameworks, just standards.</span>
+                <span style="opacity:0.6; font-size: 0.8em;">Built with strict HTML/CSS. No frameworks, just
+                    standards.</span>
             </p>
         </footer>
     </div>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
