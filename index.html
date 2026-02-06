@@ -1,121 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Erick Iván Bárcenas Martínez — Senior Cloud & Software Architect specializing in AWS, GCP, MLOps, and Distributed Systems.">
-    <meta name="theme-color" content="#0f172a">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Erick Iván Bárcenas Martínez — Senior Cloud & Software Architect specializing in AWS, GCP, MLOps, and Distributed Systems."
+    />
+    <meta name="theme-color" content="#0f172a" />
     <title>Erick Bárcenas | Cloud & Software Architect</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-</head>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
 
-<body>
-
+  <body>
     <div class="container">
-
-        <!-- Navigation -->
+      <!-- Navigation -->
+      <header>
         <nav class="top-nav">
-            <a href="cover-letter.html" class="btn btn-outline" style="font-size: 0.85rem;">
-                📄 Read Formal Cover Letter
-            </a>
-            <a href="https://github.com/eibarcenas" target="_blank" class="btn btn-outline" aria-label="GitHub">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 4.388 9.8 10.554 11.518l.8-.3 1.04-1.2c-.34.05-.66.07-1 .07-3.1 0-4.4-2.5-4.4-2.5-.59-1.5-1.45-2-1.45-2-.95-.65.07-.64.07-.64 1.05.07 1.6 1.08 1.6 1.08 1.34 2.29 3.52 1.63 4.38 1.25.13-1 .53-1.66.96-2.04-3.55-.41-7.29-1.78-7.29-7.92 0-1.75.61-3.18 1.65-4.31-.16-.4-.72-2.03.16-4.22 0 0 1.35-.43 4.41 1.64 1.28-.36 2.65-.54 4-.54 1.35 0 2.71.18 4 .54 3.06-2.07 4.41-1.64 4.41-1.64.88 2.19.32 3.82.16 4.22 1.03 1.13 1.65 2.56 1.65 4.31 0 6.16-3.75 7.51-7.31 7.91.55.48 1.03 1.42 1.03 2.87v4.27l1.03 1.19c6.16-1.72 10.55-6.22 10.55-11.52 0-6.627-5.373-12-12-12z" />
-                </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/eibarcenas" target="_blank" class="btn btn-primary"
-                aria-label="LinkedIn">
-                <span>Connect</span>
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M21 21l-4.35-4.35M18.4 10a8.4 8.4 0 11-16.8 0 8.4 8.4 0 0116.8 0z" stroke="currentColor"
-                        stroke-width="2" fill="none" />
-                    <path d="M0 0h24v24H0z" fill="none" />
-                </svg>
-            </a>
-        </nav>
+          <a href="index.html" class="brand" data-i18n="nav.brand">
+            <span class="text-accent">&lt;/&gt;</span> ErickBárcenas
+          </a>
 
-        <!-- Hero Section -->
-        <header class="hero">
-            <h1>Erick Iván Bárcenas</h1>
-            <h2 class="text-accent" style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 500;">
-                Cloud Architect • DevSecOps Specialist • Data Engineer
-            </h2>
-            <p class="lead">
-                I assist organizations in designing and scaling <strong>cloud-native architectures</strong>.
-                With 8+ years of experience, I bridge the gap between complex infrastructure,
-                high-performance Python microservices, and MLOps platforms on <strong>AWS & GCP</strong>.
-            </p>
-
-            <div class="flex gap-4" style="flex-wrap: wrap; margin-top: 1.5rem;">
-                <div class="chip">🚀 MLOps & Data Pipelines</div>
-                <div class="chip">🛡️ DevSecOps & Governance</div>
-                <div class="chip">☁️ Multi-Cloud (AWS/GCP)</div>
-                <div class="chip">🏗️ Distributed Systems</div>
+          <div class="nav-actions">
+            <div class="toggle-group">
+              <button
+                id="theme-toggle"
+                class="toggle-btn"
+                aria-label="Toggle Theme"
+              >
+                ☀️
+              </button>
+              <button
+                id="lang-toggle"
+                class="toggle-btn lang-toggle"
+                aria-label="Toggle Language"
+              >
+                EN
+              </button>
             </div>
-        </header>
 
-        <main>
-            <!-- Technical Architecture (Skills) -->
-            <section style="margin-bottom: 4rem;">
-                <div class="section-title">
-                    <h2>Technical Proficiency</h2>
-                    <span>// STACK</span>
-                </div>
+            <a
+              href="cover-letter.html"
+              class="text-secondary hover:text-primary text-sm"
+              data-i18n="nav.coverLetter"
+            >
+              Original Cover Letter
+            </a>
+            <a
+              href="https://linkedin.com/in/eibarcenas"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              <span data-i18n="nav.letsTalk">Let's Talk</span>
+              <svg
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M21 21l-4.35-4.35M18.4 10a8.4 8.4 0 11-16.8 0 8.4 8.4 0 0116.8 0z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </svg>
+            </a>
+          </div>
+        </nav>
+      </header>
 
-                <div id="skills-container" class="card grid grid-2">
-                    <!-- Rendered by JS -->
-                </div>
-            </section>
+      <main class="bento-grid">
+        <!-- Hero Profile Card (Left) -->
+        <div class="card col-span-4 row-span-2 profile-card-content">
+          <div class="profile-img-container">
+            <img
+              src="assets/img/profile.png"
+              alt="Erick Bárcenas"
+              class="profile-img"
+            />
+            <div class="status-badge">
+              <div class="status-dot"></div>
+              <span data-i18n="hero.profile.status">Open to Work</span>
+            </div>
+          </div>
 
-            <!-- Experience -->
-            <section id="experience" style="margin-bottom: 4rem;">
-                <div class="section-title">
-                    <h2>Professional Trajectory</h2>
-                    <span>// TIMELINE</span>
-                </div>
+          <h2 class="profile-name" data-i18n="hero.profile.title">
+            Erick Bárcenas 👋
+          </h2>
+          <div
+            class="text-accent font-mono text-sm mb-4"
+            data-i18n="hero.profile.subtitle"
+          >
+            Cloud & Software Architect
+          </div>
 
-                <div id="experience-container" class="card">
-                    <!-- Rendered by JS -->
-                </div>
-            </section>
+          <p
+            class="text-secondary text-sm profile-bio"
+            data-i18n="hero.profile.description"
+          >
+            Specializing in high-performance Distributed Systems, MLOps
+            platforms, and Cloud-Native architectures on AWS & GCP.
+          </p>
 
-            <!-- Projects -->
-            <section id="projects">
-                <div class="section-title">
-                    <h2>Public Projects</h2>
-                    <span>// PRODUCTION</span>
-                </div>
+          <div class="profile-socials">
+            <a
+              href="https://linkedin.com/in/eibarcenas"
+              target="_blank"
+              class="btn btn-primary"
+              data-i18n="hero.profile.linkedin"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/eibarcenas"
+              target="_blank"
+              class="btn btn-outline"
+              data-i18n="hero.profile.github"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
 
-                <div id="projects-container" class="grid grid-3">
-                    <!-- Rendered by JS -->
-                </div>
-            </section>
-        </main>
+        <!-- Intro / Stats (Right Top) -->
+        <div class="card col-span-8">
+          <div class="hero">
+            <h1 data-i18n="hero.title">
+              Architecting the Next Gen of <br />
+              <span class="text-accent">Cloud Systems</span>
+            </h1>
+            <div class="flex flex-wrap gap-4" style="margin-top: 1rem">
+              <span class="chip">🚀 8+ Years Experience</span>
+              <span class="chip">☁️ Multi-Cloud Expert</span>
+              <span class="chip">🛡️ DevSecOps</span>
+            </div>
+          </div>
+        </div>
 
-        <footer>
-            <p>
-                © <span id="year"></span> Erick Iván Bárcenas Martínez.<br>
-                <span style="opacity:0.6; font-size: 0.8em;">Built with strict HTML/CSS. No frameworks, just
-                    standards.</span>
-            </p>
-        </footer>
+        <!-- Skills (Right Middle) -->
+        <div class="card col-span-8">
+          <div class="section-title">
+            <h3 data-i18n="sections.skills">Technical Proficiency</h3>
+          </div>
+          <div id="skills-container" class="grid-2">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Experience (Left Bottom - or side) -->
+        <div class="card col-span-4 row-span-3">
+          <div class="section-title">
+            <h3 data-i18n="sections.experience">Experience</h3>
+          </div>
+          <div id="experience-container" class="flex flex-col gap-4">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Projects (Right Bottom) -->
+        <div class="col-span-8 grid-2" id="projects-container">
+          <!-- Rendered by JS -->
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          © <span id="year"></span> Erick Iván Bárcenas Martínez.<br />
+          <span
+            style="opacity: 0.6; font-size: 0.8em"
+            data-i18n="sections.footer"
+            >Designed with Bento Grid & Glassmorphism.</span
+          >
+        </p>
+      </footer>
     </div>
 
     <script type="module" src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

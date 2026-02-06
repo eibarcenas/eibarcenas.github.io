@@ -1,118 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cover Letter — Erick Iván Bárcenas Martínez — Senior Cloud Architect">
-    <meta name="theme-color" content="#0f172a">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cover Letter — Erick Iván Bárcenas Martínez — Senior Cloud Architect"
+    />
+    <meta name="theme-color" content="#0f172a" />
     <title>Cover Letter | Erick Bárcenas</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
 
-    <!-- Page Specific Overrides (Minimal) -->
+    <!-- Page Specific Overrides -->
     <style>
-        :root {
-            /* Override container width for readability on this page specifically */
-            --container-width: 800px;
-        }
+      .letter-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+        padding: 3rem;
+        backdrop-filter: blur(12px);
+        margin-top: 2rem;
+      }
 
-        body {
-            line-height: 1.7;
-            /* Increased for reading */
-            background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
-            padding-bottom: 4rem;
+      @media (max-width: 768px) {
+        .letter-card {
+          padding: 1.5rem;
         }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="container">
+      <!-- Navigation -->
+      <header>
+        <nav class="top-nav">
+          <a href="index.html" class="brand" data-i18n="nav.brand">
+            <span class="text-accent">&lt;/&gt;</span> ErickBárcenas
+          </a>
 
-        <a href="index.html" class="btn-back">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
-                </path>
-            </svg>
-            Back to Portfolio
-        </a>
-
-        <main class="letter-card">
-            <header class="letter-header">
-                <div>
-                    <h1>Erick Iván Bárcenas</h1>
-                    <p>Senior Cloud & Software Architect</p>
-                </div>
-                <div class="meta-date" id="date"></div>
-            </header>
-
-            <section class="content">
-                <p>Dear Hiring Team,</p>
-
-                <p>
-                    <strong>Architecture is about balance</strong> — between speed and stability, innovation and
-                    reliability. With over eight years of experience building cloud-native systems, I specialize in
-                    finding that balance for complex, distributed platforms on AWS and GCP.
-                </p>
-
-                <p>
-                    My career has been defined by end-to-end ownership. From designing event-driven microservices at
-                    <em>Rombo Logística</em> to orchestrating multi-region MLOps pipelines at <em>CXC</em>, I don't just
-                    write code; I design systems that scale. I have extensive experience with <strong>Python (FastAPI),
-                        Terraform, and Serverless architectures</strong>, ensuring that infrastructure is as agile as
-                    the application code it supports.
-                </p>
-
-                <p>
-                    I am particularly passionate about the intersection of <strong>DevSecOps and Data
-                        Engineering</strong>. I believe that security and observability should be first-class citizens,
-                    not afterthoughts. Whether it's implementing zero-trust security controls or building lineage-aware
-                    data pipelines with BigQuery and Dataflow, I build systems that engineering teams can trust.
-                </p>
-
-                <p>
-                    As a technical leader, I prioritize mentorship and clarity. I have successfully led migration
-                    efforts, established engineering standards, and bridged the gap between product requirements and
-                    technical reality. I thrive in environments where I can solve ambiguous problems and deliver
-                    high-impact, maintainable solutions.
-                </p>
-
-                <p>
-                    I look forward to discussing how my architectural background and engineering mindset can contribute
-                    to your team's goals.
-                </p>
-
-                <p>Sincerely,</p>
-            </section>
-
-            <div class="signature">
-                <b>Erick Iván Bárcenas</b>
-                <span>Cloud Architect & Engineer</span>
-
-                <div class="contact-row">
-                    <a href="mailto:erick.barcenas.mtz@gmail.com" class="contact-link">✉️
-                        erick.barcenas.mtz@gmail.com</a>
-                    <a href="https://github.com/eibarcenas" class="contact-link" target="_blank">💻 GitHub</a>
-                    <a href="https://www.linkedin.com/in/eibarcenas" class="contact-link" target="_blank">🔗
-                        LinkedIn</a>
-                </div>
+          <div class="nav-actions">
+            <div class="toggle-group">
+              <button
+                id="theme-toggle"
+                class="toggle-btn"
+                aria-label="Toggle Theme"
+              >
+                ☀️
+              </button>
+              <button
+                id="lang-toggle"
+                class="toggle-btn lang-toggle"
+                aria-label="Toggle Language"
+              >
+                EN
+              </button>
             </div>
-        </main>
 
+            <a
+              href="index.html"
+              class="text-secondary hover:text-primary text-sm flex items-center gap-2"
+            >
+              ← Back to Portfolio
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="letter-card">
+        <header class="letter-header mb-8 text-center">
+          <div>
+            <h1>Erick Iván Bárcenas</h1>
+            <p class="text-accent font-mono text-sm">
+              Senior Cloud & Software Architect
+            </p>
+          </div>
+          <!-- Date will be rendered by JS -->
+          <div class="text-secondary text-sm mt-2" id="date"></div>
+        </header>
+
+        <section class="content">
+          <p>Dear Hiring Team,</p>
+
+          <p>
+            <strong>Architecture is about balance</strong> — between speed and
+            stability, innovation and reliability. With over eight years of
+            experience building cloud-native systems, I specialize in finding
+            that balance for complex, distributed platforms on AWS and GCP.
+          </p>
+
+          <p>
+            My career has been defined by end-to-end ownership. From designing
+            event-driven microservices at
+            <em>Rombo Logística</em> to orchestrating multi-region MLOps
+            pipelines at <em>CXC</em>, I don't just write code; I design systems
+            that scale. I have extensive experience with
+            <strong
+              >Python (FastAPI), Terraform, and Serverless architectures</strong
+            >, ensuring that infrastructure is as agile as the application code
+            it supports.
+          </p>
+
+          <p>
+            I am particularly passionate about the intersection of
+            <strong>DevSecOps and Data Engineering</strong>. I believe that
+            security and observability should be first-class citizens, not
+            afterthoughts. Whether it's implementing zero-trust security
+            controls or building lineage-aware data pipelines with BigQuery and
+            Dataflow, I build systems that engineering teams can trust.
+          </p>
+
+          <p>
+            As a technical leader, I prioritize mentorship and clarity. I have
+            successfully led migration efforts, established engineering
+            standards, and bridged the gap between product requirements and
+            technical reality. I thrive in environments where I can solve
+            ambiguous problems and deliver high-impact, maintainable solutions.
+          </p>
+
+          <p>
+            I look forward to discussing how my architectural background and
+            engineering mindset can contribute to your team's goals.
+          </p>
+
+          <p>Sincerely,</p>
+        </section>
+
+        <div class="signature">
+          <b>Erick Iván Bárcenas</b>
+          <span>Cloud Architect & Engineer</span>
+
+          <div class="contact-row">
+            <a href="mailto:erick.barcenas.mtz@gmail.com" class="contact-link"
+              >✉️ erick.barcenas.mtz@gmail.com</a
+            >
+            <a
+              href="https://github.com/eibarcenas"
+              class="contact-link"
+              target="_blank"
+              >💻 GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/eibarcenas"
+              class="contact-link"
+              target="_blank"
+              >🔗 LinkedIn</a
+            >
+          </div>
+        </div>
+      </main>
     </div>
 
     <script type="module" src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

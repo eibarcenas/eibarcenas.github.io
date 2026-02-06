@@ -1,100 +1,262 @@
 /* Utilities */
 .container {
-    width: min(100% - 2rem, var(--container-width));
-    margin: 0 auto;
+  width: min(100% - 2rem, var(--container-width));
+  margin: 0 auto;
+  padding-bottom: 4rem;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .flex-col {
-    flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
-    align-items: center;
+  align-items: center;
 }
 
 .justify-between {
-    justify-content: space-between;
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .gap-2 {
-    gap: 0.5rem;
+  gap: 0.5rem;
 }
 
 .gap-4 {
-    gap: 1rem;
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-8 {
-    gap: 2rem;
+  gap: 2rem;
 }
 
-.grid {
-    display: grid;
-    gap: 1.5rem;
+/* Bento Grid System */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  grid-auto-rows: minmax(180px, auto);
 }
 
-.grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+.col-span-12 {
+  grid-column: span 12;
 }
 
-.grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.col-span-8 {
+  grid-column: span 8;
 }
 
+.col-span-6 {
+  grid-column: span 6;
+}
+
+.col-span-4 {
+  grid-column: span 4;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+.row-span-2 {
+  grid-row: span 2;
+}
+
+/* Text Utilities */
 .text-accent {
-    color: var(--text-accent);
+  color: var(--text-accent);
 }
 
 .text-secondary {
-    color: var(--text-secondary);
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
 }
 
 .text-sm {
-    font-size: 0.875rem;
+  font-size: 0.875rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
 }
 
 .font-mono {
-    font-family: 'SF Mono', 'Fira Code', monospace;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Layout Specifics */
 header {
-    padding: 2rem 0 4rem;
+  width: min(100% - 2rem, 900px);
+  margin: 1.5rem auto 2.5rem;
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 1.5rem;
+  z-index: 50;
+
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  /* Pill shape for header */
+  box-shadow: var(--shadow-soft);
 }
 
 .top-nav {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem 0;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 footer {
-    margin-top: 4rem;
-    padding: 2rem 0;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+  margin-top: 6rem;
+  padding: 3rem 0;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .col-span-8,
+  .col-span-6,
+  .col-span-4,
+  .col-span-3 {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 768px) {
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-    .grid-2,
-    .grid-3 {
-        grid-template-columns: 1fr;
-    }
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+}
 
-    .hero h1 {
-        font-size: 2.25rem;
-    }
+/* Utilities for inline replacement */
+.items-start {
+  align-items: flex-start;
+}
 
-    .section-title {
-        flex-direction: column;
-        gap: 0.25rem;
-    }
+.text-center {
+  text-align: center;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.row-span-3 {
+  grid-row: span 3;
+}
+
+/* Header specifics */
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Profile Card Specifics */
+.profile-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.profile-bio {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.profile-socials {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: auto;
+}
+
+.profile-socials .btn {
+  flex: 1;
+  justify-content: center;
 }
