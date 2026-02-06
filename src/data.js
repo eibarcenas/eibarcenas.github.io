@@ -1,4 +1,4 @@
-window.CV_DATA = {
+export const CV_DATA = {
   en: {
     nav: {
       brand: "&lt;/&gt; ErickBárcenas",
