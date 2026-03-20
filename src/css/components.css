@@ -1433,3 +1433,54 @@
     justify-content: center;
   }
 }
+
+/* ── Header overflow fix ──────────────────────────────────────────────────── */
+/* Clip pill so no nav element spills outside the rounded header */
+header {
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  /* Brand shrinks so nav-actions always fit inside the pill */
+  .brand {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 7rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  /* Nav-actions never shrinks — brand absorbs all leftover space */
+  .nav-actions {
+    flex-shrink: 0;
+  }
+
+  /* Override base .btn padding for nav buttons (components.css base defeats layout.css
+     media query — same cascade pattern as other grid fixes) */
+  .nav-cv-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.72rem;
+  }
+
+  .nav-cta {
+    padding: 0.45rem 0.6rem;
+    min-width: unset;
+  }
+
+  /* Stat values: fluid size so long strings (GCP+AWS) never overflow card */
+  .stat-value {
+    font-size: clamp(0.85rem, 4.5vw, 1.1rem);
+  }
+
+  /* Industry chips: allow text to wrap on very small cells */
+  .industry-chip {
+    white-space: normal;
+  }
+
+  /* Card content: protect against horizontal text overflow */
+  .card {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
