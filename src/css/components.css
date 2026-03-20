@@ -1381,3 +1381,27 @@
     padding: 1.25rem;
   }
 }
+
+/* ── Grid responsive fixes ────────────────────────────────────────────────────
+   MUST stay at the very bottom of this file. components.css loads after
+   layout.css, so base grid rules here defeat layout.css media queries.
+   These overrides restore correct responsive behaviour.
+   ─────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Skills Domains tab: single column on tablet + mobile */
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Freelance Projects: 2 columns on tablet */
+  .freelance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Freelance Projects: single column on small phones */
+  .freelance-grid {
+    grid-template-columns: 1fr;
+  }
+}
