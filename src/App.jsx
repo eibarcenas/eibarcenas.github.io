@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { CV_DATA, META, EDUCATION, LANGUAGES, SKILLS_DETAILED, FREELANCE_PROJECTS, INDUSTRIES } from './data';
 
+// Build a wa.me link with a pre-filled message
+const waUrl = (msg) =>
+  `https://wa.me/${META.whatsapp}?text=${encodeURIComponent(msg)}`;
+
 // --- Icons ---
 const WhatsAppIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -66,7 +70,7 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, t }) =
             : (lang === 'en' ? '← Back' : '← Volver')}
         </button>
         <a
-          href={`https://wa.me/${META.whatsapp}`}
+          href={waUrl(t.nav.whatsappMessage)}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-whatsapp nav-cta"
@@ -115,7 +119,7 @@ const ProfileCard = ({ t }) => (
         </a>
       </div>
       <a
-        href={`https://wa.me/${META.whatsapp}`}
+        href={waUrl(t.nav.whatsappMessage)}
         target="_blank"
         rel="noopener noreferrer"
         className="btn btn-whatsapp btn-sm w-full"
@@ -349,7 +353,7 @@ const ContactSection = ({ t }) => (
         <PhoneIcon />
         <span>{META.phone}</span>
       </a>
-      <a href={`https://wa.me/${META.whatsapp}`} target="_blank" rel="noopener noreferrer" className="contact-link whatsapp">
+      <a href={waUrl(t.nav.whatsappMessage)} target="_blank" rel="noopener noreferrer" className="contact-link whatsapp">
         <WhatsAppIcon />
         <span>WhatsApp</span>
       </a>
@@ -365,7 +369,7 @@ const ContactSection = ({ t }) => (
         </svg>
         <span>GitHub</span>
       </a>
-      <a href={`https://wa.me/${META.whatsapp}`} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp contact-cta">
+      <a href={waUrl(t.nav.whatsappMessage)} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp contact-cta">
         <WhatsAppIcon />
         {t.actions.whatsappCta}
       </a>
@@ -373,14 +377,14 @@ const ContactSection = ({ t }) => (
   </div>
 );
 
-const FloatingWhatsApp = ({ label }) => (
+const FloatingWhatsApp = ({ t }) => (
   <a
-    href={`https://wa.me/${META.whatsapp}`}
+    href={waUrl(t.nav.whatsappMessage)}
     target="_blank"
     rel="noopener noreferrer"
     className="fab-whatsapp"
     aria-label="Chat on WhatsApp"
-    title={label}
+    title={t.nav.letsTalk}
   >
     <WhatsAppIcon />
   </a>
@@ -431,7 +435,7 @@ const CoverLetterView = ({ t, lang }) => (
           <a href={`mailto:${META.email}`} className="letter-contact-item">
             <MailIcon />{META.email}
           </a>
-          <a href={`https://wa.me/${META.whatsapp}`} target="_blank" rel="noopener noreferrer" className="letter-contact-item whatsapp">
+          <a href={waUrl(t.nav.whatsappMessage)} target="_blank" rel="noopener noreferrer" className="letter-contact-item whatsapp">
             <WhatsAppIcon />{META.phone}
           </a>
           <a href={META.linkedin} target="_blank" rel="noopener noreferrer" className="letter-contact-item">
@@ -531,7 +535,7 @@ const CoverLetterView = ({ t, lang }) => (
           <span className="sig-title">Senior Cloud Architect · MLOps · DevSecOps</span>
           <div className="sig-links">
             <a href={`mailto:${META.email}`} className="contact-link">{META.email}</a>
-            <a href={`https://wa.me/${META.whatsapp}`} target="_blank" rel="noopener noreferrer" className="contact-link whatsapp">
+            <a href={waUrl(t.nav.whatsappMessage)} target="_blank" rel="noopener noreferrer" className="contact-link whatsapp">
               <WhatsAppIcon /> WhatsApp
             </a>
             <a href={META.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">LinkedIn</a>
@@ -582,7 +586,7 @@ const App = () => {
         )}
       </main>
       <Footer t={t} />
-      <FloatingWhatsApp label={t.actions.whatsappCta} />
+      <FloatingWhatsApp t={t} />
     </div>
   );
 };

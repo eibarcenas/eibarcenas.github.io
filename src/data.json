@@ -133,7 +133,8 @@
     "nav": {
       "brand": "</> ErickBárcenas",
       "coverLetter": "Original Cover Letter",
-      "letsTalk": "Let's Talk"
+      "letsTalk": "Let's Talk",
+      "whatsappMessage": "Hey Erick! 👋 Just checked out your CV and I'm genuinely impressed — I'd love to connect and chat about a potential opportunity. When's a good time? 😊"
     },
     "hero": {
       "title": "Architecting Scalable <br> <span class=\"text-accent\">Cloud Platforms</span>",
@@ -293,7 +294,8 @@
     "nav": {
       "brand": "</> ErickBárcenas",
       "coverLetter": "Carta de Presentación",
-      "letsTalk": "Hablemos"
+      "letsTalk": "Hablemos",
+      "whatsappMessage": "¡Hola Erick! 👋 Acabo de revisar tu CV y la verdad me encantó tu perfil — me gustaría platicar contigo sobre una posible oportunidad. ¿Cuándo tienes un momento? 😊"
     },
     "hero": {
       "title": "Diseñando Plataformas <br> <span class=\"text-accent\">Cloud Escalables</span>",
