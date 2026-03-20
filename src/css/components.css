@@ -1388,6 +1388,12 @@
    These overrides restore correct responsive behaviour.
    ─────────────────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
+  /* Base .bento-grid has align-items:start (for grid mode); reset to stretch
+     in flex-column mode so every card fills the full container width */
+  .bento-grid {
+    align-items: stretch;
+  }
+
   /* Skills Domains tab: single column on tablet + mobile */
   .grid-2 {
     grid-template-columns: 1fr;
