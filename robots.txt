@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eibarcenas.github.io/sitemap.xml
