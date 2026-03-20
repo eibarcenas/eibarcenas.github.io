@@ -58,7 +58,8 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.5rem;
-  grid-auto-rows: minmax(180px, auto);
+  grid-auto-rows: auto;
+  align-items: start;
 }
 
 .col-span-12 {
@@ -255,12 +256,74 @@ footer {
     display: none;
   }
 
-  .btn-whatsapp span {
+  /* Mobile nav: everything fits in one row */
+  header {
+    border-radius: var(--radius-md);
+    top: 0.5rem;
+    width: calc(100% - 1rem);
+    padding: 0.6rem 1rem;
+  }
+
+  .brand {
+    font-size: 0.95rem;
+  }
+
+  .nav-actions {
+    gap: 0.4rem;
+    flex-wrap: nowrap;
+  }
+
+  .nav-cv-btn {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  /* Hide the text from WA nav button on very small screens */
+  .nav-cta-text {
     display: none;
   }
 
-  .btn-whatsapp {
-    padding: 0.75rem;
+  .nav-cta {
+    padding: 0.5rem 0.65rem;
+    min-width: unset;
+  }
+
+  .toggle-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+
+  .lang-toggle {
+    padding: 0 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  /* Cover letter mobile */
+  .letter-hero {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .letter-sidebar {
+    flex-direction: row;
+    width: 100%;
+    min-width: unset;
+    justify-content: space-around;
+    padding: 0.75rem 1rem;
+  }
+
+  .letter-body {
+    padding: 1.5rem;
+  }
+
+  .letter-name {
+    font-size: 1.35rem;
+  }
+
+  .letter-signature {
+    flex-wrap: wrap;
   }
 }
 

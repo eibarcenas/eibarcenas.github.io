@@ -60,19 +60,19 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, t }) =
             {lang.toUpperCase()}
           </button>
         </div>
-        <button className="btn btn-outline text-sm" style={{ fontWeight: 500 }} onClick={toggleView}>
+        <button className="btn btn-outline nav-cv-btn" onClick={toggleView}>
           {view === 'portfolio'
             ? (lang === 'en' ? 'Cover Letter' : 'Carta')
-            : (lang === 'en' ? '← Portfolio' : '← Portafolio')}
+            : (lang === 'en' ? '← Back' : '← Volver')}
         </button>
         <a
           href={`https://wa.me/${META.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-whatsapp"
+          className="btn btn-whatsapp nav-cta"
         >
           <WhatsAppIcon />
-          <span>{t.nav.letsTalk}</span>
+          <span className="nav-cta-text">{t.nav.letsTalk}</span>
         </a>
       </div>
     </nav>
@@ -123,10 +123,12 @@ const ProfileCard = ({ t }) => (
 );
 
 const HeroStats = ({ t }) => (
-  <div className="card col-span-8">
+  <div className="card col-span-8 hero-card">
     <div className="hero">
+      <div className="hero-eyebrow">Senior Cloud &amp; MLOps Engineer · 8+ years</div>
       <h1 dangerouslySetInnerHTML={{ __html: t.hero.title }} />
-      <div className="flex flex-wrap gap-4" style={{ marginTop: '1rem' }}>
+      <p className="hero-tagline">{t.hero.profile.description}</p>
+      <div className="flex flex-wrap gap-3" style={{ marginTop: '1.25rem' }}>
         {t.hero.chips.map((chip, i) => (
           <span key={i} className="chip">{chip}</span>
         ))}
@@ -135,11 +137,14 @@ const HeroStats = ({ t }) => (
   </div>
 );
 
+const STAT_ICONS = ['🚀', '🏢', '☁️', '🌐'];
+
 const StatsBar = ({ t }) => (
   <div className="card col-span-8 stats-bar-card">
     <div className="stats-bar">
       {t.stats.map((stat, i) => (
         <div key={i} className="stat-item">
+          <span className="stat-icon">{STAT_ICONS[i]}</span>
           <span className="stat-value">{stat.value}</span>
           <span className="stat-label">{stat.label}</span>
         </div>
@@ -215,7 +220,7 @@ const SkillsSection = ({ t, lang }) => {
 };
 
 const ExperienceSection = ({ t }) => (
-  <div className="card col-span-4 row-span-3">
+  <div className="card col-span-4" style={{ gridRow: 'span 3', alignSelf: 'stretch' }}>
     <div className="section-title">
       <h3>{t.sections.experience}</h3>
     </div>
@@ -393,71 +398,135 @@ const PortfolioView = ({ t, lang }) => (
 );
 
 const CoverLetterView = ({ t, lang }) => (
-  <div className="letter-card" style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 'var(--radius-lg)', padding: '3rem', backdropFilter: 'blur(12px)' }}>
-    <header className="letter-header mb-8 text-center">
-      <div>
-        <h1>Erick Iván Bárcenas</h1>
-        <p className="text-accent font-mono text-sm">Senior Cloud & Software Architect</p>
-      </div>
-      <div className="text-secondary text-sm mt-2">
-        {new Date().toLocaleDateString(lang === 'en' ? 'en-US' : 'es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}
-      </div>
-    </header>
+  <div className="letter-wrap">
 
-    <section className="content text-secondary" style={{ lineHeight: 1.8, maxWidth: '800px', margin: '0 auto' }}>
-      {lang === 'en' ? (
-        <>
-          <p className="mb-4">Dear Hiring Team,</p>
-          <p className="mb-4">
-            <strong>Architecture is about balance</strong> — between speed and stability, innovation and reliability. With over eight years of experience building cloud-native systems, I specialize in finding that balance for complex, distributed platforms on AWS and GCP.
-          </p>
-          <p className="mb-4">
-            My career has been defined by end-to-end ownership. From designing event-driven microservices at <em>Rombo Logística</em> to orchestrating multi-region MLOps pipelines at <em>CXC</em>, I don&apos;t just write code; I design systems that scale. I have extensive experience with <strong>Python (FastAPI), Terraform, and Serverless architectures</strong>, ensuring that infrastructure is as agile as the application code it supports.
-          </p>
-          <p className="mb-4">
-            I am particularly passionate about the intersection of <strong>DevSecOps and Data Engineering</strong>. I believe that security and observability should be first-class citizens, not afterthoughts. Whether it&apos;s implementing zero-trust security controls or building lineage-aware data pipelines with BigQuery and Dataflow, I build systems that engineering teams can trust.
-          </p>
-          <p className="mb-4">
-            As a technical leader, I prioritize mentorship and clarity. I have successfully led migration efforts, established engineering standards, and bridged the gap between product requirements and technical reality.
-          </p>
-          <p className="mb-8">
-            I look forward to discussing how my architectural background and engineering mindset can contribute to your team&apos;s goals.
-          </p>
-          <p>Sincerely,</p>
-        </>
-      ) : (
-        <>
-          <p className="mb-4">Estimado equipo de contratación,</p>
-          <p className="mb-4">
-            <strong>La arquitectura trata sobre el equilibrio</strong> — entre velocidad y estabilidad, innovación y confiabilidad. Con más de ocho años de experiencia construyendo sistemas nativos de la nube, me especializo en encontrar ese equilibrio para plataformas complejas y distribuidas en AWS y GCP.
-          </p>
-          <p className="mb-4">
-            Mi carrera se ha definido por la responsabilidad de extremo a extremo. Desde diseñar microservicios orientados a eventos en <em>Rombo Logística</em> hasta orquestar pipelines de MLOps en <em>CXC</em>, no solo escribo código; diseño sistemas que escalan. Tengo amplia experiencia con <strong>Python (FastAPI), Terraform y arquitecturas Serverless</strong>.
-          </p>
-          <p className="mb-4">
-            Me apasiona la intersección de <strong>DevSecOps e Ingeniería de Datos</strong>. Creo que la seguridad y la observabilidad deben ser ciudadanos de primera clase, no ocurrencias tardías.
-          </p>
-          <p className="mb-4">
-            Como líder técnico, priorizo la mentoría y la claridad. He liderado exitosamente esfuerzos de migración, establecido estándares de ingeniería y cerrado la brecha entre los requisitos del producto y la realidad técnica.
-          </p>
-          <p className="mb-8">
-            Espero poder conversar sobre cómo mi experiencia arquitectónica puede contribuir a los objetivos de su equipo.
-          </p>
-          <p>Atentamente,</p>
-        </>
-      )}
-
-      <div className="mt-8 pt-8" style={{ borderTop: '1px solid var(--glass-border)' }}>
-        <b className="block text-primary text-lg">Erick Iván Bárcenas</b>
-        <span className="text-sm opacity-80">Cloud Architect & Engineer</span>
-        <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <a href={`mailto:${META.email}`} className="contact-link">{META.email}</a>
-          <a href={`https://wa.me/${META.whatsapp}`} target="_blank" rel="noopener noreferrer" className="contact-link whatsapp">
-            <WhatsAppIcon /> WhatsApp
+    {/* ── Hero banner ── */}
+    <div className="letter-hero">
+      <div className="letter-hero-img">
+        <img src="./assets/img/profile.png" alt="Erick Bárcenas" />
+      </div>
+      <div className="letter-hero-info">
+        <h1 className="letter-name">Erick Iván Bárcenas Martínez</h1>
+        <p className="letter-role">Senior MLOps · DevSecOps · Cloud/Data Architect</p>
+        <div className="letter-chips">
+          <span className="chip">GCP</span>
+          <span className="chip">AWS</span>
+          <span className="chip">Python</span>
+          <span className="chip">Terraform</span>
+          <span className="chip">MLOps</span>
+        </div>
+        <div className="letter-contacts">
+          <a href={`mailto:${META.email}`} className="letter-contact-item">
+            <MailIcon />{META.email}
           </a>
+          <a href={`https://wa.me/${META.whatsapp}`} target="_blank" rel="noopener noreferrer" className="letter-contact-item whatsapp">
+            <WhatsAppIcon />{META.phone}
+          </a>
+          <a href={META.linkedin} target="_blank" rel="noopener noreferrer" className="letter-contact-item">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            linkedin/erickbarcenas
+          </a>
+          <span className="letter-contact-item">
+            <LocationIcon />{META.location}
+          </span>
         </div>
       </div>
-    </section>
+      {/* Quick stats sidebar */}
+      <div className="letter-sidebar">
+        <div className="letter-stat"><span className="letter-stat-val">8+</span><span className="letter-stat-lbl">{lang === 'en' ? 'Years Exp.' : 'Años Exp.'}</span></div>
+        <div className="letter-stat"><span className="letter-stat-val">4+</span><span className="letter-stat-lbl">{lang === 'en' ? 'Companies' : 'Empresas'}</span></div>
+        <div className="letter-stat"><span className="letter-stat-val">10+</span><span className="letter-stat-lbl">{lang === 'en' ? 'Projects' : 'Proyectos'}</span></div>
+        <div className="letter-stat"><span className="letter-stat-val">2</span><span className="letter-stat-lbl">{lang === 'en' ? 'Clouds' : 'Nubes'}</span></div>
+      </div>
+    </div>
+
+    {/* ── Body ── */}
+    <div className="letter-body">
+      {/* Date */}
+      <p className="letter-date">
+        {new Date().toLocaleDateString(lang === 'en' ? 'en-US' : 'es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </p>
+
+      {lang === 'en' ? (
+        <div className="letter-content">
+          <p className="letter-salutation">Dear Hiring Team,</p>
+
+          <p>
+            My name is <strong>Erick Bárcenas</strong>, a <strong>Senior Cloud Architect and Python Engineer</strong> based in Mexico City with over <strong>8 years of experience</strong> designing and deploying large-scale distributed systems. I started my career building full-stack applications for clients across Mexico, and over time I specialized in cloud infrastructure — the layer that determines whether a product survives real traffic or collapses under it.
+          </p>
+
+          <p>
+            I am what you might call a <strong>builder-architect</strong>: I don&apos;t just design on whiteboards — I write the Terraform, ship the pipelines, and stay through the incidents. At <strong>CXC</strong>, I was the first engineer on the team. I designed the GCP architecture from scratch, built end-to-end MLOps workflows with <strong>MLflow, LlamaIndex, and LangGraph</strong>, and established DevSecOps standards that are now the company&apos;s engineering foundation. At <strong>Rombo Logística</strong>, I led the AWS infrastructure modernization — migrating to microservices on ECS/EKS, implementing event-driven patterns with SQS/SNS, and cutting deployment times significantly with CodePipeline automation.
+          </p>
+
+          <p>
+            What sets me apart is my <strong>full-stack cloud fluency</strong>: I move fluidly between Python backend services, Terraform infrastructure, CI/CD pipelines, data engineering with BigQuery and Dataflow, and ML model deployment. I don&apos;t need to hand off to three different specialists — I can own the problem end to end. I also care deeply about <strong>engineering culture</strong>: I mentor teams, write documentation, and raise engineering maturity through standards and blueprints, not just code.
+          </p>
+
+          <div className="letter-highlights">
+            <div className="highlight-item"><span className="highlight-icon">⚡</span><span>Built MVPs from <strong>0→1</strong> at 3 different companies as first engineer</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🏗️</span><span>Deep expertise in <strong>GCP + AWS</strong> cloud architecture (8 years AWS, 2 years GCP)</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🤖</span><span>Delivered production <strong>MLOps + AI agent</strong> systems (LlamaIndex, LangGraph, MLflow)</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🔐</span><span>Strong <strong>DevSecOps</strong> background — IaC governance, secret rotation, SAST/DAST</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🧑‍🏫</span><span>Mentor and technical leader — raised engineering maturity at every team I&apos;ve joined</span></div>
+          </div>
+
+          <p>
+            I thrive in environments with hard problems and high ownership expectations. If your team is building something that needs to scale reliably and securely, I would love to be part of that conversation.
+          </p>
+
+          <p>Thank you for your time.</p>
+          <p className="letter-closing">Sincerely,</p>
+        </div>
+      ) : (
+        <div className="letter-content">
+          <p className="letter-salutation">Estimado equipo de contratación,</p>
+
+          <p>
+            Mi nombre es <strong>Erick Bárcenas</strong>, soy <strong>Arquitecto Cloud Senior e Ingeniero Python</strong> con sede en Ciudad de México y más de <strong>8 años de experiencia</strong> diseñando y desplegando sistemas distribuidos a gran escala. Comencé mi carrera construyendo aplicaciones full-stack para clientes en México y con el tiempo me especialicé en infraestructura cloud — la capa que determina si un producto sobrevive el tráfico real o colapsa bajo él.
+          </p>
+
+          <p>
+            Soy lo que se podría llamar un <strong>arquitecto-constructor</strong>: no solo diseño en pizarrones, también escribo el Terraform, entrego los pipelines y me quedo durante los incidentes. En <strong>CXC</strong> fui el primer ingeniero del equipo. Diseñé la arquitectura GCP desde cero, construí flujos MLOps end-to-end con <strong>MLflow, LlamaIndex y LangGraph</strong>, y establecí estándares DevSecOps que hoy son la base de ingeniería de la empresa. En <strong>Rombo Logística</strong> lideré la modernización de infraestructura AWS — migrando a microservicios en ECS/EKS, implementando patrones event-driven con SQS/SNS, y automatizando despliegues con CodePipeline.
+          </p>
+
+          <p>
+            Lo que me distingue es mi <strong>fluidez cloud full-stack</strong>: me muevo sin fricción entre servicios backend en Python, infraestructura Terraform, pipelines CI/CD, ingeniería de datos con BigQuery y Dataflow, y despliegue de modelos ML. No necesito delegar a tres especialistas distintos — puedo ser dueño del problema de extremo a extremo. También me importa profundamente la <strong>cultura de ingeniería</strong>: hago mentoría, escribo documentación y elevo la madurez del equipo a través de estándares y blueprints.
+          </p>
+
+          <div className="letter-highlights">
+            <div className="highlight-item"><span className="highlight-icon">⚡</span><span>Construí MVPs de <strong>0→1</strong> en 3 empresas distintas como primer ingeniero</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🏗️</span><span>Expertise profundo en <strong>GCP + AWS</strong> (8 años AWS, 2 años GCP)</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🤖</span><span>Sistemas <strong>MLOps + agentes IA</strong> en producción (LlamaIndex, LangGraph, MLflow)</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🔐</span><span>Sólido background en <strong>DevSecOps</strong> — IaC governance, rotación de secretos, SAST/DAST</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🧑‍🏫</span><span>Mentor y líder técnico — elevé la madurez de ingeniería en cada equipo</span></div>
+          </div>
+
+          <p>
+            Prospero en entornos con problemas difíciles y expectativas de alta responsabilidad. Si tu equipo está construyendo algo que necesita escalar de manera confiable y segura, me encantaría ser parte de esa conversación.
+          </p>
+
+          <p>Gracias por tu tiempo.</p>
+          <p className="letter-closing">Atentamente,</p>
+        </div>
+      )}
+
+      {/* Signature block */}
+      <div className="letter-signature">
+        <img src="./assets/img/profile.png" alt="Erick" className="sig-avatar" />
+        <div>
+          <strong className="sig-name">Erick Iván Bárcenas Martínez</strong>
+          <span className="sig-title">Senior Cloud Architect · MLOps · DevSecOps</span>
+          <div className="sig-links">
+            <a href={`mailto:${META.email}`} className="contact-link">{META.email}</a>
+            <a href={`https://wa.me/${META.whatsapp}`} target="_blank" rel="noopener noreferrer" className="contact-link whatsapp">
+              <WhatsAppIcon /> WhatsApp
+            </a>
+            <a href={META.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 );
 
