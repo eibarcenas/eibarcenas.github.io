@@ -1,3 +1,540 @@
+/* ============================================================
+   NEW COMPONENTS: WhatsApp, Stats, Skills, Education, Contact
+   ============================================================ */
+
+/* WhatsApp Button */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-whatsapp:hover {
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+/* Floating WhatsApp Button */
+.fab-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  z-index: 100;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fab-pulse 3s infinite;
+}
+
+.fab-whatsapp svg {
+  width: 28px;
+  height: 28px;
+}
+
+.fab-whatsapp:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.65);
+  animation: none;
+}
+
+@keyframes fab-pulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(37, 211, 102, 0.75);
+  }
+}
+
+/* Stats Bar */
+.stats-bar-card {
+  padding: 1.5rem 2rem;
+}
+
+.stats-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: var(--glass-border);
+}
+
+.stat-value {
+  font-family: var(--font-head);
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Skill Tabs */
+.tab-group {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--glass-bg);
+  padding: 0.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  background: var(--bg-secondary);
+  color: var(--text-accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tab-btn:hover:not(.active) {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Skills Tech Grid */
+.skills-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-group-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skill-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.skill-bar-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.skill-years {
+  font-size: 0.7rem;
+  color: var(--text-accent);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 999px;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.skill-bar-wrap {
+  height: 4px;
+  background: var(--glass-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+/* Profile Meta */
+.profile-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.profile-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+}
+
+/* Experience enhancements */
+.period-badge {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  white-space: nowrap;
+}
+
+.exp-item {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.exp-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.exp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.exp-list li {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.exp-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--text-accent);
+  font-size: 0.75rem;
+}
+
+.tech-stack-row {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+.tech-stack-label {
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-right: 0.25rem;
+}
+
+.tech-stack-text {
+  font-family: var(--font-mono);
+}
+
+/* Education Card */
+.edu-card {
+  justify-content: space-between;
+}
+
+.edu-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.edu-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.edu-degree {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.edu-school {
+  font-size: 0.9rem;
+  color: var(--text-accent);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.edu-year {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+}
+
+.lang-list {
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1rem;
+}
+
+.lang-list-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.65rem;
+  font-weight: 600;
+}
+
+.lang-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+}
+
+.lang-name {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.lang-level {
+  font-size: 0.75rem;
+  color: var(--text-accent);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+/* Freelance Section */
+.freelance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.freelance-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  transition: all 0.2s;
+}
+
+.freelance-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--glass-border-hover);
+}
+
+.freelance-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.freelance-name.link {
+  color: var(--text-accent);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.freelance-name.link:hover {
+  text-decoration: underline;
+}
+
+.freelance-work {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Contact Section */
+.contact-card {
+  background: linear-gradient(
+    135deg,
+    var(--glass-bg),
+    rgba(37, 211, 102, 0.03)
+  );
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.contact-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-accent);
+  color: var(--text-primary);
+}
+
+.contact-link.whatsapp {
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.2);
+  background: rgba(37, 211, 102, 0.05);
+}
+
+.contact-link.whatsapp:hover {
+  background: rgba(37, 211, 102, 0.12);
+  border-color: #25d366;
+}
+
+.contact-cta {
+  margin-left: auto;
+}
+
+/* Section Title */
+.section-title {
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.section-title h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+}
+
+/* chip-sm for skill tags */
+.chip-sm {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.chip-sm:hover {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--text-primary);
+}
+
+/* Skill item (domains tab) */
+.skill-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--glass-border-hover);
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -113,7 +650,7 @@
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.1;
-  background: linear-gradient(to right, #635cf6, #5d55f2);
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

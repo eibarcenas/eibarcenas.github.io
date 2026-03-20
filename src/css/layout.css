@@ -161,17 +161,106 @@ footer {
   .col-span-3 {
     grid-column: span 2;
   }
+
+  .freelance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-tech-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
   .bento-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .hero h1 {
-    font-size: 2.25rem;
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  /* Header: stack on small screens */
+  header {
+    border-radius: var(--radius-lg);
+    top: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .top-nav {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  /* Hide cover letter btn text, show icon only on small */
+  .stats-bar {
+    justify-content: space-between;
+  }
+
+  .stat-value {
+    font-size: 1.35rem;
+  }
+
+  .freelance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-cta {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fab-whatsapp {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+  }
+
+  .fab-whatsapp svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .freelance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .btn-whatsapp span {
+    display: none;
+  }
+
+  .btn-whatsapp {
+    padding: 0.75rem;
   }
 }
 

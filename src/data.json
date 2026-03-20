@@ -1,0 +1,441 @@
+{
+  "meta": {
+    "name": "Erick Iván Bárcenas Martínez",
+    "title": "Senior MLOps, DevSecOps & Cloud/Data Architect (GCP | AWS | Python)",
+    "email": "erick.barcenas.mtz@gmail.com",
+    "phone": "+52 55 44 71 25 75",
+    "whatsapp": "525544712575",
+    "location": "Chalco, Estado de México",
+    "github": "https://github.com/erickbarcenas",
+    "linkedin": "https://linkedin.com/in/erickbarcenas",
+    "yearsExperience": 8
+  },
+  "education": {
+    "degree": "Bachelor's in Mechatronic Engineering",
+    "school": "UNAM",
+    "graduation": "2022"
+  },
+  "languages": [
+    { "name": "Spanish", "level": "Native" },
+    { "name": "English", "level": "B2 Upper Intermediate" }
+  ],
+  "skillsDetailed": [
+    {
+      "category": "Programming Languages",
+      "items": [
+        { "name": "Python", "years": 8 },
+        { "name": "JavaScript", "years": 8 },
+        { "name": "SQL (Postgres, MySQL, BigQuery)", "years": 8 },
+        { "name": "Bash / Shell Scripting", "years": 8 },
+        { "name": "TypeScript", "years": 4 },
+        { "name": "Java", "years": 1 },
+        { "name": "Elixir", "years": 1 }
+      ]
+    },
+    {
+      "category": "Cloud Architecture (AWS)",
+      "items": [
+        { "name": "AWS Lambda", "years": 8 },
+        { "name": "ECS (Fargate & EC2)", "years": 8 },
+        { "name": "EKS (Kubernetes on AWS)", "years": 8 },
+        { "name": "EC2", "years": 8 },
+        { "name": "API Gateway (REST & HTTP)", "years": 8 },
+        { "name": "Route53", "years": 8 },
+        { "name": "CloudFront", "years": 8 },
+        { "name": "IAM", "years": 8 },
+        { "name": "Code Pipeline", "years": 8 },
+        { "name": "SNS (Pub/Sub)", "years": 4 },
+        { "name": "SQS (Queues & message patterns)", "years": 4 },
+        { "name": "EventBridge", "years": 4 },
+        { "name": "Step Function", "years": 4 }
+      ]
+    },
+    {
+      "category": "Cloud Architecture (GCP)",
+      "items": [
+        { "name": "Cloud Run", "years": 2 },
+        { "name": "GKE (GPU/CPU workloads)", "years": 2 },
+        { "name": "VPC / Serverless VPC Access", "years": 2 },
+        { "name": "Secret Manager", "years": 2 },
+        { "name": "IAM / IAP", "years": 2 },
+        { "name": "Artifact Registry", "years": 2 },
+        { "name": "Load Balancers (NEGs, Cloud Armor)", "years": 2 }
+      ]
+    },
+    {
+      "category": "IaC / DevOps / DevSecOps",
+      "items": [
+        { "name": "Terraform", "years": 4 },
+        { "name": "GitLab CI/CD", "years": 4 },
+        { "name": "Cloud Build", "years": 4 },
+        { "name": "Code Pipeline & Code Build", "years": 4 },
+        { "name": "Buildah / Kaniko", "years": 4 },
+        { "name": "Monitoring (Grafana, Prometheus)", "years": 4 },
+        { "name": "SAST / DAST scanning", "years": 1 },
+        { "name": "Secret Rotation / Governance", "years": 1 },
+        { "name": "Datadog", "years": 1 }
+      ]
+    },
+    {
+      "category": "MLOps",
+      "items": [
+        { "name": "MLflow", "years": 1 },
+        { "name": "Vertex AI", "years": 1 },
+        { "name": "LlamaIndex / LangGraph", "years": 1 },
+        { "name": "Airflow / Composer", "years": 1 },
+        { "name": "TensorFlow / PyTorch (basic)", "years": 1 },
+        { "name": "Feature Stores", "years": 1 },
+        { "name": "Experiment Tracking", "years": 1 },
+        { "name": "Model Registry", "years": 1 }
+      ]
+    },
+    {
+      "category": "Data Engineering",
+      "items": [
+        { "name": "BigQuery", "years": 1 },
+        { "name": "Dataflow (Beam)", "years": 1 },
+        { "name": "GCS Data Lake", "years": 1 },
+        { "name": "ETL/ELT Pipelines (GCP)", "years": 1 },
+        { "name": "Data Modeling (OLTP/OLAP)", "years": 1 },
+        { "name": "Airbyte", "years": 1 }
+      ]
+    },
+    {
+      "category": "Messaging",
+      "items": [
+        { "name": "SQS/SNS (AWS)", "years": 4 },
+        { "name": "Pub/Sub (GCP)", "years": 2 },
+        { "name": "RabbitMQ", "years": 2 },
+        { "name": "Kafka", "years": 1 }
+      ]
+    }
+  ],
+  "freelanceProjects": [
+    { "name": "Grupo Chong S.A DE C.V.", "work": "Frontend application development (React).", "url": "https://www.grupochong.mx" },
+    { "name": "IIMAS", "work": "Frontend application development (React). RESTful service development (Python/Django).", "url": null },
+    { "name": "DRPROMED S.A DE C.V.", "work": "Frontend application development (React).", "url": "https://drpromed.com.mx" },
+    { "name": "Servicios Total Show S.A. de C.V.", "work": "Frontend application development (React). RESTful service development (Python/Django).", "url": "https://www.totalshow.mx" },
+    { "name": "Yamblet", "work": "Frontend application development (React). Chatbot development (Python).", "url": null },
+    { "name": "USECAD", "work": "Frontend application development (React). RESTful service development (Python/Django).", "url": null },
+    { "name": "PROTECO", "work": "Frontend applications instructor (Angular/React). RESTful service development (Python/Django).", "url": null },
+    { "name": "Asimov Ingeniería", "work": "Frontend application development (Angular/React). RESTful service development (Python/Django).", "url": null }
+  ],
+  "en": {
+    "nav": {
+      "brand": "</> ErickBárcenas",
+      "coverLetter": "Original Cover Letter",
+      "letsTalk": "Let's Talk"
+    },
+    "hero": {
+      "title": "Architecting Scalable <br> <span class=\"text-accent\">Cloud Platforms</span>",
+      "chips": ["GCP & AWS Architect", "Data Platforms", "DevSecOps", "MLOps", "Python"],
+      "profile": {
+        "title": "Erick Bárcenas",
+        "subtitle": "Cloud, Data & MLOps Architect",
+        "description": "Senior Cloud Architect and Python Engineer with 8+ years designing and deploying large-scale distributed systems on GCP and AWS. Strong background in Data Engineering, MLOps, CI/CD automation, and IaC with Terraform.",
+        "status": "Available for Consulting",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
+        "whatsapp": "WhatsApp"
+      }
+    },
+    "stats": [
+      { "value": "8+", "label": "Years Experience" },
+      { "value": "4+", "label": "Companies" },
+      { "value": "GCP+AWS", "label": "Cloud Platforms" },
+      { "value": "10+", "label": "Live Projects" }
+    ],
+    "sections": {
+      "skills": "Architectural Domains",
+      "skillsDetailed": "Skills & Experience",
+      "experience": "Career History",
+      "projects": "Selected Work",
+      "freelance": "Freelance Projects (2016–2020)",
+      "education": "Education",
+      "contact": "Get In Touch",
+      "footer": "Designed for Scalability & Performance."
+    },
+    "actions": {
+      "viewProject": "View Case Study",
+      "contact": "Contact Me",
+      "whatsappCta": "Chat on WhatsApp"
+    },
+    "data": {
+      "skills": [
+        {
+          "title": "Cloud Architecture (GCP & AWS)",
+          "description": "Designing scalable, secure, multi-environment systems.",
+          "tags": ["Cloud Run", "GKE", "VPC", "IAM", "Networking", "Load Balancing"]
+        },
+        {
+          "title": "Platform & DevSecOps",
+          "description": "Standardizing CI/CD, Terraform governance, and reusable blueprints.",
+          "tags": ["CI/CD Standards", "Terraform", "Governance", "Blueprints", "Guardrails"]
+        },
+        {
+          "title": "Data & MLOps Platforms",
+          "description": "Building production-grade data pipelines and ML lifecycles.",
+          "tags": ["MLflow", "BigQuery", "Dataflow", "Experiment Tracking", "Orchestration"]
+        },
+        {
+          "title": "Observability & Reliability",
+          "description": "Ensuring system health with comprehensive metrics, logs, and SLOs.",
+          "tags": ["Grafana", "Cloud Monitoring", "SLOs", "Tracing", "Metrics"]
+        }
+      ],
+      "experience": [
+        {
+          "role": "Cloud & MLOps Architect",
+          "company": "Tecnología en cuentas por cobrar",
+          "period": "Jan 2024 — Present",
+          "description": "Architecting DevSecOps, MLOps, and Data Engineering Cloud Architectures.",
+          "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager, Terraform, Python, FastAPI, MLflow, GitLab CI/CD, Docker, LangGraph, LlamaIndex)",
+          "details": [
+            "First software engineer — designed and built the company's first pilot and MVP from scratch.",
+            "Defined the MVP architecture that became the foundation for multiple products and clients.",
+            "Designed end-to-end MLOps pipelines using GitLab CI/CD, Cloud Build, Artifact Registry and Cloud Run.",
+            "Implemented MLflow tracking and model registry, integrated with BigQuery and GCS for dataset/experiment lineage.",
+            "Built streaming and batch ETL/ELT pipelines using Dataflow (Beam), Pub/Sub, Cloud Functions and Composer.",
+            "Designed scalable multi-agent AI architectures using LlamaIndex and LangGraph with session, state, and event orchestration.",
+            "Implemented full IaC using Terraform modules for Cloud Run services, VPC, Serverless connectors, IAM policies, Secret Manager, and security enforcement.",
+            "Developed secure DevSecOps blueprints: CI/CD standards, boilerplates, naming conventions, secret rotation, vulnerability scanning.",
+            "Mentored engineers on GCP, Terraform, DevSecOps, and AI architecture best practices."
+          ]
+        },
+        {
+          "role": "Senior Python AWS Engineer",
+          "company": "Rombo Logística",
+          "period": "Aug 2023 — Dec 2024",
+          "description": "Designing scalable backend services and event-driven architectures.",
+          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2, Kinesis Firehose, CodePipeline, CloudWatch, CloudFormation, CloudFront, VPC, AIM), Python, NodeJs, Fast API, Serverless, SCRUM & Jira",
+          "details": [
+            "First software engineer — designed and built the company's first pilot and MVP from scratch.",
+            "Spearheaded the design and implementation of AWS cloud architectures using CloudFormation and C4 methodology, ensuring scalability and reliability of services.",
+            "Developed RESTful services and microservices using ECS, EC2, RDS, Lambda, DynamoDB, SNS, SQS, and S3.",
+            "Implemented comprehensive unit tests using Pytest and conducted load testing with Locust.",
+            "Established CI/CD pipelines using CodeBuild and CodePipeline, automating the deployment process.",
+            "Mentored and supported team members, fostering a collaborative and growth-oriented work environment."
+          ]
+        },
+        {
+          "role": "Engineering Lead",
+          "company": "Persistent Systems",
+          "period": "Sep 2022 — Jun 2023",
+          "description": "Engineering Lead for Frontend Architecture & GraphQL Integration.",
+          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, Fast API, Serverless, SCRUM & Jira",
+          "details": [
+            "Provided technical leadership as a Tech Lead, guiding the team in frontend development using React and GraphQL.",
+            "Orchestrated the creation of proxies with Apollo and GraphQL to streamline data fetching and management in frontend applications.",
+            "Prototyped mockups and wireframes using Figma, enabling visualization and validation of design concepts."
+          ]
+        },
+        {
+          "role": "Full Stack Developer",
+          "company": "Sugar App",
+          "period": "Apr 2020 — Sep 2022",
+          "description": "Designed Scalable Serverless Architectures & Data-Driven Microservices.",
+          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, Fast API, Serverless, SCRUM & Jira",
+          "details": [
+            "First software engineer — designed and built the company's first pilot and MVP from scratch.",
+            "Led a team in the development and testing of frontend applications, delivering intuitive user interfaces.",
+            "Designed database architecture using Entity-Relationship diagrams, ensuring optimal data storage and retrieval efficiency.",
+            "Developed serverless microservices on AWS, leveraging Lambda and other cloud services to build scalable and resilient backend solutions.",
+            "Implemented RESTful and GraphQL services to facilitate data communication between frontend and backend systems.",
+            "Established CI/CD pipelines to automate the build, test, and deployment processes."
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "Shugar App",
+          "description": "Full-stack serverless platform for the beauty industry.",
+          "link": "https://www.shugarapp.com"
+        },
+        {
+          "title": "Keet Global",
+          "description": "Logistics and supply chain management platform.",
+          "link": "https://www.keet.global/home"
+        },
+        {
+          "title": "Grupo Chong",
+          "description": "Corporate web presence and internal tools.",
+          "link": "https://www.grupochong.mx"
+        },
+        {
+          "title": "RSI Delivers",
+          "description": "Enterprise-scale delivery solutions.",
+          "link": "https://www.rsidelivers.com"
+        },
+        {
+          "title": "Total Show",
+          "description": "Entertainment booking and management system.",
+          "link": "https://www.totalshow.mx"
+        },
+        {
+          "title": "Mundo de Negocios",
+          "description": "Business platform and marketplace.",
+          "link": "https://www.mundodenegocios.mx"
+        }
+      ]
+    }
+  },
+  "es": {
+    "nav": {
+      "brand": "</> ErickBárcenas",
+      "coverLetter": "Carta de Presentación",
+      "letsTalk": "Hablemos"
+    },
+    "hero": {
+      "title": "Diseñando Plataformas <br> <span class=\"text-accent\">Cloud Escalables</span>",
+      "chips": ["Arquitecto GCP & AWS", "Plataformas de Datos", "DevSecOps", "MLOps", "Python"],
+      "profile": {
+        "title": "Erick Bárcenas",
+        "subtitle": "Arquitecto de Cloud, Data & MLOps",
+        "description": "Arquitecto Cloud Senior e Ingeniero Python con 8+ años diseñando y desplegando sistemas distribuidos a gran escala en GCP y AWS. Sólida experiencia en Ingeniería de Datos, MLOps, automatización CI/CD e IaC con Terraform.",
+        "status": "Disponible para Consultoría",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
+        "whatsapp": "WhatsApp"
+      }
+    },
+    "stats": [
+      { "value": "8+", "label": "Años de Experiencia" },
+      { "value": "4+", "label": "Empresas" },
+      { "value": "GCP+AWS", "label": "Plataformas Cloud" },
+      { "value": "10+", "label": "Proyectos Activos" }
+    ],
+    "sections": {
+      "skills": "Dominios Arquitectónicos",
+      "skillsDetailed": "Habilidades & Experiencia",
+      "experience": "Trayectoria Profesional",
+      "projects": "Trabajo Seleccionado",
+      "freelance": "Proyectos Freelance (2016–2020)",
+      "education": "Educación",
+      "contact": "Contacto",
+      "footer": "Diseñado para Escalabilidad y Rendimiento."
+    },
+    "actions": {
+      "viewProject": "Ver Caso de Estudio",
+      "contact": "Contáctame",
+      "whatsappCta": "Chatear por WhatsApp"
+    },
+    "data": {
+      "skills": [
+        {
+          "title": "Arquitectura Cloud (GCP & AWS)",
+          "description": "Diseño de sistemas escalables, seguros y multi-ambiente.",
+          "tags": ["Cloud Run", "GKE", "VPC", "IAM", "Networking", "Balanceo de Carga"]
+        },
+        {
+          "title": "Plataforma & DevSecOps",
+          "description": "Estandarización de CI/CD, gobierno de Terraform y blueprints reutilizables.",
+          "tags": ["Estándares CI/CD", "Terraform", "Gobierno", "Blueprints", "Guardrails"]
+        },
+        {
+          "title": "Plataformas de Datos & MLOps",
+          "description": "Construcción de pipelines de datos y ciclos de vida de ML en producción.",
+          "tags": ["MLflow", "BigQuery", "Dataflow", "Tracking de Experimentos", "Orquestación"]
+        },
+        {
+          "title": "Observabilidad & Confiabilidad",
+          "description": "Asegurando la salud del sistema con métricas, logs y SLOs integrales.",
+          "tags": ["Grafana", "Cloud Monitoring", "SLOs", "Tracing", "Métricas"]
+        }
+      ],
+      "experience": [
+        {
+          "role": "Cloud & MLOps Architect",
+          "company": "Tecnología en cuentas por cobrar",
+          "period": "Ene 2024 — Presente",
+          "description": "Arquitectura DevSecOps, MLOps e Ingeniería de Datos en la Nube.",
+          "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager, Terraform, Python, FastAPI, MLflow, GitLab CI/CD, Docker, LangGraph, LlamaIndex)",
+          "details": [
+            "Primer ingeniero de software — diseñé y construí el primer piloto y MVP de la empresa desde cero.",
+            "Definí la arquitectura MVP que se convirtió en la base de múltiples productos y clientes.",
+            "Diseñé pipelines MLOps end-to-end usando GitLab CI/CD, Cloud Build, Artifact Registry y Cloud Run.",
+            "Implementé MLflow tracking y model registry, integrado con BigQuery y GCS para linaje de datos.",
+            "Construí pipelines ETL/ELT streaming y batch usando Dataflow (Beam), Pub/Sub, Cloud Functions y Composer.",
+            "Diseñé arquitecturas multi-agente de IA escalables usando LlamaIndex y LangGraph.",
+            "Implementé IaC completo con módulos Terraform para Cloud Run, VPC, IAM, Secret Manager y seguridad.",
+            "Desarrollé blueprints DevSecOps seguros: estándares CI/CD, plantillas, rotación de secretos, escaneo de vulnerabilidades.",
+            "Mentoría a ingenieros en GCP, Terraform, DevSecOps y arquitecturas de IA."
+          ]
+        },
+        {
+          "role": "Senior Python AWS Engineer",
+          "company": "Rombo Logística",
+          "period": "Ago 2023 — Dic 2024",
+          "description": "Diseño de servicios backend escalables y arquitecturas event-driven.",
+          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2, Kinesis Firehose, CodePipeline, CloudWatch, CloudFormation, CloudFront, VPC), Python, NodeJs, FastAPI, Serverless, SCRUM & Jira",
+          "details": [
+            "Primer ingeniero — diseñé y construí el primer piloto y MVP desde cero.",
+            "Lideré el diseño e implementación de arquitecturas AWS usando CloudFormation y metodología C4.",
+            "Desarrollé servicios RESTful y microservicios usando ECS, EC2, RDS, Lambda, DynamoDB, SNS, SQS y S3.",
+            "Implementé pruebas unitarias con Pytest y pruebas de carga con Locust.",
+            "Establecí pipelines CI/CD usando CodeBuild y CodePipeline.",
+            "Mentoría y soporte al equipo, fomentando un ambiente de trabajo colaborativo."
+          ]
+        },
+        {
+          "role": "Engineering Lead",
+          "company": "Persistent Systems",
+          "period": "Sep 2022 — Jun 2023",
+          "description": "Liderazgo de Ingeniería para Arquitectura Frontend & Integración GraphQL.",
+          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, FastAPI, Serverless",
+          "details": [
+            "Liderazgo técnico como Tech Lead, guiando al equipo en desarrollo frontend con React y GraphQL.",
+            "Orquesté la creación de proxies con Apollo y GraphQL para optimizar la obtención y gestión de datos.",
+            "Prototipé mockups y wireframes en Figma para visualización y validación de conceptos de diseño."
+          ]
+        },
+        {
+          "role": "Full Stack Developer",
+          "company": "Sugar App",
+          "period": "Abr 2020 — Sep 2022",
+          "description": "Diseño de Arquitecturas Serverless Escalables y Microservicios Data-Driven.",
+          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, FastAPI, Serverless",
+          "details": [
+            "Primer ingeniero — diseñé y construí el primer piloto y MVP desde cero.",
+            "Lideré el equipo en desarrollo y pruebas de aplicaciones frontend.",
+            "Diseñé arquitectura de base de datos usando diagramas Entidad-Relación.",
+            "Desarrollé microservicios serverless en AWS usando Lambda y otros servicios cloud.",
+            "Implementé servicios RESTful y GraphQL para comunicación entre frontend y backend.",
+            "Establecí pipelines CI/CD para automatizar los procesos de build, test y despliegue."
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "Shugar App",
+          "description": "Plataforma serverless full-stack para la industria de la belleza.",
+          "link": "https://www.shugarapp.com"
+        },
+        {
+          "title": "Keet Global",
+          "description": "Plataforma de gestión logística y cadena de suministro.",
+          "link": "https://www.keet.global/home"
+        },
+        {
+          "title": "Grupo Chong",
+          "description": "Presencia web corporativa y herramientas internas.",
+          "link": "https://www.grupochong.mx"
+        },
+        {
+          "title": "RSI Delivers",
+          "description": "Soluciones de entrega a escala empresarial.",
+          "link": "https://www.rsidelivers.com"
+        },
+        {
+          "title": "Total Show",
+          "description": "Sistema de gestión y reservas de entretenimiento.",
+          "link": "https://www.totalshow.mx"
+        },
+        {
+          "title": "Mundo de Negocios",
+          "description": "Plataforma de negocios y marketplace.",
+          "link": "https://www.mundodenegocios.mx"
+        }
+      ]
+    }
+  }
+}
