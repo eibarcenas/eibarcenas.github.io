@@ -65,9 +65,14 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, t }) =
           </button>
         </div>
         <button className="btn btn-outline nav-cv-btn" onClick={toggleView}>
-          {view === 'portfolio'
-            ? (lang === 'en' ? 'Cover Letter' : 'Carta')
-            : (lang === 'en' ? '← Back' : '← Volver')}
+          <span className="cv-btn-label">
+            {view === 'portfolio'
+              ? (lang === 'en' ? 'Cover Letter' : 'Carta')
+              : (lang === 'en' ? '← Back' : '← Volver')}
+          </span>
+          <span className="cv-btn-short">
+            {view === 'portfolio' ? 'CV' : '←'}
+          </span>
         </button>
         <a
           href={waUrl(t.nav.whatsappMessage)}

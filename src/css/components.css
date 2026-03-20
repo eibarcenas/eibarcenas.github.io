@@ -1405,3 +1405,31 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Nav + Contact mobile fixes ───────────────────────────────────────────── */
+/* Show full label by default, hide short version */
+.cv-btn-short {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  /* Swap label for short version so nav doesn't overflow */
+  .cv-btn-label {
+    display: none;
+  }
+  .cv-btn-short {
+    display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Contact links: equal full-width stack */
+  .contact-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .contact-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
