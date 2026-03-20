@@ -335,7 +335,6 @@
 
 /* ── Stats bar — prevent grid stretch ── */
 .stats-bar-card {
-  align-self: start;
 }
 
 /* WhatsApp Button */
