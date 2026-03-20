@@ -149,18 +149,33 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsiveness */
+/* ── Responsiveness ── */
+
+/* Tablet-large: keep 3-col proportions (same as desktop but compact) */
 @media (max-width: 1024px) {
   .bento-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
 
-  .col-span-8,
-  .col-span-6,
-  .col-span-4,
-  .col-span-3 {
+  .col-span-12 {
+    grid-column: span 3;
+  }
+
+  .col-span-8 {
     grid-column: span 2;
+  }
+
+  .col-span-6 {
+    grid-column: span 2;
+  }
+
+  .col-span-4 {
+    grid-column: span 1;
+  }
+
+  .col-span-3 {
+    grid-column: span 1;
   }
 
   .freelance-grid {
@@ -172,6 +187,7 @@ footer {
   }
 }
 
+/* Tablet: stack everything, profile card goes horizontal */
 @media (max-width: 768px) {
   .bento-grid {
     display: flex;
@@ -180,31 +196,27 @@ footer {
   }
 
   .hero h1 {
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    font-size: clamp(1.6rem, 6vw, 2.25rem);
   }
 
-  /* Header: stack on small screens */
   header {
     border-radius: var(--radius-lg);
     top: 0.75rem;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 1rem;
   }
 
   .top-nav {
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
   .nav-actions {
     gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 100%;
+    flex-wrap: nowrap;
   }
 
-  /* Hide cover letter btn text, show icon only on small */
   .stats-bar {
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 0.5rem;
   }
 
   .stat-value {
@@ -235,56 +247,47 @@ footer {
   }
 
   .fab-whatsapp {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    width: 52px;
-    height: 52px;
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
   }
 
   .fab-whatsapp svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 }
 
+/* Mobile: fully stacked, compact everything */
 @media (max-width: 480px) {
-  .freelance-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-item:not(:last-child)::after {
-    display: none;
-  }
-
-  /* Mobile nav: everything fits in one row */
   header {
     border-radius: var(--radius-md);
     top: 0.5rem;
     width: calc(100% - 1rem);
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 0.75rem;
   }
 
   .brand {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .nav-actions {
-    gap: 0.4rem;
+    gap: 0.35rem;
     flex-wrap: nowrap;
   }
 
   .nav-cv-btn {
-    padding: 0.4rem 0.65rem;
-    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.72rem;
   }
 
-  /* Hide the text from WA nav button on very small screens */
   .nav-cta-text {
     display: none;
   }
 
   .nav-cta {
-    padding: 0.5rem 0.65rem;
+    padding: 0.45rem 0.6rem;
     min-width: unset;
   }
 
@@ -295,8 +298,46 @@ footer {
   }
 
   .lang-toggle {
-    padding: 0 0.5rem;
+    padding: 0 0.45rem;
     font-size: 0.7rem;
+  }
+
+  /* Stats: 2×2 grid on small phones */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .stat-item {
+    border-right: none !important;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--glass-border);
+  }
+
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  /* Hero industries: compact */
+  .hero-industries {
+    gap: 0.35rem;
+  }
+
+  .industry-chip {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  /* Freelance: single column */
+  .freelance-grid {
+    grid-template-columns: 1fr;
   }
 
   /* Cover letter mobile */
@@ -411,4 +452,14 @@ footer {
 .profile-socials .btn {
   flex: 1;
   justify-content: center;
+}
+
+/* The right-side content wrapper inside profile card */
+.profile-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  flex: 1;
 }

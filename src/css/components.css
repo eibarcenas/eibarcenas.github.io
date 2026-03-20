@@ -1244,3 +1244,140 @@
   padding: 0 0.75rem;
   border-radius: 999px;
 }
+
+/* ── Profile Card Responsive ── */
+@media (max-width: 768px) {
+  /* Horizontal layout: image left, content right */
+  .profile-card-content {
+    flex-direction: row !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    gap: 1.25rem;
+  }
+
+  .profile-img-container {
+    width: 130px !important;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .profile-card-right {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .profile-name {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .profile-meta {
+    align-items: flex-start !important;
+  }
+
+  .profile-bio {
+    text-align: left;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .profile-socials {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Back to column on small phones, compact image */
+  .profile-card-content {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    gap: 0;
+  }
+
+  .profile-img-container {
+    width: 100% !important;
+    max-height: 200px;
+    aspect-ratio: unset;
+    margin-bottom: 1rem;
+  }
+
+  .profile-img {
+    object-position: center 15%;
+    max-height: 200px;
+  }
+
+  .profile-card-right {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .profile-name {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .profile-meta {
+    align-items: center !important;
+  }
+
+  .profile-bio {
+    text-align: center;
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+}
+
+/* ── Mobile: stats 2×2 + hero compact ── */
+@media (max-width: 480px) {
+  /* Stats: 2×2 grid */
+  .stats-bar {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .stat-item {
+    padding: 0.75rem 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--glass-border);
+  }
+
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+  }
+
+  /* Hero: smaller title */
+  .hero h1 {
+    font-size: clamp(1.5rem, 9vw, 2rem) !important;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    white-space: normal;
+  }
+
+  .hero-tagline {
+    font-size: 0.85rem;
+  }
+
+  /* Stats bar card: less padding */
+  .stats-bar-card {
+    padding: 1rem;
+  }
+
+  /* Hero card: less padding */
+  .hero-card {
+    padding: 1.25rem;
+  }
+}

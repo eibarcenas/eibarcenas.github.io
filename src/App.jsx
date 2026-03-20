@@ -89,40 +89,42 @@ const ProfileCard = ({ t }) => (
       </div>
     </div>
 
-    <h2 className="profile-name">{t.hero.profile.title} 👋</h2>
-    <div className="text-accent font-mono text-sm mb-2">{t.hero.profile.subtitle}</div>
+    <div className="profile-card-right">
+      <h2 className="profile-name">{t.hero.profile.title} 👋</h2>
+      <div className="text-accent font-mono text-sm mb-2">{t.hero.profile.subtitle}</div>
 
-    <div className="profile-meta">
-      <span className="profile-meta-item">
-        <LocationIcon />
-        {META.location}
-      </span>
-      <span className="profile-meta-item">
-        <GraduationIcon />
-        {EDUCATION.degree.replace("Bachelor's in ", '')} · {EDUCATION.school} &rsquo;{EDUCATION.graduation.slice(-2)}
-      </span>
-    </div>
+      <div className="profile-meta">
+        <span className="profile-meta-item">
+          <LocationIcon />
+          {META.location}
+        </span>
+        <span className="profile-meta-item">
+          <GraduationIcon />
+          {EDUCATION.degree.replace("Bachelor's in ", '')} · {EDUCATION.school} &rsquo;{EDUCATION.graduation.slice(-2)}
+        </span>
+      </div>
 
-    <p className="text-secondary text-sm profile-bio">{t.hero.profile.description}</p>
+      <p className="text-secondary text-sm profile-bio">{t.hero.profile.description}</p>
 
-    <div className="profile-socials">
-      <a href={META.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
-        {t.hero.profile.linkedin}
+      <div className="profile-socials">
+        <a href={META.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
+          {t.hero.profile.linkedin}
+        </a>
+        <a href={META.github} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">
+          {t.hero.profile.github}
+        </a>
+      </div>
+      <a
+        href={`https://wa.me/${META.whatsapp}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn btn-whatsapp btn-sm w-full"
+        style={{ marginTop: '0.75rem', justifyContent: 'center' }}
+      >
+        <WhatsAppIcon />
+        {t.hero.profile.whatsapp}
       </a>
-      <a href={META.github} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">
-        {t.hero.profile.github}
-      </a>
     </div>
-    <a
-      href={`https://wa.me/${META.whatsapp}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="btn btn-whatsapp btn-sm w-full"
-      style={{ marginTop: '0.75rem', justifyContent: 'center' }}
-    >
-      <WhatsAppIcon />
-      {t.hero.profile.whatsapp}
-    </a>
   </div>
 );
 
