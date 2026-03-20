@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CV_DATA, META, EDUCATION, LANGUAGES, SKILLS_DETAILED, FREELANCE_PROJECTS } from './data';
+import { CV_DATA, META, EDUCATION, LANGUAGES, SKILLS_DETAILED, FREELANCE_PROJECTS, INDUSTRIES } from './data';
 
 // --- Icons ---
 const WhatsAppIcon = () => (
@@ -97,6 +97,10 @@ const ProfileCard = ({ t }) => (
         <LocationIcon />
         {META.location}
       </span>
+      <span className="profile-meta-item">
+        <GraduationIcon />
+        {EDUCATION.degree.replace("Bachelor's in ", '')} · {EDUCATION.school} &rsquo;{EDUCATION.graduation.slice(-2)}
+      </span>
     </div>
 
     <p className="text-secondary text-sm profile-bio">{t.hero.profile.description}</p>
@@ -131,6 +135,12 @@ const HeroStats = ({ t }) => (
       <div className="flex flex-wrap gap-3" style={{ marginTop: '1.25rem' }}>
         {t.hero.chips.map((chip, i) => (
           <span key={i} className="chip">{chip}</span>
+        ))}
+      </div>
+      <div className="hero-industries">
+        <span className="industries-label">{t.hero.industriesLabel}</span>
+        {INDUSTRIES.map((ind, i) => (
+          <span key={i} className="industry-chip">{ind.icon} {ind.name}</span>
         ))}
       </div>
     </div>

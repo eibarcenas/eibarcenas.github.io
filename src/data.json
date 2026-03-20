@@ -8,7 +8,16 @@
     "location": "Chalco, Estado de México",
     "github": "https://github.com/erickbarcenas",
     "linkedin": "https://linkedin.com/in/erickbarcenas",
-    "yearsExperience": 8
+    "yearsExperience": 8,
+    "industries": [
+      { "icon": "💰", "name": "Finance" },
+      { "icon": "🚛", "name": "Logistics" },
+      { "icon": "💘", "name": "Dating" },
+      { "icon": "🏥", "name": "Healthcare" },
+      { "icon": "🛍️", "name": "Retail" },
+      { "icon": "🎭", "name": "Entertainment" },
+      { "icon": "🎓", "name": "EdTech" }
+    ]
   },
   "education": {
     "degree": "Bachelor's in Mechatronic Engineering",
@@ -129,6 +138,7 @@
     "hero": {
       "title": "Architecting Scalable <br> <span class=\"text-accent\">Cloud Platforms</span>",
       "chips": ["GCP & AWS Architect", "Data Platforms", "DevSecOps", "MLOps", "Python"],
+      "industriesLabel": "Industries:",
       "profile": {
         "title": "Erick Bárcenas",
         "subtitle": "Cloud, Data & MLOps Architect",
@@ -288,6 +298,7 @@
     "hero": {
       "title": "Diseñando Plataformas <br> <span class=\"text-accent\">Cloud Escalables</span>",
       "chips": ["Arquitecto GCP & AWS", "Plataformas de Datos", "DevSecOps", "MLOps", "Python"],
+      "industriesLabel": "Industrias:",
       "profile": {
         "title": "Erick Bárcenas",
         "subtitle": "Arquitecto de Cloud, Data & MLOps",

@@ -27,6 +27,48 @@
   max-width: 580px;
 }
 
+/* ── Industries row ── */
+.hero-industries {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.industries-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.industry-chip {
+  font-size: 0.78rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.industry-chip:hover {
+  border-color: var(--text-accent);
+  color: var(--text-primary);
+}
+
 /* ── Nav tweaks ── */
 .nav-cv-btn {
   font-size: 0.85rem;
@@ -525,11 +567,11 @@
 /* Profile Meta */
 .profile-meta {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
   justify-content: center;
   margin-bottom: 0.75rem;
-  flex-wrap: wrap;
 }
 
 .profile-meta-item {
@@ -538,6 +580,12 @@
   gap: 0.3rem;
   font-size: 0.78rem;
   color: var(--text-tertiary);
+}
+
+.profile-meta-item svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 /* Experience enhancements */

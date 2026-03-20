@@ -6,3 +6,4 @@ export const EDUCATION = cvData.education;
 export const LANGUAGES = cvData.languages;
 export const SKILLS_DETAILED = cvData.skillsDetailed;
 export const FREELANCE_PROJECTS = cvData.freelanceProjects;
+export const INDUSTRIES = cvData.meta.industries;
