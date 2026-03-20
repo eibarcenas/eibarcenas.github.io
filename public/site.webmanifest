@@ -1,0 +1,16 @@
+{
+  "name": "Erick Bárcenas | Cloud Architect",
+  "short_name": "ErickBárcenas",
+  "description": "Senior Cloud & MLOps Architect portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/assets/img/profile.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
