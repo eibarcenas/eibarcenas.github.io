@@ -39,7 +39,9 @@
       "levelEs": "Intermedio",
       "color": "#3B82F6",
       "icon": "🐍",
-      "status": "available"
+      "status": "available",
+      "whatsappMessage": "Hi Erick! I'm interested in your Backend Architecture with Python course. Could you share more details?",
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Backend con Python. ¿Podrías compartirme más detalles?"
     },
     {
       "title": "Cloud Architecture on AWS",
@@ -51,7 +53,9 @@
       "levelEs": "Intermedio",
       "color": "#FF9900",
       "icon": "🟠",
-      "status": "available"
+      "status": "available",
+      "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on AWS course. Could you share more details?",
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en AWS. ¿Podrías compartirme más detalles?"
     },
     {
       "title": "Cloud Architecture on GCP",
@@ -63,7 +67,9 @@
       "levelEs": "Intermedio",
       "color": "#4285F4",
       "icon": "🔵",
-      "status": "available"
+      "status": "available",
+      "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on GCP course. Could you share more details?",
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en GCP. ¿Podrías compartirme más detalles?"
     },
     {
       "title": "Generative AI Engineering",
@@ -75,7 +81,9 @@
       "levelEs": "Avanzado",
       "color": "#00A67E",
       "icon": "🤖",
-      "status": "available"
+      "status": "available",
+      "whatsappMessage": "Hi Erick! I'm interested in your Generative AI Engineering course. Could you share more details?",
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Ingeniería de IA Generativa. ¿Podrías compartirme más detalles?"
     },
     {
       "title": "DevSecOps Essentials",

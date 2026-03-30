@@ -446,7 +446,7 @@ const CoursesView = ({ t, lang }) => (
           </div>
           {c.status === 'available' && (
             <a
-              href={waUrl(t.nav.whatsappMessage)}
+              href={waUrl(lang === 'en' ? c.whatsappMessage : c.whatsappMessageEs)}
               target="_blank"
               rel="noopener noreferrer"
               className="course-cta"
