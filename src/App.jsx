@@ -411,6 +411,75 @@ const Footer = ({ t }) => (
   </footer>
 );
 
+const CourseCard = ({ c, lang }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="course-card" style={{ borderTopColor: c.color }}>
+      <div className="course-card-header">
+        <span className="course-icon">{c.icon}</span>
+        <div className="course-meta">
+          <span className="course-level-badge" style={{ color: c.color, borderColor: c.color }}>
+            {lang === 'en' ? c.level : c.levelEs}
+          </span>
+          {c.status === 'coming-soon' && (
+            <span className="course-status-badge">
+              {lang === 'en' ? 'Coming Soon' : 'Próximamente'}
+            </span>
+          )}
+        </div>
+      </div>
+      <div className="course-title">{lang === 'en' ? c.title : c.titleEs}</div>
+      <div className="course-description">{lang === 'en' ? c.description : c.descriptionEs}</div>
+      <div className="course-topics">
+        {c.topics.map((topic, j) => (
+          <span key={j} className="chip-sm">{topic}</span>
+        ))}
+      </div>
+      {c.modules && c.modules.length > 0 && (
+        <div className="temario">
+          <button
+            className="temario-toggle"
+            style={{ color: c.color, borderColor: c.color }}
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+          >
+            {open
+              ? lang === 'en' ? '▲ Hide syllabus' : '▲ Ocultar temario'
+              : lang === 'en' ? '▼ View syllabus' : '▼ Ver temario'}
+          </button>
+          {open && (
+            <div className="temario-body">
+              {c.modules.map((mod, mi) => (
+                <div key={mi} className="temario-module">
+                  <div className="temario-module-title" style={{ color: c.color }}>
+                    {lang === 'en' ? mod.title : mod.titleEs}
+                  </div>
+                  <ul className="temario-lessons">
+                    {(lang === 'en' ? mod.lessons : mod.lessonsEs).map((lesson, li) => (
+                      <li key={li}>{lesson}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+      {c.status === 'available' && (
+        <a
+          href={waUrl(lang === 'en' ? c.whatsappMessage : c.whatsappMessageEs)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="course-cta"
+          style={{ borderColor: c.color, color: c.color }}
+        >
+          {lang === 'en' ? 'Get in touch →' : 'Contáctame →'}
+        </a>
+      )}
+    </div>
+  );
+};
+
 const CoursesView = ({ t, lang }) => (
   <div className="courses-view">
     <div className="courses-hero">
@@ -423,39 +492,7 @@ const CoursesView = ({ t, lang }) => (
     </div>
     <div className="courses-grid">
       {COURSES.map((c, i) => (
-        <div key={i} className="course-card" style={{ borderTopColor: c.color }}>
-          <div className="course-card-header">
-            <span className="course-icon">{c.icon}</span>
-            <div className="course-meta">
-              <span className="course-level-badge" style={{ color: c.color, borderColor: c.color }}>
-                {lang === 'en' ? c.level : c.levelEs}
-              </span>
-              {c.status === 'coming-soon' && (
-                <span className="course-status-badge">
-                  {lang === 'en' ? 'Coming Soon' : 'Próximamente'}
-                </span>
-              )}
-            </div>
-          </div>
-          <div className="course-title">{lang === 'en' ? c.title : c.titleEs}</div>
-          <div className="course-description">{lang === 'en' ? c.description : c.descriptionEs}</div>
-          <div className="course-topics">
-            {c.topics.map((topic, j) => (
-              <span key={j} className="chip-sm">{topic}</span>
-            ))}
-          </div>
-          {c.status === 'available' && (
-            <a
-              href={waUrl(lang === 'en' ? c.whatsappMessage : c.whatsappMessageEs)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="course-cta"
-              style={{ borderColor: c.color, color: c.color }}
-            >
-              {lang === 'en' ? 'Get in touch →' : 'Contáctame →'}
-            </a>
-          )}
-        </div>
+        <CourseCard key={i} c={c} lang={lang} />
       ))}
     </div>
   </div>

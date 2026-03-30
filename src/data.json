@@ -41,7 +41,33 @@
       "icon": "🐍",
       "status": "available",
       "whatsappMessage": "Hi Erick! I'm interested in your Backend Architecture with Python course. Could you share more details?",
-      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Backend con Python. ¿Podrías compartirme más detalles?"
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Backend con Python. ¿Podrías compartirme más detalles?",
+      "modules": [
+        {
+          "title": "Module 1 — FastAPI Foundations",
+          "titleEs": "Módulo 1 — Fundamentos de FastAPI",
+          "lessons": ["Project structure & virtual envs", "Pydantic models & validation", "Async/await & dependency injection", "Error handling & middleware"],
+          "lessonsEs": ["Estructura de proyecto y entornos virtuales", "Modelos Pydantic y validación", "Async/await e inyección de dependencias", "Manejo de errores y middleware"]
+        },
+        {
+          "title": "Module 2 — API Design (REST & GraphQL)",
+          "titleEs": "Módulo 2 — Diseño de APIs (REST y GraphQL)",
+          "lessons": ["REST best practices & versioning", "Authentication with OAuth2 & JWT", "GraphQL with Strawberry", "Rate limiting & caching"],
+          "lessonsEs": ["Buenas prácticas REST y versionado", "Autenticación con OAuth2 y JWT", "GraphQL con Strawberry", "Rate limiting y caché"]
+        },
+        {
+          "title": "Module 3 — Clean Architecture",
+          "titleEs": "Módulo 3 — Arquitectura Limpia",
+          "lessons": ["Domain-Driven Design (DDD) basics", "Hexagonal / Ports & Adapters", "Repository & Unit of Work patterns", "Dependency inversion in Python"],
+          "lessonsEs": ["Fundamentos de Domain-Driven Design", "Hexagonal / Puertos y Adaptadores", "Patrones Repository y Unit of Work", "Inversión de dependencias en Python"]
+        },
+        {
+          "title": "Module 4 — Microservices & Event-Driven",
+          "titleEs": "Módulo 4 — Microservicios y Event-Driven",
+          "lessons": ["Microservice communication patterns", "Event-driven with RabbitMQ / Kafka", "Saga pattern & CQRS", "Observability: logs, metrics, traces"],
+          "lessonsEs": ["Patrones de comunicación entre microservicios", "Event-driven con RabbitMQ / Kafka", "Patrón Saga y CQRS", "Observabilidad: logs, métricas, trazas"]
+        }
+      ]
     },
     {
       "title": "Cloud Architecture on AWS",
@@ -55,7 +81,33 @@
       "icon": "🟠",
       "status": "available",
       "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on AWS course. Could you share more details?",
-      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en AWS. ¿Podrías compartirme más detalles?"
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en AWS. ¿Podrías compartirme más detalles?",
+      "modules": [
+        {
+          "title": "Module 1 — AWS Foundations",
+          "titleEs": "Módulo 1 — Fundamentos de AWS",
+          "lessons": ["IAM: users, roles & policies", "VPC, subnets & security groups", "S3, CloudFront & static hosting", "AWS CLI & SDK basics"],
+          "lessonsEs": ["IAM: usuarios, roles y políticas", "VPC, subredes y grupos de seguridad", "S3, CloudFront y hosting estático", "AWS CLI y SDK básico"]
+        },
+        {
+          "title": "Module 2 — Serverless & Containers",
+          "titleEs": "Módulo 2 — Serverless y Contenedores",
+          "lessons": ["Lambda: triggers, layers & cold starts", "API Gateway: REST & HTTP APIs", "ECS with Fargate & task definitions", "EKS cluster setup & Helm basics"],
+          "lessonsEs": ["Lambda: triggers, layers y cold starts", "API Gateway: REST y HTTP APIs", "ECS con Fargate y definiciones de tareas", "Configuración de cluster EKS y Helm básico"]
+        },
+        {
+          "title": "Module 3 — Messaging & Data",
+          "titleEs": "Módulo 3 — Mensajería y Datos",
+          "lessons": ["SQS: queues, DLQ & visibility timeout", "SNS: topics, subscriptions & fan-out", "DynamoDB: modeling & access patterns", "RDS & Aurora: multi-AZ & read replicas"],
+          "lessonsEs": ["SQS: colas, DLQ y visibility timeout", "SNS: topics, suscripciones y fan-out", "DynamoDB: modelado y patrones de acceso", "RDS y Aurora: multi-AZ y réplicas de lectura"]
+        },
+        {
+          "title": "Module 4 — IaC & CI/CD on AWS",
+          "titleEs": "Módulo 4 — IaC y CI/CD en AWS",
+          "lessons": ["Terraform with AWS provider", "CloudFormation & CDK basics", "CodePipeline & CodeBuild", "GitOps with GitHub Actions on AWS"],
+          "lessonsEs": ["Terraform con el proveedor AWS", "Fundamentos de CloudFormation y CDK", "CodePipeline y CodeBuild", "GitOps con GitHub Actions en AWS"]
+        }
+      ]
     },
     {
       "title": "Cloud Architecture on GCP",
@@ -69,7 +121,33 @@
       "icon": "🔵",
       "status": "available",
       "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on GCP course. Could you share more details?",
-      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en GCP. ¿Podrías compartirme más detalles?"
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en GCP. ¿Podrías compartirme más detalles?",
+      "modules": [
+        {
+          "title": "Module 1 — GCP Foundations",
+          "titleEs": "Módulo 1 — Fundamentos de GCP",
+          "lessons": ["GCP projects, billing & IAM", "VPC, firewall rules & Cloud DNS", "Cloud Storage & lifecycle policies", "gcloud CLI & service accounts"],
+          "lessonsEs": ["Proyectos GCP, facturación e IAM", "VPC, reglas de firewall y Cloud DNS", "Cloud Storage y políticas de ciclo de vida", "gcloud CLI y cuentas de servicio"]
+        },
+        {
+          "title": "Module 2 — Serverless & Containers",
+          "titleEs": "Módulo 2 — Serverless y Contenedores",
+          "lessons": ["Cloud Run: deploy & scaling", "Cloud Functions (1st & 2nd gen)", "GKE: cluster setup & workloads", "Artifact Registry & container security"],
+          "lessonsEs": ["Cloud Run: despliegue y escalado", "Cloud Functions (1.ª y 2.ª generación)", "GKE: configuración de cluster y cargas de trabajo", "Artifact Registry y seguridad de contenedores"]
+        },
+        {
+          "title": "Module 3 — Data & Messaging",
+          "titleEs": "Módulo 3 — Datos y Mensajería",
+          "lessons": ["Pub/Sub: topics, subscriptions & push/pull", "BigQuery: tables, partitions & SQL analytics", "Firestore & Datastore patterns", "Dataflow basics for streaming"],
+          "lessonsEs": ["Pub/Sub: topics, suscripciones y push/pull", "BigQuery: tablas, particiones y SQL analítico", "Patrones con Firestore y Datastore", "Fundamentos de Dataflow para streaming"]
+        },
+        {
+          "title": "Module 4 — IaC & CI/CD on GCP",
+          "titleEs": "Módulo 4 — IaC y CI/CD en GCP",
+          "lessons": ["Terraform with Google provider", "Cloud Build pipelines & triggers", "GitOps with GitHub Actions on GCP", "Secret Manager & workload identity"],
+          "lessonsEs": ["Terraform con el proveedor Google", "Pipelines y triggers de Cloud Build", "GitOps con GitHub Actions en GCP", "Secret Manager e identidad de cargas de trabajo"]
+        }
+      ]
     },
     {
       "title": "Generative AI Engineering",
@@ -83,7 +161,33 @@
       "icon": "🤖",
       "status": "available",
       "whatsappMessage": "Hi Erick! I'm interested in your Generative AI Engineering course. Could you share more details?",
-      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Ingeniería de IA Generativa. ¿Podrías compartirme más detalles?"
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Ingeniería de IA Generativa. ¿Podrías compartirme más detalles?",
+      "modules": [
+        {
+          "title": "Module 1 — LLM Fundamentals",
+          "titleEs": "Módulo 1 — Fundamentos de LLMs",
+          "lessons": ["How LLMs work: tokens, context & temperature", "Prompt engineering patterns", "OpenAI & Anthropic SDK basics", "Structured outputs & function calling"],
+          "lessonsEs": ["Cómo funcionan los LLMs: tokens, contexto y temperatura", "Patrones de prompt engineering", "Fundamentos de OpenAI y Anthropic SDK", "Salidas estructuradas y function calling"]
+        },
+        {
+          "title": "Module 2 — RAG Pipelines",
+          "titleEs": "Módulo 2 — Pipelines RAG",
+          "lessons": ["Embeddings & vector databases (Pinecone, pgvector)", "Document loaders & chunking strategies", "Retrieval strategies: semantic, hybrid & re-ranking", "RAG evaluation & tracing with LlamaIndex"],
+          "lessonsEs": ["Embeddings y bases de datos vectoriales (Pinecone, pgvector)", "Carga de documentos y estrategias de chunking", "Estrategias de retrieval: semántico, híbrido y re-ranking", "Evaluación y trazabilidad de RAG con LlamaIndex"]
+        },
+        {
+          "title": "Module 3 — Multi-Agent Systems",
+          "titleEs": "Módulo 3 — Sistemas Multi-Agente",
+          "lessons": ["Agent architectures: ReAct, Plan-and-Execute", "LangGraph: nodes, edges & state machines", "Tool use & custom tool creation", "Memory: short-term, long-term & episodic"],
+          "lessonsEs": ["Arquitecturas de agentes: ReAct, Plan-and-Execute", "LangGraph: nodos, aristas y máquinas de estado", "Uso de herramientas y creación de herramientas personalizadas", "Memoria: corto plazo, largo plazo y episódica"]
+        },
+        {
+          "title": "Module 4 — Production AI Systems",
+          "titleEs": "Módulo 4 — Sistemas de IA en Producción",
+          "lessons": ["Vertex AI: model deployment & endpoints", "Evaluation: faithfulness, relevance & groundedness", "Observability: LangSmith, cost & latency tracking", "Security: prompt injection & guardrails"],
+          "lessonsEs": ["Vertex AI: despliegue de modelos y endpoints", "Evaluación: fidelidad, relevancia y fundamentación", "Observabilidad: LangSmith, costos y latencia", "Seguridad: prompt injection y guardrails"]
+        }
+      ]
     },
     {
       "title": "DevSecOps Essentials",
