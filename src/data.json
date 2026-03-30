@@ -40,6 +40,7 @@
       "color": "#3B82F6",
       "icon": "🐍",
       "status": "available",
+      "playbookKey": "backend-python",
       "whatsappMessage": "Hi Erick! I'm interested in your Backend Architecture with Python course. Could you share more details?",
       "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Backend con Python. ¿Podrías compartirme más detalles?",
       "modules": [
@@ -80,6 +81,7 @@
       "color": "#FF9900",
       "icon": "🟠",
       "status": "available",
+      "playbookKey": "aws",
       "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on AWS course. Could you share more details?",
       "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en AWS. ¿Podrías compartirme más detalles?",
       "modules": [
@@ -120,6 +122,7 @@
       "color": "#4285F4",
       "icon": "🔵",
       "status": "available",
+      "playbookKey": "gcp",
       "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on GCP course. Could you share more details?",
       "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en GCP. ¿Podrías compartirme más detalles?",
       "modules": [
@@ -160,6 +163,7 @@
       "color": "#00A67E",
       "icon": "🤖",
       "status": "available",
+      "playbookKey": "genai",
       "whatsappMessage": "Hi Erick! I'm interested in your Generative AI Engineering course. Could you share more details?",
       "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Ingeniería de IA Generativa. ¿Podrías compartirme más detalles?",
       "modules": [
@@ -430,7 +434,7 @@
           "company": "Rombo Logística",
           "period": "Aug 2023 — Dec 2024",
           "description": "Designing scalable backend services and event-driven architectures.",
-          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2, Kinesis Firehose, CodePipeline, CloudWatch, CloudFormation, CloudFront, VPC, AIM), Python, NodeJs, Fast API, Serverless, SCRUM & Jira",
+          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2, Kinesis Firehose, CodePipeline, CloudWatch, CloudFormation, CloudFront, VPC, IAM), Python, Node.js, FastAPI, Serverless, SCRUM & Jira",
           "details": [
             "First software engineer — designed and built the company's first pilot and MVP from scratch.",
             "Spearheaded the design and implementation of AWS cloud architectures using CloudFormation and C4 methodology, ensuring scalability and reliability of services.",

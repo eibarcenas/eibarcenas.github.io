@@ -130,7 +130,6 @@ header {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   border-radius: 999px;
-  /* Pill shape for header */
   box-shadow: var(--shadow-soft);
 }
 
@@ -149,9 +148,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ── Responsiveness ── */
-
-/* Tablet-large: keep 3-col proportions (same as desktop but compact) */
+/* --- Responsiveness --- */
 @media (max-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -169,297 +166,210 @@ footer {
   .col-span-6 {
     grid-column: span 2;
   }
-
-  .col-span-4 {
-    grid-column: span 1;
-  }
-
-  .col-span-3 {
-    grid-column: span 1;
-  }
-
-  .freelance-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .skills-tech-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
-/* Tablet: stack everything, profile card goes horizontal */
 @media (max-width: 768px) {
   .bento-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(1.6rem, 6vw, 2.25rem);
   }
 
   header {
     border-radius: var(--radius-lg);
     top: 0.75rem;
-    padding: 0.6rem 1rem;
-  }
-
-  .top-nav {
-    gap: 0.5rem;
-  }
-
-  .nav-actions {
-    gap: 0.5rem;
-    flex-wrap: nowrap;
-  }
-
-  .stats-bar {
-    justify-content: space-around;
-    gap: 0.5rem;
-  }
-
-  .stat-value {
-    font-size: 1.35rem;
-  }
-
-  .freelance-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-grid {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .contact-cta {
-    margin-left: 0;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-tech-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .fab-whatsapp {
-    bottom: 1rem;
-    right: 1rem;
-    width: 48px;
-    height: 48px;
-  }
-
-  .fab-whatsapp svg {
-    width: 22px;
-    height: 22px;
   }
 }
 
-/* Mobile: fully stacked, compact everything */
 @media (max-width: 480px) {
   header {
-    border-radius: var(--radius-md);
-    top: 0.5rem;
     width: calc(100% - 1rem);
-    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* --- Print Styles --- */
+.print-only {
+  display: none;
+}
+
+@media print {
+  @page {
+    margin: 1.2cm;
+    size: A4 portrait;
   }
 
-  .brand {
-    font-size: 0.9rem;
+  .print-only {
+    display: block !important;
   }
 
-  .nav-actions {
-    gap: 0.35rem;
-    flex-wrap: nowrap;
-  }
-
-  .nav-cv-btn {
-    padding: 0.35rem 0.6rem;
-    font-size: 0.72rem;
-  }
-
-  .nav-cta-text {
-    display: none;
-  }
-
+  header,
+  footer,
+  .fab-whatsapp,
+  .toggle-group,
+  .nav-actions,
+  .status-badge,
+  .profile-card-content,
+  .hero-card,
+  .stats-bar-card,
+  .tab-group,
+  .nav-cv-btn,
   .nav-cta {
-    padding: 0.45rem 0.6rem;
-    min-width: unset;
+    display: none !important;
   }
 
-  .toggle-btn {
-    width: 28px;
-    height: 28px;
-    font-size: 0.8rem;
+  * {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 
-  .lang-toggle {
-    padding: 0 0.45rem;
-    font-size: 0.7rem;
+  body {
+    background: white;
+    color: black;
+    padding: 0;
+    margin: 0;
+    font-size: 11pt;
+    line-height: 1.4;
   }
 
-  /* Stats: 2×2 grid on small phones */
-  .stats-bar {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  .stat-item {
-    border-right: none !important;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--glass-border);
+  /* Professional Two Column Grid */
+  .bento-grid {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr !important;
+    gap: 2.5rem !important;
+    margin-top: 0;
   }
 
-  .stat-item:not(:last-child)::after {
-    display: none;
+  /* Left Column */
+  .experience-section {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    /* Let it flow naturally */
   }
 
-  .stat-value {
-    font-size: 1.5rem;
+  /* Right Column */
+  .skills-section {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
   }
 
-  /* Hero industries: compact */
-  .hero-industries {
-    gap: 0.35rem;
+  .edu-card {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
   }
 
-  .industry-chip {
-    font-size: 0.72rem;
-    padding: 0.15rem 0.45rem;
+  .contact-card,
+  .freelance-section,
+  .projects-section {
+    grid-column: 1 / span 2 !important;
   }
 
-  /* Freelance: single column */
-  .freelance-grid {
-    grid-template-columns: 1fr;
+  .card {
+    break-inside: auto;
+    /* Allow sections to span multiple pages */
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 2rem !important;
+    background: transparent !important;
+    overflow: visible !important;
   }
 
-  /* Cover letter mobile */
-  .letter-hero {
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1.5rem;
+  /* Keep individual items together */
+  .exp-item,
+  .edu-card,
+  .project-card,
+  .skill-category {
+    break-inside: avoid;
   }
 
-  .letter-sidebar {
-    flex-direction: row;
-    width: 100%;
-    min-width: unset;
-    justify-content: space-around;
-    padding: 0.75rem 1rem;
+  .section-title h3 {
+    font-size: 1.3rem !important;
+    border-bottom: 2pt solid #2563eb !important;
+    padding-bottom: 2pt !important;
+    margin-bottom: 1rem !important;
+    color: #1e293b !important;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 
-  .letter-body {
-    padding: 1.5rem;
+  .print-header {
+    text-align: left;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1pt solid #cbd5e1;
   }
 
-  .letter-name {
-    font-size: 1.35rem;
+  .print-name {
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 0.25rem !important;
+    color: #0f172a !important;
+    line-height: 1.1;
   }
 
-  .letter-signature {
-    flex-wrap: wrap;
+  .print-role {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: #2563eb !important;
+    margin-bottom: 0.75rem !important;
+    font-family: var(--font-mono);
   }
-}
 
-/* Utilities for inline replacement */
-.items-start {
-  align-items: flex-start;
-}
+  .print-contact,
+  .print-links {
+    font-size: 10pt;
+    color: #334155;
+    margin-top: 0.25rem;
+    font-family: var(--font-mono);
+  }
 
-.text-center {
-  text-align: center;
-}
+  .text-accent,
+  .text-secondary,
+  .text-tertiary,
+  p,
+  span,
+  li,
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #1e293b !important;
+  }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
+  .chip,
+  .chip-sm,
+  .industry-chip,
+  .period-badge,
+  .lang-level {
+    border: 0.5pt solid #94a3b8 !important;
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    font-size: 8pt !important;
+    padding: 2pt 6pt !important;
+    white-space: normal !important;
+    /* Allow wrapping to prevent cutting */
+  }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
+  .exp-item {
+    border-bottom: 0.5pt solid #e2e8f0 !important;
+    padding-bottom: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
+  .exp-list li {
+    font-size: 10pt !important;
+    margin-bottom: 1pt !important;
+  }
 
-.w-full {
-  width: 100%;
-}
-
-.flex-1 {
-  flex: 1;
-}
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-
-.row-span-3 {
-  grid-row: span 3;
-}
-
-/* Header specifics */
-.brand {
-  font-weight: 700;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.nav-actions {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-/* Profile Card Specifics */
-.profile-card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-}
-
-.profile-name {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
-
-.profile-bio {
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.profile-socials {
-  display: flex;
-  gap: 0.75rem;
-  width: 100%;
-  margin-top: auto;
-}
-
-.profile-socials .btn {
-  flex: 1;
-  justify-content: center;
-}
-
-/* The right-side content wrapper inside profile card */
-.profile-card-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  flex: 1;
+  .exp-list li::before {
+    color: #2563eb !important;
+    font-weight: bold;
+  }
 }

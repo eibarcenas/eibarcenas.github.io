@@ -1,6 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { CV_DATA, META, EDUCATION, LANGUAGES, COURSES, SKILLS_DETAILED, FREELANCE_PROJECTS, INDUSTRIES } from './data';
 
+// Instructor playbooks (raw markdown, imported at build time)
+import bpM1 from './content/playbooks/backend-python/m1-fastapi-foundations.md?raw';
+import bpM2 from './content/playbooks/backend-python/m2-api-design.md?raw';
+import bpM3 from './content/playbooks/backend-python/m3-clean-architecture.md?raw';
+import bpM4 from './content/playbooks/backend-python/m4-microservices-eda.md?raw';
+import awsM1 from './content/playbooks/aws/m1-foundations.md?raw';
+import awsM2 from './content/playbooks/aws/m2-serverless-containers.md?raw';
+import awsM3 from './content/playbooks/aws/m3-messaging-data.md?raw';
+import awsM4 from './content/playbooks/aws/m4-iac-cicd.md?raw';
+import gcpM1 from './content/playbooks/gcp/m1-foundations.md?raw';
+import gcpM2 from './content/playbooks/gcp/m2-serverless-containers.md?raw';
+import gcpM3 from './content/playbooks/gcp/m3-data-messaging.md?raw';
+import gcpM4 from './content/playbooks/gcp/m4-iac-cicd.md?raw';
+import genM1 from './content/playbooks/genai/m1-llm-fundamentals.md?raw';
+import genM2 from './content/playbooks/genai/m2-rag-pipelines.md?raw';
+import genM3 from './content/playbooks/genai/m3-multi-agent.md?raw';
+import genM4 from './content/playbooks/genai/m4-production-ai.md?raw';
+
+const PLAYBOOKS = {
+  'backend-python': { m1: bpM1, m2: bpM2, m3: bpM3, m4: bpM4 },
+  aws: { m1: awsM1, m2: awsM2, m3: awsM3, m4: awsM4 },
+  gcp: { m1: gcpM1, m2: gcpM2, m3: gcpM3, m4: gcpM4 },
+  genai: { m1: genM1, m2: genM2, m3: genM3, m4: genM4 },
+};
+
 // Build a wa.me link with a pre-filled message
 const waUrl = (msg) =>
   `https://wa.me/${META.whatsapp}?text=${encodeURIComponent(msg)}`;
@@ -8,7 +33,7 @@ const waUrl = (msg) =>
 // --- Icons ---
 const WhatsAppIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
   </svg>
 );
 
@@ -44,9 +69,165 @@ const GraduationIcon = () => (
   </svg>
 );
 
+const PrintIcon = () => (
+  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+  </svg>
+);
+
+// --- Instructor: Markdown Renderer ---
+
+const INSTRUCTOR_PASS = 'Admin360!';
+
+const parseBold = (text) => {
+  const parts = text.split(/\*\*(.*?)\*\*/g);
+  return parts.map((part, i) =>
+    i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+  );
+};
+
+const MarkdownRenderer = ({ content }) => {
+  const lines = content.split('\n');
+  const elements = [];
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    if (line.startsWith('```')) {
+      const codeLines = [];
+      i++;
+      while (i < lines.length && !lines[i].startsWith('```')) {
+        codeLines.push(lines[i]);
+        i++;
+      }
+      elements.push(<pre key={i} className="md-code">{codeLines.join('\n')}</pre>);
+    } else if (line.startsWith('### ')) {
+      elements.push(<h3 key={i} className="md-h3">{line.slice(4)}</h3>);
+    } else if (line.startsWith('## ')) {
+      elements.push(<h2 key={i} className="md-h2">{line.slice(3)}</h2>);
+    } else if (line.startsWith('# ')) {
+      elements.push(<h1 key={i} className="md-h1">{line.slice(2)}</h1>);
+    } else if (line.startsWith('- ') || line.startsWith('* ')) {
+      elements.push(<li key={i} className="md-li">{parseBold(line.slice(2))}</li>);
+    } else if (/^\d+\. /.test(line)) {
+      elements.push(<li key={i} className="md-li md-oli">{parseBold(line.replace(/^\d+\. /, ''))}</li>);
+    } else if (line.startsWith('---')) {
+      elements.push(<hr key={i} className="md-hr" />);
+    } else if (line.trim() === '') {
+      elements.push(<div key={i} className="md-spacer" />);
+    } else {
+      elements.push(<p key={i} className="md-p">{parseBold(line)}</p>);
+    }
+    i++;
+  }
+  return <div className="md-content">{elements}</div>;
+};
+
+const InstructorLogin = ({ onAuth }) => {
+  const [pw, setPw] = useState('');
+  const [err, setErr] = useState(false);
+
+  const submit = (e) => {
+    e.preventDefault();
+    if (pw === INSTRUCTOR_PASS) {
+      sessionStorage.setItem('instructor_auth', '1');
+      onAuth();
+    } else {
+      setErr(true);
+      setPw('');
+    }
+  };
+
+  return (
+    <div className="instructor-login">
+      <div className="instructor-login-card">
+        <div className="instructor-login-icon">⚙</div>
+        <h2 className="instructor-login-title">Instructor Access</h2>
+        <p className="instructor-login-sub">This area is for course instructors only.</p>
+        <form onSubmit={submit} className="instructor-login-form">
+          <input
+            type="password"
+            value={pw}
+            onChange={(e) => { setPw(e.target.value); setErr(false); }}
+            placeholder="Enter password"
+            className={`instructor-pw-input${err ? ' error' : ''}`}
+            autoFocus
+          />
+          {err && <p className="instructor-pw-err">Incorrect password. Try again.</p>}
+          <button type="submit" className="btn btn-outline instructor-login-btn">Enter →</button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+const InstructorView = ({ lang }) => {
+  const [selectedKey, setSelectedKey] = useState(null);
+  const [selectedMod, setSelectedMod] = useState(null);
+
+  const courses = COURSES.filter(c => c.playbookKey && PLAYBOOKS[c.playbookKey]);
+  const content = selectedKey && selectedMod ? PLAYBOOKS[selectedKey][selectedMod] : null;
+
+  return (
+    <div className="instructor-view">
+      <aside className="instructor-sidebar">
+        <div className="instructor-sidebar-title">📚 Playbooks</div>
+        {courses.map((c, i) => (
+          <div key={i} className="instructor-course-group">
+            <button
+              className={`instructor-course-btn${selectedKey === c.playbookKey ? ' active' : ''}`}
+              style={{ borderLeftColor: c.color }}
+              onClick={() => { setSelectedKey(c.playbookKey); setSelectedMod(null); }}
+            >
+              <span>{c.icon}</span>
+              <span>{lang === 'en' ? c.title : c.titleEs}</span>
+            </button>
+            {selectedKey === c.playbookKey && c.modules && (
+              <div className="instructor-modules">
+                {c.modules.map((mod, mi) => {
+                  const key = `m${mi + 1}`;
+                  return (
+                    <button
+                      key={mi}
+                      className={`instructor-module-btn${selectedMod === key ? ' active' : ''}`}
+                      onClick={() => setSelectedMod(key)}
+                    >
+                      {lang === 'en' ? mod.title : mod.titleEs}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        ))}
+      </aside>
+      <div className="instructor-content">
+        {content
+          ? <MarkdownRenderer content={content} />
+          : (
+            <div className="instructor-empty">
+              <span>📖</span>
+              <p>Select a course and module from the sidebar to view its playbook.</p>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  );
+};
+
 // --- Components ---
 
-const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, toggleCoverLetter, goToCourses, goToPortfolio, t }) => (
+const PrintHeader = ({ t }) => (
+  <div className="print-only print-header">
+    <h1 className="print-name">{META.name}</h1>
+    <p className="print-role">{t.hero.profile.subtitle}</p>
+    <div className="print-contact">
+      <span>{META.email}</span> • <span>{META.phone}</span> • <span>{META.location}</span> • <span>{META.linkedin.replace('https://www.linkedin.com/in/', 'linkedin.com/in/')}</span>
+    </div>
+  </div>
+);
+
+const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, toggleCoverLetter, goToCourses, goToPortfolio, goToInstructor, t }) => (
   <header>
     <nav className="top-nav">
       <a
@@ -59,6 +240,15 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, toggle
         <div className="toggle-group">
           <button className="toggle-btn" aria-label="Toggle Theme" onClick={toggleTheme}>
             {theme === 'light' ? '☀️' : '🌙'}
+          </button>
+          <button className="toggle-btn" aria-label="Print" onClick={() => {
+            const oldTitle = document.title;
+            const name = t.hero.profile.title || "Erick_Barcenas";
+            document.title = `${name.replace(/\s+/g, '_')}_CV`;
+            window.print();
+            document.title = oldTitle;
+          }}>
+            <PrintIcon />
           </button>
           <button className="toggle-btn lang-toggle" aria-label="Toggle Language" onClick={toggleLang}>
             {lang.toUpperCase()}
@@ -78,6 +268,9 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, toggle
             <button className="btn btn-outline nav-cv-btn" onClick={goToCourses}>
               <span className="cv-btn-label">{t.nav.courses}</span>
               <span className="cv-btn-short">📚</span>
+            </button>
+            <button className="btn btn-outline nav-cv-btn instructor-nav-btn" onClick={goToInstructor} title="Instructor area">
+              <span>⚙</span>
             </button>
           </>
         )}
@@ -185,7 +378,7 @@ const SkillsSection = ({ t, lang }) => {
   const [activeTab, setActiveTab] = useState('domains');
 
   return (
-    <div className="card col-span-8">
+    <div className="card col-span-8 skills-section">
       <div className="section-title flex justify-between items-center">
         <h3>{t.sections.skills}</h3>
         <div className="tab-group">
@@ -248,7 +441,7 @@ const SkillsSection = ({ t, lang }) => {
 };
 
 const ExperienceSection = ({ t }) => (
-  <div className="card col-span-4" style={{ gridRow: 'span 3', alignSelf: 'stretch' }}>
+  <div className="card col-span-4 experience-section" style={{ gridRow: 'span 3', alignSelf: 'stretch' }}>
     <div className="section-title">
       <h3>{t.sections.experience}</h3>
     </div>
@@ -371,13 +564,13 @@ const ContactSection = ({ t }) => (
       </a>
       <a href={META.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
         <span>LinkedIn</span>
       </a>
       <a href={META.github} target="_blank" rel="noopener noreferrer" className="contact-link">
         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
         </svg>
         <span>GitHub</span>
       </a>
@@ -499,17 +692,20 @@ const CoursesView = ({ t, lang }) => (
 );
 
 const PortfolioView = ({ t, lang }) => (
-  <div className="bento-grid">
-    <ProfileCard t={t} />
-    <HeroStats t={t} />
-    <StatsBar t={t} />
-    <SkillsSection t={t} lang={lang} />
-    <ExperienceSection t={t} />
-    <EducationSection t={t} lang={lang} />
-    <ProjectsSection t={t} />
-    <FreelanceSection t={t} />
-    <ContactSection t={t} />
-  </div>
+  <>
+    <PrintHeader t={t} />
+    <div className="bento-grid">
+      <ProfileCard t={t} />
+      <HeroStats t={t} />
+      <StatsBar t={t} />
+      <SkillsSection t={t} lang={lang} />
+      <ExperienceSection t={t} />
+      <EducationSection t={t} lang={lang} />
+      <ProjectsSection t={t} />
+      <FreelanceSection t={t} />
+      <ContactSection t={t} />
+    </div>
+  </>
 );
 
 const CoverLetterView = ({ t, lang }) => (
@@ -538,7 +734,7 @@ const CoverLetterView = ({ t, lang }) => (
             <WhatsAppIcon />{META.phone}
           </a>
           <a href={META.linkedin} target="_blank" rel="noopener noreferrer" className="letter-contact-item">
-            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
             linkedin/erickbarcenas
           </a>
           <span className="letter-contact-item">
@@ -649,6 +845,9 @@ const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
   const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
   const [view, setView] = useState('portfolio');
+  const [instructorAuth, setInstructorAuth] = useState(
+    () => sessionStorage.getItem('instructor_auth') === '1'
+  );
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -666,6 +865,7 @@ const App = () => {
   const toggleCoverLetter = () => setView('coverLetter');
   const goToCourses = () => setView('courses');
   const goToPortfolio = () => setView('portfolio');
+  const goToInstructor = () => setView('instructor');
 
   const t = CV_DATA[lang];
 
@@ -681,14 +881,20 @@ const App = () => {
         toggleCoverLetter={toggleCoverLetter}
         goToCourses={goToCourses}
         goToPortfolio={goToPortfolio}
+        goToInstructor={goToInstructor}
         t={t}
       />
       <main>
         {view === 'portfolio' && <PortfolioView t={t} lang={lang} />}
         {view === 'coverLetter' && <CoverLetterView t={t} lang={lang} />}
         {view === 'courses' && <CoursesView t={t} lang={lang} />}
+        {view === 'instructor' && (
+          instructorAuth
+            ? <InstructorView lang={lang} />
+            : <InstructorLogin onAuth={() => setInstructorAuth(true)} />
+        )}
       </main>
-      <Footer t={t} />
+      {view !== 'instructor' && <Footer t={t} />}
       <FloatingWhatsApp t={t} />
     </div>
   );
