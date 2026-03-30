@@ -46,7 +46,7 @@ const GraduationIcon = () => (
 
 // --- Components ---
 
-const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, t }) => (
+const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, toggleCoverLetter, goToCourses, goToPortfolio, t }) => (
   <header>
     <nav className="top-nav">
       <a
@@ -64,16 +64,23 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, t }) =
             {lang.toUpperCase()}
           </button>
         </div>
-        <button className="btn btn-outline nav-cv-btn" onClick={toggleView}>
-          <span className="cv-btn-label">
-            {view === 'portfolio'
-              ? (lang === 'en' ? 'Cover Letter' : 'Carta')
-              : (lang === 'en' ? '← Back' : '← Volver')}
-          </span>
-          <span className="cv-btn-short">
-            {view === 'portfolio' ? 'CV' : '←'}
-          </span>
-        </button>
+        {view !== 'portfolio' ? (
+          <button className="btn btn-outline nav-cv-btn" onClick={goToPortfolio}>
+            <span className="cv-btn-label">{lang === 'en' ? '← Back' : '← Volver'}</span>
+            <span className="cv-btn-short">←</span>
+          </button>
+        ) : (
+          <>
+            <button className="btn btn-outline nav-cv-btn" onClick={toggleCoverLetter}>
+              <span className="cv-btn-label">{lang === 'en' ? 'Cover Letter' : 'Carta'}</span>
+              <span className="cv-btn-short">CV</span>
+            </button>
+            <button className="btn btn-outline nav-cv-btn" onClick={goToCourses}>
+              <span className="cv-btn-label">{t.nav.courses}</span>
+              <span className="cv-btn-short">📚</span>
+            </button>
+          </>
+        )}
         <a
           href={waUrl(t.nav.whatsappMessage)}
           target="_blank"
@@ -295,18 +302,6 @@ const EducationSection = ({ t, lang }) => (
         </div>
       ))}
     </div>
-    {CERTIFICATIONS && CERTIFICATIONS.length > 0 && (
-      <div className="cert-list">
-        <div className="lang-list-title">{t.sections.certifications}</div>
-        {CERTIFICATIONS.map((c, i) => (
-          <div key={i} className="cert-item">
-            <span className="cert-dot" style={{ background: c.color }} />
-            <span className="cert-name">{c.name}</span>
-            <span className="cert-year">{c.year}</span>
-          </div>
-        ))}
-      </div>
-    )}
   </div>
 );
 
@@ -414,6 +409,31 @@ const Footer = ({ t }) => (
       <span style={{ opacity: 0.6, fontSize: '0.8em' }}>{t.sections.footer}</span>
     </p>
   </footer>
+);
+
+const CoursesView = ({ t, lang }) => (
+  <div className="courses-view">
+    <div className="courses-hero">
+      <h1 className="courses-title">{t.sections.certifications}</h1>
+      <p className="courses-subtitle">
+        {lang === 'en'
+          ? 'A record of continuous learning — courses and topics explored along the way.'
+          : 'Un registro de aprendizaje continuo — cursos y temas explorados en el camino.'}
+      </p>
+    </div>
+    <div className="courses-grid">
+      {CERTIFICATIONS.map((c, i) => (
+        <div key={i} className="course-card" style={{ borderLeftColor: c.color }}>
+          <span className="course-dot" style={{ background: c.color }} />
+          <div className="course-info">
+            <div className="course-name">{c.name}</div>
+            <div className="course-issuer">{c.issuer}</div>
+          </div>
+          <span className="course-year">{c.year}</span>
+        </div>
+      ))}
+    </div>
+  </div>
 );
 
 const PortfolioView = ({ t, lang }) => (
@@ -581,6 +601,9 @@ const App = () => {
   const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
   const toggleLang = () => setLang(prev => prev === 'en' ? 'es' : 'en');
   const toggleView = () => setView(prev => prev === 'portfolio' ? 'coverLetter' : 'portfolio');
+  const toggleCoverLetter = () => setView('coverLetter');
+  const goToCourses = () => setView('courses');
+  const goToPortfolio = () => setView('portfolio');
 
   const t = CV_DATA[lang];
 
@@ -593,14 +616,15 @@ const App = () => {
         toggleLang={toggleLang}
         view={view}
         toggleView={toggleView}
+        toggleCoverLetter={toggleCoverLetter}
+        goToCourses={goToCourses}
+        goToPortfolio={goToPortfolio}
         t={t}
       />
       <main>
-        {view === 'portfolio' ? (
-          <PortfolioView t={t} lang={lang} />
-        ) : (
-          <CoverLetterView t={t} lang={lang} />
-        )}
+        {view === 'portfolio' && <PortfolioView t={t} lang={lang} />}
+        {view === 'coverLetter' && <CoverLetterView t={t} lang={lang} />}
+        {view === 'courses' && <CoursesView t={t} lang={lang} />}
       </main>
       <Footer t={t} />
       <FloatingWhatsApp t={t} />

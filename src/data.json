@@ -184,6 +184,7 @@
     "nav": {
       "brand": "</> ErickBárcenas",
       "coverLetter": "Original Cover Letter",
+      "courses": "Courses",
       "letsTalk": "Let's Talk",
       "whatsappMessage": "Hey Erick! Nice to meet you, I'm [Your Name]. I just went through your CV and I'm really impressed with your profile. I'd love to connect, whether for a new opportunity or a consulting project. When's a good time for a quick chat?"
     },
@@ -353,6 +354,7 @@
     "nav": {
       "brand": "</> ErickBárcenas",
       "coverLetter": "Carta de Presentación",
+      "courses": "Cursos",
       "letsTalk": "Hablemos",
       "whatsappMessage": "Hola Erick! Mucho gusto, soy [Tu Nombre]. Acabo de revisar tu CV y me encanto tu perfil. Me gustaria conectar contigo, ya sea para una nueva oportunidad o un proyecto de consultoria. Cuando tienes un momento para platicar?"
     },
