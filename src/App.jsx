@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { CV_DATA, META, EDUCATION, LANGUAGES, COURSES, SKILLS_DETAILED, FREELANCE_PROJECTS, INDUSTRIES } from './data';
 
 // Instructor playbooks (raw markdown, imported at build time)
@@ -217,22 +218,37 @@ const InstructorView = ({ lang }) => {
 
 // --- Components ---
 
+const PRINT_SKILLS = ['GCP', 'AWS', 'Python', 'Terraform', 'FastAPI', 'LangGraph', 'LlamaIndex', 'Vertex AI', 'Docker', 'Kubernetes', 'GitLab CI/CD', 'BigQuery', 'Dataflow', 'Cloud Run', 'DevSecOps', 'Microservices', 'REST APIs', 'GraphQL'];
+
 const PrintHeader = ({ t }) => (
   <div className="print-only print-header">
     <h1 className="print-name">{META.name}</h1>
     <p className="print-role">{t.hero.profile.subtitle}</p>
+    {t.hero.profile.summary && (
+      <p className="print-summary">{t.hero.profile.summary}</p>
+    )}
+    <div className="print-skills-bar">
+      {PRINT_SKILLS.map((s) => (
+        <span key={s} className="print-skill-tag">{s}</span>
+      ))}
+    </div>
     <div className="print-contact">
-      <span>{META.email}</span> • <span>{META.phone}</span> • <span>{META.location}</span> • <span>{META.linkedin.replace('https://www.linkedin.com/in/', 'linkedin.com/in/')}</span>
+      <span>{META.email}</span> • <span>{META.phone}</span> • <span>{META.location}</span> • <span>{META.github.replace('https://', '')}</span> • <span>{META.linkedin.replace('https://www.', '').replace('https://', '')}</span>
     </div>
   </div>
 );
 
-const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, toggleCoverLetter, goToCourses, goToPortfolio, goToInstructor, t }) => (
+const Header = ({ theme, toggleTheme, lang, toggleLang, t }) => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const isPortfolio = pathname === '/';
+
+  return (
   <header>
     <nav className="top-nav">
       <a
-        href="#"
-        onClick={(e) => { e.preventDefault(); if (view !== 'portfolio') toggleView(); }}
+        href="#/"
+        onClick={(e) => { e.preventDefault(); navigate('/'); }}
         className="brand"
         dangerouslySetInnerHTML={{ __html: t.nav.brand }}
       />
@@ -254,22 +270,22 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, toggle
             {lang.toUpperCase()}
           </button>
         </div>
-        {view !== 'portfolio' ? (
-          <button className="btn btn-outline nav-cv-btn" onClick={goToPortfolio}>
+        {!isPortfolio ? (
+          <button className="btn btn-outline nav-cv-btn" onClick={() => navigate('/')}>
             <span className="cv-btn-label">{lang === 'en' ? '← Back' : '← Volver'}</span>
             <span className="cv-btn-short">←</span>
           </button>
         ) : (
           <>
-            <button className="btn btn-outline nav-cv-btn" onClick={toggleCoverLetter}>
+            <button className="btn btn-outline nav-cv-btn" onClick={() => navigate('/cover-letter')}>
               <span className="cv-btn-label">{lang === 'en' ? 'Cover Letter' : 'Carta'}</span>
               <span className="cv-btn-short">CV</span>
             </button>
-            <button className="btn btn-outline nav-cv-btn" onClick={goToCourses}>
+            <button className="btn btn-outline nav-cv-btn" onClick={() => navigate('/courses')}>
               <span className="cv-btn-label">{t.nav.courses}</span>
               <span className="cv-btn-short">📚</span>
             </button>
-            <button className="btn btn-outline nav-cv-btn instructor-nav-btn" onClick={goToInstructor} title="Instructor area">
+            <button className="btn btn-outline nav-cv-btn instructor-nav-btn" onClick={() => navigate('/instructor')} title="Instructor area">
               <span>⚙</span>
             </button>
           </>
@@ -286,7 +302,8 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, view, toggleView, toggle
       </div>
     </nav>
   </header>
-);
+  );
+};
 
 const ProfileCard = ({ t }) => (
   <div className="card col-span-4 row-span-2 profile-card-content">
@@ -499,7 +516,7 @@ const EducationSection = ({ t, lang }) => (
 );
 
 const ProjectsSection = ({ t }) => (
-  <div className="col-span-8 grid-2">
+  <div className="col-span-8 grid-2 projects-section">
     {t.data.projects.map((project, i) => (
       <a key={i} href={project.link} target="_blank" rel="noopener noreferrer" className="card project-card group">
         <div className="flex justify-between items-start mb-4">
@@ -523,7 +540,7 @@ const ProjectsSection = ({ t }) => (
 );
 
 const FreelanceSection = ({ t }) => (
-  <div className="card col-span-12">
+  <div className="card col-span-12 freelance-section">
     <div className="section-title">
       <h3>{t.sections.freelance}</h3>
     </div>
@@ -844,10 +861,10 @@ const CoverLetterView = ({ t, lang }) => (
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
   const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
-  const [view, setView] = useState('portfolio');
   const [instructorAuth, setInstructorAuth] = useState(
     () => sessionStorage.getItem('instructor_auth') === '1'
   );
+  const { pathname } = useLocation();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -861,11 +878,6 @@ const App = () => {
 
   const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
   const toggleLang = () => setLang(prev => prev === 'en' ? 'es' : 'en');
-  const toggleView = () => setView(prev => prev === 'portfolio' ? 'coverLetter' : 'portfolio');
-  const toggleCoverLetter = () => setView('coverLetter');
-  const goToCourses = () => setView('courses');
-  const goToPortfolio = () => setView('portfolio');
-  const goToInstructor = () => setView('instructor');
 
   const t = CV_DATA[lang];
 
@@ -876,25 +888,25 @@ const App = () => {
         toggleTheme={toggleTheme}
         lang={lang}
         toggleLang={toggleLang}
-        view={view}
-        toggleView={toggleView}
-        toggleCoverLetter={toggleCoverLetter}
-        goToCourses={goToCourses}
-        goToPortfolio={goToPortfolio}
-        goToInstructor={goToInstructor}
         t={t}
       />
       <main>
-        {view === 'portfolio' && <PortfolioView t={t} lang={lang} />}
-        {view === 'coverLetter' && <CoverLetterView t={t} lang={lang} />}
-        {view === 'courses' && <CoursesView t={t} lang={lang} />}
-        {view === 'instructor' && (
-          instructorAuth
-            ? <InstructorView lang={lang} />
-            : <InstructorLogin onAuth={() => setInstructorAuth(true)} />
-        )}
+        <Routes>
+          <Route path="/" element={<PortfolioView t={t} lang={lang} />} />
+          <Route path="/cover-letter" element={<CoverLetterView t={t} lang={lang} />} />
+          <Route path="/courses" element={<CoursesView t={t} lang={lang} />} />
+          <Route
+            path="/instructor"
+            element={
+              instructorAuth
+                ? <InstructorView lang={lang} />
+                : <InstructorLogin onAuth={() => setInstructorAuth(true)} />
+            }
+          />
+          <Route path="*" element={<PortfolioView t={t} lang={lang} />} />
+        </Routes>
       </main>
-      {view !== 'instructor' && <Footer t={t} />}
+      {pathname !== '/instructor' && <Footer t={t} />}
       <FloatingWhatsApp t={t} />
     </div>
   );

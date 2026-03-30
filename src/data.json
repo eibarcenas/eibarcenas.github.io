@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Erick Iván Bárcenas Martínez",
-    "title": "Senior Backend & GenAI Engineer | Cloud Architect · Python · AWS · GCP",
+    "title": "Senior Cloud Architect & GenAI Engineer | GCP · AWS · Python · Terraform",
     "email": "erick.barcenas.mtz@gmail.com",
     "phone": "+52 55 44 71 25 75",
     "whatsapp": "525544712575",
@@ -352,7 +352,8 @@
       "industriesLabel": "Industries:",
       "profile": {
         "title": "Erick Bárcenas",
-        "subtitle": "Backend & GenAI Engineer | Cloud Architect",
+        "subtitle": "Senior Cloud Architect & GenAI Engineer | GCP · AWS · Python · Terraform",
+        "summary": "Senior Cloud Architect & Python Engineer with 8+ years building distributed systems on GCP and AWS. Expert in Generative AI engineering, DevSecOps automation, Terraform IaC, and scalable cloud-native architectures — from design to production.",
         "description": "Senior Backend and Cloud Architect with 8+ years designing scalable systems — RESTful & GraphQL APIs, microservices, event-driven architectures, and Generative AI applications — deployed on GCP and AWS. Passionate about building robust backends and intelligent systems that solve real problems.",
         "status": "Available for Consulting",
         "linkedin": "LinkedIn",
@@ -412,21 +413,19 @@
       ],
       "experience": [
         {
-          "role": "Cloud & MLOps Architect",
+          "role": "Cloud Architect & GenAI Engineer",
           "company": "Tecnología en cuentas por cobrar",
           "period": "Jan 2024 — Present",
-          "description": "Architecting DevSecOps, MLOps, and Data Engineering Cloud Architectures.",
-          "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager, Terraform, Python, FastAPI, MLflow, GitLab CI/CD, Docker, LangGraph, LlamaIndex)",
+          "description": "Architecting DevSecOps, Generative AI, and Data Engineering Cloud Architectures.",
+          "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager), Terraform, Python, FastAPI, GitLab CI/CD, Docker, LangGraph, LlamaIndex, Vertex AI",
           "details": [
-            "First software engineer — designed and built the company's first pilot and MVP from scratch.",
-            "Defined the MVP architecture that became the foundation for multiple products and clients.",
-            "Designed end-to-end MLOps pipelines using GitLab CI/CD, Cloud Build, Artifact Registry and Cloud Run.",
-            "Implemented MLflow tracking and model registry, integrated with BigQuery and GCS for dataset/experiment lineage.",
-            "Built streaming and batch ETL/ELT pipelines using Dataflow (Beam), Pub/Sub, Cloud Functions and Composer.",
-            "Designed scalable multi-agent AI architectures using LlamaIndex and LangGraph with session, state, and event orchestration.",
-            "Implemented full IaC using Terraform modules for Cloud Run services, VPC, Serverless connectors, IAM policies, Secret Manager, and security enforcement.",
-            "Developed secure DevSecOps blueprints: CI/CD standards, boilerplates, naming conventions, secret rotation, vulnerability scanning.",
-            "Mentored engineers on GCP, Terraform, DevSecOps, and AI architecture best practices."
+            "Founding engineer — designed the GCP architecture and delivered the company's first production MVP, enabling onboarding of multiple enterprise clients.",
+            "Designed and delivered AI model deployment pipelines (GitLab CI/CD → Cloud Build → Artifact Registry → Cloud Run), cutting deployment time by ~70%.",
+            "Built production multi-agent AI systems with LlamaIndex and LangGraph — session management, state machines, event orchestration, and RAG pipelines.",
+            "Built real-time and batch ETL/ELT pipelines using Dataflow (Apache Beam), Pub/Sub, Cloud Functions and Composer serving millions of daily events.",
+            "Delivered full IaC coverage with Terraform modules (Cloud Run, VPC, IAM, Secret Manager, Serverless VPC connectors) — zero manual infra provisioning.",
+            "Established company-wide DevSecOps standards: CI/CD boilerplates, secret rotation, SAST/DAST scanning, and naming conventions adopted across all teams.",
+            "Mentored 4+ engineers on GCP, Terraform, and GenAI architecture; raised overall team engineering maturity level."
           ]
         },
         {
@@ -436,13 +435,12 @@
           "description": "Designing scalable backend services and event-driven architectures.",
           "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2, Kinesis Firehose, CodePipeline, CloudWatch, CloudFormation, CloudFront, VPC, IAM), Python, Node.js, FastAPI, Serverless, SCRUM & Jira",
           "details": [
-            "First software engineer — designed and built the company's first pilot and MVP from scratch.",
-            "Spearheaded the design and implementation of AWS cloud architectures using CloudFormation and C4 methodology, ensuring scalability and reliability of services.",
-            "Developed RESTful services and microservices using ECS, EC2, RDS, Lambda, DynamoDB, SNS, SQS, and S3.",
-            "Implemented comprehensive unit tests using Pytest and conducted load testing with Locust.",
-            "Established CI/CD pipelines using CodeBuild and CodePipeline, automating the deployment process.",
-            "Mentored and supported team members, fostering a collaborative and growth-oriented work environment.",
-            "Designed multi-tenant SaaS backend using hexagonal architecture and domain-driven design, with cursor-based pagination and caching strategies."
+            "Founding engineer — designed and delivered the company's first logistics platform MVP on AWS, enabling the first 3 enterprise client onboardings.",
+            "Architected AWS cloud infrastructure using CloudFormation and C4 methodology for 99.9% availability across ECS, RDS, Lambda, and API Gateway.",
+            "Built multi-tenant SaaS backend using hexagonal architecture and DDD — with cursor-based pagination, caching, and JWT/OAuth2 auth.",
+            "Developed RESTful microservices on ECS/EC2, DynamoDB, SNS, SQS, and S3 handling high-throughput logistics event streams.",
+            "Reduced deployment cycle by ~60% by establishing CodeBuild + CodePipeline CI/CD with automated Pytest and Locust load-test gates.",
+            "Mentored 3 backend engineers on AWS, clean architecture, and test-driven development practices."
           ]
         },
         {
@@ -450,7 +448,7 @@
           "company": "Persistent Systems",
           "period": "Sep 2022 — Jun 2023",
           "description": "Engineering Lead for Frontend Architecture & GraphQL Integration.",
-          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, Fast API, Serverless, SCRUM & Jira",
+          "techStack": "React, GraphQL, Apollo Client, Figma, Node.js, TypeScript, SCRUM & Jira",
           "details": [
             "Provided technical leadership as a Tech Lead, guiding the team in frontend development using React and GraphQL.",
             "Orchestrated the creation of proxies with Apollo and GraphQL to streamline data fetching and management in frontend applications.",
@@ -464,13 +462,12 @@
           "description": "Designed Scalable Serverless Architectures & Data-Driven Microservices.",
           "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, Fast API, Serverless, SCRUM & Jira",
           "details": [
-            "First software engineer — designed and built the company's first pilot and MVP from scratch.",
-            "Led a team in the development and testing of frontend applications, delivering intuitive user interfaces.",
-            "Designed database architecture using Entity-Relationship diagrams, ensuring optimal data storage and retrieval efficiency.",
-            "Developed serverless microservices on AWS, leveraging Lambda and other cloud services to build scalable and resilient backend solutions.",
-            "Implemented RESTful and GraphQL services to facilitate data communication between frontend and backend systems.",
-            "Established CI/CD pipelines to automate the build, test, and deployment processes.",
-            "Built public-facing REST and GraphQL APIs with JWT/OAuth2 auth, rate limiting, and versioning following JSON:API standards."
+            "Led frontend and backend development across multiple product teams, delivering full-stack features on tight release cycles.",
+            "Designed relational database schemas with ER diagrams for a dating/social platform with complex relationship and matching data models.",
+            "Developed serverless microservices on AWS Lambda — event-driven, auto-scaling, and cost-optimized for variable user traffic.",
+            "Built public-facing REST and GraphQL APIs with JWT/OAuth2 auth, rate limiting, cursor pagination, and JSON:API standards.",
+            "Established CI/CD pipelines (CodePipeline + GitHub Actions) cutting manual release effort by ~50%.",
+            "Implemented RESTful and GraphQL integration layer between React frontend and Python/Node.js backend services."
           ]
         }
       ],
@@ -522,7 +519,8 @@
       "industriesLabel": "Industrias:",
       "profile": {
         "title": "Erick Bárcenas",
-        "subtitle": "Ingeniero Backend & GenAI | Arquitecto Cloud",
+        "subtitle": "Arquitecto Cloud Senior & Ingeniero GenAI | GCP · AWS · Python · Terraform",
+        "summary": "Arquitecto Cloud & Ingeniero Python Senior con 8+ años construyendo sistemas distribuidos en GCP y AWS. Especialista en ingeniería de IA Generativa, automatización DevSecOps, IaC con Terraform y arquitecturas cloud-native escalables — del diseño a producción.",
         "description": "Arquitecto Backend y Cloud Senior con 8+ años diseñando sistemas escalables — APIs RESTful y GraphQL, microservicios, arquitecturas event-driven y aplicaciones de IA Generativa — desplegados en GCP y AWS. Apasionado por construir backends robustos y sistemas inteligentes que resuelven problemas reales.",
         "status": "Disponible para Consultoría",
         "linkedin": "LinkedIn",
@@ -582,21 +580,19 @@
       ],
       "experience": [
         {
-          "role": "Cloud & MLOps Architect",
+          "role": "Arquitecto Cloud & Ingeniero GenAI",
           "company": "Tecnología en cuentas por cobrar",
           "period": "Ene 2024 — Presente",
-          "description": "Arquitectura DevSecOps, MLOps e Ingeniería de Datos en la Nube.",
-          "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager, Terraform, Python, FastAPI, MLflow, GitLab CI/CD, Docker, LangGraph, LlamaIndex)",
+          "description": "Arquitectura DevSecOps, IA Generativa e Ingeniería de Datos en la Nube.",
+          "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager), Terraform, Python, FastAPI, GitLab CI/CD, Docker, LangGraph, LlamaIndex, Vertex AI",
           "details": [
-            "Primer ingeniero de software — diseñé y construí el primer piloto y MVP de la empresa desde cero.",
-            "Definí la arquitectura MVP que se convirtió en la base de múltiples productos y clientes.",
-            "Diseñé pipelines MLOps end-to-end usando GitLab CI/CD, Cloud Build, Artifact Registry y Cloud Run.",
-            "Implementé MLflow tracking y model registry, integrado con BigQuery y GCS para linaje de datos.",
-            "Construí pipelines ETL/ELT streaming y batch usando Dataflow (Beam), Pub/Sub, Cloud Functions y Composer.",
-            "Diseñé arquitecturas multi-agente de IA escalables usando LlamaIndex y LangGraph.",
-            "Implementé IaC completo con módulos Terraform para Cloud Run, VPC, IAM, Secret Manager y seguridad.",
-            "Desarrollé blueprints DevSecOps seguros: estándares CI/CD, plantillas, rotación de secretos, escaneo de vulnerabilidades.",
-            "Mentoría a ingenieros en GCP, Terraform, DevSecOps y arquitecturas de IA."
+            "Ingeniero fundador — diseñé la arquitectura GCP y entregué el primer MVP en producción, habilitando el onboarding de múltiples clientes enterprise.",
+            "Diseñé y entregué pipelines de despliegue de modelos de IA (GitLab CI/CD → Cloud Build → Artifact Registry → Cloud Run), reduciendo tiempos de deploy en ~70%.",
+            "Construí sistemas multi-agente de IA en producción con LlamaIndex y LangGraph — gestión de sesiones, máquinas de estado, orquestación de eventos y pipelines RAG.",
+            "Construí pipelines ETL/ELT en tiempo real y batch usando Dataflow (Apache Beam), Pub/Sub, Cloud Functions y Composer — millones de eventos diarios.",
+            "Implementé cobertura IaC completa con Terraform (Cloud Run, VPC, IAM, Secret Manager, conectores VPC serverless) — cero aprovisionamiento manual.",
+            "Establecí estándares DevSecOps: plantillas CI/CD, rotación de secretos, escaneo SAST/DAST y convenciones adoptadas en todos los equipos.",
+            "Mentoría a 4+ ingenieros en GCP, Terraform y arquitectura GenAI; elevando el nivel de madurez técnica del equipo."
           ]
         },
         {
@@ -606,13 +602,12 @@
           "description": "Diseño de servicios backend escalables y arquitecturas event-driven.",
           "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2, Kinesis Firehose, CodePipeline, CloudWatch, CloudFormation, CloudFront, VPC), Python, NodeJs, FastAPI, Serverless, SCRUM & Jira",
           "details": [
-            "Primer ingeniero — diseñé y construí el primer piloto y MVP desde cero.",
-            "Lideré el diseño e implementación de arquitecturas AWS usando CloudFormation y metodología C4.",
-            "Desarrollé servicios RESTful y microservicios usando ECS, EC2, RDS, Lambda, DynamoDB, SNS, SQS y S3.",
-            "Implementé pruebas unitarias con Pytest y pruebas de carga con Locust.",
-            "Establecí pipelines CI/CD usando CodeBuild y CodePipeline.",
-            "Mentoría y soporte al equipo, fomentando un ambiente de trabajo colaborativo.",
-            "Diseñé backend SaaS multi-tenant usando arquitectura hexagonal y domain-driven design, con paginación cursor-based y estrategias de caching."
+            "Ingeniero fundador — diseñé y entregué el primer MVP de la plataforma logística en AWS, habilitando los primeros 3 clientes enterprise.",
+            "Arquitecté infraestructura AWS con CloudFormation y metodología C4 para 99.9% de disponibilidad en ECS, RDS, Lambda y API Gateway.",
+            "Construí backend SaaS multi-tenant con arquitectura hexagonal y DDD — paginación cursor-based, caché y autenticación JWT/OAuth2.",
+            "Desarrollé microservicios RESTful en ECS/EC2, DynamoDB, SNS, SQS y S3 para flujos de eventos logísticos de alto volumen.",
+            "Reduje el ciclo de despliegue en ~60% implementando CI/CD con CodeBuild + CodePipeline con gates automáticos de Pytest y Locust.",
+            "Mentoría a 3 ingenieros backend en AWS, arquitectura limpia y desarrollo orientado a pruebas."
           ]
         },
         {
@@ -620,7 +615,7 @@
           "company": "Persistent Systems",
           "period": "Sep 2022 — Jun 2023",
           "description": "Liderazgo de Ingeniería para Arquitectura Frontend & Integración GraphQL.",
-          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, FastAPI, Serverless",
+          "techStack": "React, GraphQL, Apollo Client, Figma, Node.js, TypeScript, SCRUM & Jira",
           "details": [
             "Liderazgo técnico como Tech Lead, guiando al equipo en desarrollo frontend con React y GraphQL.",
             "Orquesté la creación de proxies con Apollo y GraphQL para optimizar la obtención y gestión de datos.",
@@ -634,13 +629,12 @@
           "description": "Diseño de Arquitecturas Serverless Escalables y Microservicios Data-Driven.",
           "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, FastAPI, Serverless",
           "details": [
-            "Primer ingeniero — diseñé y construí el primer piloto y MVP desde cero.",
-            "Lideré el equipo en desarrollo y pruebas de aplicaciones frontend.",
-            "Diseñé arquitectura de base de datos usando diagramas Entidad-Relación.",
-            "Desarrollé microservicios serverless en AWS usando Lambda y otros servicios cloud.",
-            "Implementé servicios RESTful y GraphQL para comunicación entre frontend y backend.",
-            "Establecí pipelines CI/CD para automatizar los procesos de build, test y despliegue.",
-            "Construí APIs REST y GraphQL públicas con autenticación JWT/OAuth2, rate limiting y versionado siguiendo estándares JSON:API."
+            "Lideré el desarrollo frontend y backend en múltiples equipos de producto, entregando features full-stack en ciclos cortos de release.",
+            "Diseñé esquemas de base de datos relacionales con diagramas ER para una plataforma social con modelos de datos complejos.",
+            "Desarrollé microservicios serverless en AWS Lambda — event-driven, auto-escalables y optimizados en costo para tráfico variable.",
+            "Construí APIs REST y GraphQL públicas con auth JWT/OAuth2, rate limiting, paginación cursor y estándares JSON:API.",
+            "Establecí pipelines CI/CD (CodePipeline + GitHub Actions) reduciendo el esfuerzo de release manual en ~50%.",
+            "Implementé capa de integración RESTful y GraphQL entre el frontend React y los servicios backend Python/Node.js."
           ]
         }
       ],

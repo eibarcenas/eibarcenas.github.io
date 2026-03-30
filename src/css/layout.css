@@ -192,11 +192,13 @@ footer {
 }
 
 @media print {
+  /* ── Page setup ── */
   @page {
     margin: 1.2cm;
     size: A4 portrait;
   }
 
+  /* ── Show/hide ── */
   .print-only {
     display: block !important;
   }
@@ -212,25 +214,47 @@ footer {
   .stats-bar-card,
   .tab-group,
   .nav-cv-btn,
-  .nav-cta {
+  .nav-cta,
+  .contact-card,
+  .skills-tech-grid,
+  .edu-icon {
     display: none !important;
   }
 
+  /* ── Reset decorations ── */
   * {
     border-radius: 0 !important;
     box-shadow: none !important;
     text-shadow: none !important;
+    -webkit-text-fill-color: unset !important;
+    background-image: none !important;
   }
 
+  /* ── Base typography ── */
   body {
-    background: white;
-    color: black;
+    background: white !important;
+    color: #1e293b !important;
     padding: 0;
     margin: 0;
-    font-size: 11pt;
-    line-height: 1.4;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    font-family: inherit;
   }
 
+  /* ── All text to dark slate ── */
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span,
+  li,
+  a,
+  div {
+    color: #1e293b !important;
+  }
+
+  /* ── Container ── */
   .container {
     width: 100% !important;
     max-width: 100% !important;
@@ -238,22 +262,30 @@ footer {
     margin: 0 !important;
   }
 
-  /* Professional Two Column Grid */
+  /* ══════════════════════════════════════════
+     GRID — 2-column layout: 2fr | 1fr
+  ══════════════════════════════════════════ */
   .bento-grid {
     display: grid !important;
     grid-template-columns: 2fr 1fr !important;
-    gap: 2.5rem !important;
-    margin-top: 0;
+    gap: 1.25rem 1.75rem !important;
+    margin-top: 0 !important;
   }
 
-  /* Left Column */
+  /* Override col-span utilities for print 2-col grid */
+  .col-span-4,
+  .col-span-8,
+  .col-span-12 {
+    grid-column: auto !important;
+  }
+
+  /* Left column — experience */
   .experience-section {
     grid-column: 1 !important;
-    grid-row: auto !important;
-    /* Let it flow naturally */
+    grid-row: 1 / span 3 !important;
   }
 
-  /* Right Column */
+  /* Right column — skills top, education below */
   .skills-section {
     grid-column: 2 !important;
     grid-row: 1 !important;
@@ -264,112 +296,322 @@ footer {
     grid-row: 2 !important;
   }
 
-  .contact-card,
-  .freelance-section,
-  .projects-section {
-    grid-column: 1 / span 2 !important;
+  /* Full-width sections (page 2) */
+  .projects-section,
+  .freelance-section {
+    grid-column: 1 / -1 !important;
   }
 
+  .freelance-section {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Always render domains (chip) view — ignore JS tab state */
+  .skills-section .grid-2 {
+    display: grid !important;
+  }
+
+  /* ══════════════════════════════════════════
+     CARDS & SECTIONS
+  ══════════════════════════════════════════ */
   .card {
     break-inside: auto;
-    /* Allow sections to span multiple pages */
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 1.5rem !important;
     background: transparent !important;
     overflow: visible !important;
   }
 
-  /* Keep individual items together */
   .exp-item,
-  .edu-card,
   .project-card,
-  .skill-category {
+  .skill-category,
+  .freelance-item {
     break-inside: avoid;
   }
 
-  .section-title h3 {
-    font-size: 1.3rem !important;
-    border-bottom: 2pt solid #2563eb !important;
-    padding-bottom: 2pt !important;
-    margin-bottom: 1rem !important;
-    color: #1e293b !important;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
+  /* ══════════════════════════════════════════
+     PRINT HEADER
+  ══════════════════════════════════════════ */
   .print-header {
-    text-align: left;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1pt solid #cbd5e1;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 2pt solid #2563eb;
   }
 
   .print-name {
-    font-size: 2.8rem !important;
+    font-size: 22pt !important;
     font-weight: 800 !important;
-    margin-bottom: 0.25rem !important;
-    color: #0f172a !important;
+    color: #1e40af !important;
     line-height: 1.1;
+    margin-bottom: 3pt !important;
   }
 
   .print-role {
-    font-size: 1.2rem !important;
+    font-size: 11pt !important;
     font-weight: 600 !important;
     color: #2563eb !important;
-    margin-bottom: 0.75rem !important;
-    font-family: var(--font-mono);
+    font-family: inherit !important;
+    margin-bottom: 5pt !important;
   }
 
-  .print-contact,
-  .print-links {
-    font-size: 10pt;
-    color: #334155;
-    margin-top: 0.25rem;
-    font-family: var(--font-mono);
+  .print-summary {
+    font-size: 9.5pt !important;
+    color: #334155 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 5pt !important;
+    max-width: 100% !important;
   }
 
-  .text-accent,
-  .text-secondary,
-  .text-tertiary,
-  p,
-  span,
-  li,
-  h1,
-  h2,
-  h3,
-  h4 {
+  .print-skills-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4pt !important;
+    margin-bottom: 5pt !important;
+  }
+
+  .print-skill-tag {
+    font-size: 8pt !important;
+    font-weight: 600 !important;
+    color: #1e40af !important;
+    background: #eff6ff !important;
+    border: 0.5pt solid #93c5fd !important;
+    padding: 1.5pt 6pt !important;
+    border-radius: 3pt !important;
+  }
+
+  .print-contact {
+    font-size: 9pt !important;
+    color: #475569 !important;
+    font-family: inherit !important;
+    margin-top: 0 !important;
+  }
+
+  .print-contact span {
+    color: #475569 !important;
+  }
+
+  /* ══════════════════════════════════════════
+     SECTION TITLES
+  ══════════════════════════════════════════ */
+  .section-title {
+    display: block !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .section-title h3 {
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.07em !important;
+    color: #1e40af !important;
+    border-bottom: 1.5pt solid #2563eb !important;
+    padding: 3pt 4pt !important;
+    margin-bottom: 0.6rem !important;
+    background: #f8fafc !important;
+  }
+
+  /* ══════════════════════════════════════════
+     EXPERIENCE
+  ══════════════════════════════════════════ */
+  .exp-item {
+    border-bottom: 0.5pt solid #e2e8f0 !important;
+    padding-bottom: 0.85rem !important;
+    margin-bottom: 0.85rem !important;
+  }
+
+  /* Last item keeps a bottom border for visual consistency */
+  .exp-item:last-child {
+    border-bottom: 0.5pt solid #e2e8f0 !important;
+    padding-bottom: 0.85rem !important;
+  }
+
+  .period-badge {
+    font-size: 8pt !important;
+    font-family: inherit !important;
+    background: #f1f5f9 !important;
+    border: 0.5pt solid #94a3b8 !important;
+    color: #475569 !important;
+    padding: 1.5pt 5pt !important;
+  }
+
+  .exp-list {
+    gap: 0 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .exp-list li {
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+    margin-bottom: 2pt !important;
     color: #1e293b !important;
+  }
+
+  .exp-list li::before {
+    content: "›" !important;
+    color: #2563eb !important;
+    font-weight: 700 !important;
+  }
+
+  .tech-stack-row {
+    margin-top: 4pt !important;
+  }
+
+  .tech-stack-label {
+    font-size: 8pt !important;
+    font-weight: 700 !important;
+    color: #475569 !important;
+  }
+
+  .tech-stack-text {
+    font-family: inherit !important;
+    font-size: 8pt !important;
+    color: #475569 !important;
+  }
+
+  /* ══════════════════════════════════════════
+     SKILLS (domains/chips view)
+  ══════════════════════════════════════════ */
+  .skill-item {
+    background: transparent !important;
+    border: 0.5pt solid #e2e8f0 !important;
+    padding: 0.5rem !important;
+  }
+
+  .skill-item h4 {
+    font-size: 9pt !important;
+    font-weight: 700 !important;
+    margin-bottom: 3pt !important;
+  }
+
+  .skill-item p {
+    font-size: 8pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 4pt !important;
   }
 
   .chip,
   .chip-sm,
   .industry-chip,
-  .period-badge,
   .lang-level {
-    border: 0.5pt solid #94a3b8 !important;
-    background: #f1f5f9 !important;
-    color: #0f172a !important;
-    font-size: 8pt !important;
-    padding: 2pt 6pt !important;
+    border: 0.5pt solid #93c5fd !important;
+    background: #eff6ff !important;
+    color: #1e40af !important;
+    font-size: 7.5pt !important;
+    padding: 1.5pt 5pt !important;
     white-space: normal !important;
-    /* Allow wrapping to prevent cutting */
+    font-family: inherit !important;
   }
 
-  .exp-item {
-    border-bottom: 0.5pt solid #e2e8f0 !important;
-    padding-bottom: 1.5rem !important;
-    margin-bottom: 1.5rem !important;
+  /* ══════════════════════════════════════════
+     EDUCATION & LANGUAGES
+  ══════════════════════════════════════════ */
+  .edu-content {
+    gap: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
   }
 
-  .exp-list li {
+  .edu-degree {
     font-size: 10pt !important;
-    margin-bottom: 1pt !important;
+    font-weight: 700 !important;
   }
 
-  .exp-list li::before {
+  .edu-school {
+    font-size: 9pt !important;
+  }
+
+  .edu-year {
+    font-size: 8.5pt !important;
+  }
+
+  .lang-list {
+    border-top: 0.5pt solid #e2e8f0 !important;
+    padding-top: 0.5rem !important;
+  }
+
+  .lang-list-title {
+    font-size: 8pt !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #475569 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .lang-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 9pt !important;
+    padding: 2pt 0 !important;
+  }
+
+  .lang-level {
+    font-size: 7.5pt !important;
+    border: 0.5pt solid #93c5fd !important;
+    background: #eff6ff !important;
+    color: #1e40af !important;
+    padding: 1.5pt 5pt !important;
+  }
+
+  /* ══════════════════════════════════════════
+     PROJECTS
+  ══════════════════════════════════════════ */
+  .projects-section {
+    margin-bottom: 1rem !important;
+  }
+
+  .project-card {
+    background: transparent !important;
+    border: 0.5pt solid #e2e8f0 !important;
+    padding: 0.6rem !important;
+  }
+
+  .project-icon {
+    display: none !important;
+  }
+
+  .project-card h3 {
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    margin-bottom: 3pt !important;
+  }
+
+  .project-card p {
+    font-size: 8.5pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 4pt !important;
+  }
+
+  /* ══════════════════════════════════════════
+     FREELANCE
+  ══════════════════════════════════════════ */
+  .freelance-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.4rem !important;
+  }
+
+  .freelance-item {
+    background: transparent !important;
+    border: 0.5pt solid #e2e8f0 !important;
+    padding: 0.5rem 0.6rem !important;
+  }
+
+  .freelance-name {
+    font-size: 9pt !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+  }
+
+  .freelance-name.link {
     color: #2563eb !important;
-    font-weight: bold;
+  }
+
+  .freelance-work {
+    font-size: 8pt !important;
+    color: #475569 !important;
+    line-height: 1.4 !important;
   }
 }
