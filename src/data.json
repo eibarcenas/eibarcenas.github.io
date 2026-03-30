@@ -28,7 +28,38 @@
     { "name": "Spanish", "level": "Native" },
     { "name": "English", "level": "B2 Upper Intermediate" }
   ],
-  "certifications": [],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect – Associate",
+      "issuer": "Amazon Web Services",
+      "year": "2022",
+      "color": "#FF9900"
+    },
+    {
+      "name": "Google Cloud Professional Cloud Architect",
+      "issuer": "Google Cloud",
+      "year": "2023",
+      "color": "#4285F4"
+    },
+    {
+      "name": "HashiCorp Certified: Terraform Associate",
+      "issuer": "HashiCorp",
+      "year": "2023",
+      "color": "#7B42BC"
+    },
+    {
+      "name": "Building LLM Apps with LangChain",
+      "issuer": "DeepLearning.AI",
+      "year": "2024",
+      "color": "#00A67E"
+    },
+    {
+      "name": "Python for Data Engineering",
+      "issuer": "DataCamp",
+      "year": "2021",
+      "color": "#03EF62"
+    }
+  ],
   "skillsDetailed": [
     {
       "category": "Programming Languages",
@@ -183,7 +214,7 @@
       "projects": "Selected Work",
       "freelance": "Freelance Projects (2016–2020)",
       "education": "Education",
-      "certifications": "Certifications & Courses",
+      "certifications": "Courses & Learning",
       "contact": "Get In Touch",
       "footer": "Designed for Scalability & Performance."
     },
@@ -352,7 +383,7 @@
       "projects": "Trabajo Seleccionado",
       "freelance": "Proyectos Freelance (2016–2020)",
       "education": "Educación",
-      "certifications": "Certificaciones & Cursos",
+      "certifications": "Cursos & Aprendizaje",
       "contact": "Contacto",
       "footer": "Diseñado para Escalabilidad y Rendimiento."
     },
