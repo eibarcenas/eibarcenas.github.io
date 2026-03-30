@@ -42,15 +42,27 @@
       "status": "available"
     },
     {
-      "title": "Cloud Architecture on AWS & GCP",
-      "titleEs": "Arquitectura Cloud en AWS y GCP",
-      "description": "Learn to design scalable, secure cloud-native systems on AWS and GCP — from serverless to containers, IaC with Terraform, and CI/CD pipelines.",
-      "descriptionEs": "Aprende a diseñar sistemas cloud-native escalables y seguros en AWS y GCP — desde serverless hasta contenedores, IaC con Terraform y pipelines CI/CD.",
-      "topics": ["AWS Lambda", "Cloud Run", "Terraform", "CI/CD", "VPC", "IAM"],
+      "title": "Cloud Architecture on AWS",
+      "titleEs": "Arquitectura Cloud en AWS",
+      "description": "Build scalable, secure cloud-native systems on AWS — serverless with Lambda, containers on ECS/EKS, event-driven with SQS/SNS, and infrastructure as code with Terraform.",
+      "descriptionEs": "Construye sistemas cloud-native escalables y seguros en AWS — serverless con Lambda, contenedores en ECS/EKS, event-driven con SQS/SNS e infraestructura como código con Terraform.",
+      "topics": ["Lambda", "ECS / EKS", "API Gateway", "SQS / SNS", "Terraform", "IAM"],
       "level": "Intermediate",
       "levelEs": "Intermedio",
       "color": "#FF9900",
-      "icon": "☁️",
+      "icon": "🟠",
+      "status": "available"
+    },
+    {
+      "title": "Cloud Architecture on GCP",
+      "titleEs": "Arquitectura Cloud en GCP",
+      "description": "Design and deploy cloud-native applications on Google Cloud — serverless with Cloud Run, Kubernetes on GKE, async messaging with Pub/Sub, analytics with BigQuery, and IaC with Terraform.",
+      "descriptionEs": "Diseña y despliega aplicaciones cloud-native en Google Cloud — serverless con Cloud Run, Kubernetes en GKE, mensajería asíncrona con Pub/Sub, analítica con BigQuery e IaC con Terraform.",
+      "topics": ["Cloud Run", "GKE", "Pub/Sub", "BigQuery", "Terraform", "IAM"],
+      "level": "Intermediate",
+      "levelEs": "Intermedio",
+      "color": "#4285F4",
+      "icon": "🔵",
       "status": "available"
     },
     {
