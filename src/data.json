@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Erick Iván Bárcenas Martínez",
-    "title": "Senior MLOps, DevSecOps & Cloud/Data Architect (GCP | AWS | Python)",
+    "title": "Senior Backend & GenAI Engineer | Cloud Architect · Python · AWS · GCP",
     "email": "erick.barcenas.mtz@gmail.com",
     "phone": "+52 55 44 71 25 75",
     "whatsapp": "525544712575",
@@ -28,6 +28,7 @@
     { "name": "Spanish", "level": "Native" },
     { "name": "English", "level": "B2 Upper Intermediate" }
   ],
+  "certifications": [],
   "skillsDetailed": [
     {
       "category": "Programming Languages",
@@ -39,6 +40,25 @@
         { "name": "TypeScript", "years": 4 },
         { "name": "Java", "years": 1 },
         { "name": "Elixir", "years": 1 }
+      ]
+    },
+    {
+      "category": "Backend Architecture & API Design",
+      "items": [
+        { "name": "RESTful APIs", "years": 8 },
+        { "name": "GraphQL APIs", "years": 4 },
+        { "name": "FastAPI / Python Backend", "years": 6 },
+        { "name": "Node.js Backend", "years": 4 },
+        { "name": "Elixir / Phoenix", "years": 1 },
+        { "name": "Microservices Architecture", "years": 6 },
+        { "name": "Event-Driven Architecture (EDA)", "years": 4 },
+        { "name": "Hexagonal / Clean Architecture", "years": 4 },
+        { "name": "Domain-Driven Design (DDD)", "years": 3 },
+        { "name": "Multi-Tenant SaaS Design", "years": 4 },
+        { "name": "PostgreSQL / Cloud SQL", "years": 6 },
+        { "name": "DynamoDB / Firestore / DocumentDB", "years": 4 },
+        { "name": "OAuth2 / JWT / RBAC", "years": 4 },
+        { "name": "Cursor-based pagination & caching", "years": 3 }
       ]
     },
     {
@@ -86,16 +106,16 @@
       ]
     },
     {
-      "category": "MLOps",
+      "category": "Generative AI Engineering",
       "items": [
-        { "name": "MLflow", "years": 1 },
-        { "name": "Vertex AI", "years": 1 },
-        { "name": "LlamaIndex / LangGraph", "years": 1 },
-        { "name": "Airflow / Composer", "years": 1 },
-        { "name": "TensorFlow / PyTorch (basic)", "years": 1 },
-        { "name": "Feature Stores", "years": 1 },
-        { "name": "Experiment Tracking", "years": 1 },
-        { "name": "Model Registry", "years": 1 }
+        { "name": "LlamaIndex", "years": 1 },
+        { "name": "LangGraph", "years": 1 },
+        { "name": "Multi-Agent Systems", "years": 1 },
+        { "name": "RAG Pipelines", "years": 1 },
+        { "name": "Vertex AI (inference & deployment)", "years": 1 },
+        { "name": "Prompt Engineering", "years": 1 },
+        { "name": "Vector Databases (ChromaDB, Weaviate)", "years": 1 },
+        { "name": "AI Orchestration & State Management", "years": 1 }
       ]
     },
     {
@@ -138,12 +158,12 @@
     },
     "hero": {
       "title": "Architecting Scalable <br> <span class=\"text-accent\">Cloud Platforms</span>",
-      "chips": ["GCP & AWS Architect", "Data Platforms", "DevSecOps", "MLOps", "Python"],
+      "chips": ["GCP & AWS Architect", "Backend APIs", "Microservices", "Generative AI", "DevSecOps", "Python"],
       "industriesLabel": "Industries:",
       "profile": {
         "title": "Erick Bárcenas",
-        "subtitle": "Cloud, Data & MLOps Architect",
-        "description": "Senior Cloud Architect and Python Engineer with 8+ years designing and deploying large-scale distributed systems on GCP and AWS. Strong background in Data Engineering, MLOps, CI/CD automation, and IaC with Terraform.",
+        "subtitle": "Backend & GenAI Engineer | Cloud Architect",
+        "description": "Senior Backend and Cloud Architect with 8+ years designing scalable systems — RESTful & GraphQL APIs, microservices, event-driven architectures, and Generative AI applications — deployed on GCP and AWS. Passionate about building robust backends and intelligent systems that solve real problems.",
         "status": "Available for Consulting",
         "linkedin": "LinkedIn",
         "github": "GitHub",
@@ -163,6 +183,7 @@
       "projects": "Selected Work",
       "freelance": "Freelance Projects (2016–2020)",
       "education": "Education",
+      "certifications": "Certifications & Courses",
       "contact": "Get In Touch",
       "footer": "Designed for Scalability & Performance."
     },
@@ -184,9 +205,14 @@
           "tags": ["CI/CD Standards", "Terraform", "Governance", "Blueprints", "Guardrails"]
         },
         {
-          "title": "Data & MLOps Platforms",
-          "description": "Building production-grade data pipelines and ML lifecycles.",
-          "tags": ["MLflow", "BigQuery", "Dataflow", "Experiment Tracking", "Orchestration"]
+          "title": "Backend Architecture & APIs",
+          "description": "Designing robust, scalable backend systems and API layers.",
+          "tags": ["RESTful APIs", "GraphQL", "Microservices", "EDA", "DDD", "Multi-Tenant SaaS"]
+        },
+        {
+          "title": "Generative AI Engineering",
+          "description": "Building intelligent multi-agent systems and RAG pipelines for production.",
+          "tags": ["LlamaIndex", "LangGraph", "RAG", "Multi-Agent", "Vertex AI", "Prompt Engineering"]
         },
         {
           "title": "Observability & Reliability",
@@ -225,7 +251,8 @@
             "Developed RESTful services and microservices using ECS, EC2, RDS, Lambda, DynamoDB, SNS, SQS, and S3.",
             "Implemented comprehensive unit tests using Pytest and conducted load testing with Locust.",
             "Established CI/CD pipelines using CodeBuild and CodePipeline, automating the deployment process.",
-            "Mentored and supported team members, fostering a collaborative and growth-oriented work environment."
+            "Mentored and supported team members, fostering a collaborative and growth-oriented work environment.",
+            "Designed multi-tenant SaaS backend using hexagonal architecture and domain-driven design, with cursor-based pagination and caching strategies."
           ]
         },
         {
@@ -252,7 +279,8 @@
             "Designed database architecture using Entity-Relationship diagrams, ensuring optimal data storage and retrieval efficiency.",
             "Developed serverless microservices on AWS, leveraging Lambda and other cloud services to build scalable and resilient backend solutions.",
             "Implemented RESTful and GraphQL services to facilitate data communication between frontend and backend systems.",
-            "Established CI/CD pipelines to automate the build, test, and deployment processes."
+            "Established CI/CD pipelines to automate the build, test, and deployment processes.",
+            "Built public-facing REST and GraphQL APIs with JWT/OAuth2 auth, rate limiting, and versioning following JSON:API standards."
           ]
         }
       ],
@@ -299,12 +327,12 @@
     },
     "hero": {
       "title": "Diseñando Plataformas <br> <span class=\"text-accent\">Cloud Escalables</span>",
-      "chips": ["Arquitecto GCP & AWS", "Plataformas de Datos", "DevSecOps", "MLOps", "Python"],
+      "chips": ["Arquitecto GCP & AWS", "APIs Backend", "Microservicios", "IA Generativa", "DevSecOps", "Python"],
       "industriesLabel": "Industrias:",
       "profile": {
         "title": "Erick Bárcenas",
-        "subtitle": "Arquitecto de Cloud, Data & MLOps",
-        "description": "Arquitecto Cloud Senior e Ingeniero Python con 8+ años diseñando y desplegando sistemas distribuidos a gran escala en GCP y AWS. Sólida experiencia en Ingeniería de Datos, MLOps, automatización CI/CD e IaC con Terraform.",
+        "subtitle": "Ingeniero Backend & GenAI | Arquitecto Cloud",
+        "description": "Arquitecto Backend y Cloud Senior con 8+ años diseñando sistemas escalables — APIs RESTful y GraphQL, microservicios, arquitecturas event-driven y aplicaciones de IA Generativa — desplegados en GCP y AWS. Apasionado por construir backends robustos y sistemas inteligentes que resuelven problemas reales.",
         "status": "Disponible para Consultoría",
         "linkedin": "LinkedIn",
         "github": "GitHub",
@@ -324,6 +352,7 @@
       "projects": "Trabajo Seleccionado",
       "freelance": "Proyectos Freelance (2016–2020)",
       "education": "Educación",
+      "certifications": "Certificaciones & Cursos",
       "contact": "Contacto",
       "footer": "Diseñado para Escalabilidad y Rendimiento."
     },
@@ -345,9 +374,14 @@
           "tags": ["Estándares CI/CD", "Terraform", "Gobierno", "Blueprints", "Guardrails"]
         },
         {
-          "title": "Plataformas de Datos & MLOps",
-          "description": "Construcción de pipelines de datos y ciclos de vida de ML en producción.",
-          "tags": ["MLflow", "BigQuery", "Dataflow", "Tracking de Experimentos", "Orquestación"]
+          "title": "Arquitectura Backend & APIs",
+          "description": "Diseño de sistemas backend robustos, escalables y capas de API.",
+          "tags": ["APIs RESTful", "GraphQL", "Microservicios", "EDA", "DDD", "SaaS Multi-Tenant"]
+        },
+        {
+          "title": "Ingeniería de IA Generativa",
+          "description": "Construcción de sistemas multi-agente inteligentes y pipelines RAG para producción.",
+          "tags": ["LlamaIndex", "LangGraph", "RAG", "Multi-Agente", "Vertex AI", "Prompt Engineering"]
         },
         {
           "title": "Observabilidad & Confiabilidad",
@@ -386,7 +420,8 @@
             "Desarrollé servicios RESTful y microservicios usando ECS, EC2, RDS, Lambda, DynamoDB, SNS, SQS y S3.",
             "Implementé pruebas unitarias con Pytest y pruebas de carga con Locust.",
             "Establecí pipelines CI/CD usando CodeBuild y CodePipeline.",
-            "Mentoría y soporte al equipo, fomentando un ambiente de trabajo colaborativo."
+            "Mentoría y soporte al equipo, fomentando un ambiente de trabajo colaborativo.",
+            "Diseñé backend SaaS multi-tenant usando arquitectura hexagonal y domain-driven design, con paginación cursor-based y estrategias de caching."
           ]
         },
         {
@@ -413,7 +448,8 @@
             "Diseñé arquitectura de base de datos usando diagramas Entidad-Relación.",
             "Desarrollé microservicios serverless en AWS usando Lambda y otros servicios cloud.",
             "Implementé servicios RESTful y GraphQL para comunicación entre frontend y backend.",
-            "Establecí pipelines CI/CD para automatizar los procesos de build, test y despliegue."
+            "Establecí pipelines CI/CD para automatizar los procesos de build, test y despliegue.",
+            "Construí APIs REST y GraphQL públicas con autenticación JWT/OAuth2, rate limiting y versionado siguiendo estándares JSON:API."
           ]
         }
       ],

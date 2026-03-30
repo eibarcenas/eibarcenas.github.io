@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CV_DATA, META, EDUCATION, LANGUAGES, SKILLS_DETAILED, FREELANCE_PROJECTS, INDUSTRIES } from './data';
+import { CV_DATA, META, EDUCATION, LANGUAGES, CERTIFICATIONS, SKILLS_DETAILED, FREELANCE_PROJECTS, INDUSTRIES } from './data';
 
 // Build a wa.me link with a pre-filled message
 const waUrl = (msg) =>
@@ -140,7 +140,7 @@ const ProfileCard = ({ t }) => (
 const HeroStats = ({ t }) => (
   <div className="card col-span-8 hero-card">
     <div className="hero">
-      <div className="hero-eyebrow">Senior Cloud &amp; MLOps Engineer · 8+ years</div>
+      <div className="hero-eyebrow">Senior Backend &amp; GenAI Engineer · 8+ years</div>
       <h1 dangerouslySetInnerHTML={{ __html: t.hero.title }} />
       <p className="hero-tagline">{t.hero.profile.description}</p>
       <div className="flex flex-wrap gap-3" style={{ marginTop: '1.25rem' }}>
@@ -295,6 +295,18 @@ const EducationSection = ({ t, lang }) => (
         </div>
       ))}
     </div>
+    {CERTIFICATIONS && CERTIFICATIONS.length > 0 && (
+      <div className="cert-list">
+        <div className="lang-list-title">{t.sections.certifications}</div>
+        {CERTIFICATIONS.map((c, i) => (
+          <div key={i} className="cert-item">
+            <span className="cert-dot" style={{ background: c.color }} />
+            <span className="cert-name">{c.name}</span>
+            <span className="cert-year">{c.year}</span>
+          </div>
+        ))}
+      </div>
+    )}
   </div>
 );
 
