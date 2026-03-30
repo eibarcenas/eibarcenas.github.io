@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CV_DATA, META, EDUCATION, LANGUAGES, CERTIFICATIONS, SKILLS_DETAILED, FREELANCE_PROJECTS, INDUSTRIES } from './data';
+import { CV_DATA, META, EDUCATION, LANGUAGES, COURSES, SKILLS_DETAILED, FREELANCE_PROJECTS, INDUSTRIES } from './data';
 
 // Build a wa.me link with a pre-filled message
 const waUrl = (msg) =>
@@ -414,22 +414,47 @@ const Footer = ({ t }) => (
 const CoursesView = ({ t, lang }) => (
   <div className="courses-view">
     <div className="courses-hero">
-      <h1 className="courses-title">{t.sections.certifications}</h1>
+      <h1 className="courses-title">{t.sections.courses}</h1>
       <p className="courses-subtitle">
         {lang === 'en'
-          ? 'A record of continuous learning — courses and topics explored along the way.'
-          : 'Un registro de aprendizaje continuo — cursos y temas explorados en el camino.'}
+          ? "Practical courses on topics I've built production systems with — designed to help you learn by doing, not just by watching."
+          : 'Cursos prácticos sobre temas con los que he construido sistemas en producción — diseñados para aprender haciendo, no solo viendo.'}
       </p>
     </div>
     <div className="courses-grid">
-      {CERTIFICATIONS.map((c, i) => (
-        <div key={i} className="course-card" style={{ borderLeftColor: c.color }}>
-          <span className="course-dot" style={{ background: c.color }} />
-          <div className="course-info">
-            <div className="course-name">{c.name}</div>
-            <div className="course-issuer">{c.issuer}</div>
+      {COURSES.map((c, i) => (
+        <div key={i} className="course-card" style={{ borderTopColor: c.color }}>
+          <div className="course-card-header">
+            <span className="course-icon">{c.icon}</span>
+            <div className="course-meta">
+              <span className="course-level-badge" style={{ color: c.color, borderColor: c.color }}>
+                {lang === 'en' ? c.level : c.levelEs}
+              </span>
+              {c.status === 'coming-soon' && (
+                <span className="course-status-badge">
+                  {lang === 'en' ? 'Coming Soon' : 'Próximamente'}
+                </span>
+              )}
+            </div>
           </div>
-          <span className="course-year">{c.year}</span>
+          <div className="course-title">{lang === 'en' ? c.title : c.titleEs}</div>
+          <div className="course-description">{lang === 'en' ? c.description : c.descriptionEs}</div>
+          <div className="course-topics">
+            {c.topics.map((topic, j) => (
+              <span key={j} className="chip-sm">{topic}</span>
+            ))}
+          </div>
+          {c.status === 'available' && (
+            <a
+              href={waUrl(t.nav.whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="course-cta"
+              style={{ borderColor: c.color, color: c.color }}
+            >
+              {lang === 'en' ? 'Get in touch →' : 'Contáctame →'}
+            </a>
+          )}
         </div>
       ))}
     </div>

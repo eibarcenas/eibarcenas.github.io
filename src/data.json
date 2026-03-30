@@ -28,36 +28,66 @@
     { "name": "Spanish", "level": "Native" },
     { "name": "English", "level": "B2 Upper Intermediate" }
   ],
-  "certifications": [
+  "courses": [
     {
-      "name": "AWS Certified Solutions Architect – Associate",
-      "issuer": "Amazon Web Services",
-      "year": "2022",
-      "color": "#FF9900"
+      "title": "Backend Architecture with Python",
+      "titleEs": "Arquitectura Backend con Python",
+      "description": "Design and build production-grade REST & GraphQL APIs, microservices, and event-driven systems using Python, FastAPI, and clean architecture patterns.",
+      "descriptionEs": "Diseña y construye APIs REST y GraphQL, microservicios y sistemas event-driven en Python, FastAPI y patrones de arquitectura limpia.",
+      "topics": ["FastAPI", "RESTful APIs", "GraphQL", "Microservices", "DDD", "EDA"],
+      "level": "Intermediate",
+      "levelEs": "Intermedio",
+      "color": "#3B82F6",
+      "icon": "🐍",
+      "status": "available"
     },
     {
-      "name": "Google Cloud Professional Cloud Architect",
-      "issuer": "Google Cloud",
-      "year": "2023",
-      "color": "#4285F4"
+      "title": "Cloud Architecture on AWS & GCP",
+      "titleEs": "Arquitectura Cloud en AWS y GCP",
+      "description": "Learn to design scalable, secure cloud-native systems on AWS and GCP — from serverless to containers, IaC with Terraform, and CI/CD pipelines.",
+      "descriptionEs": "Aprende a diseñar sistemas cloud-native escalables y seguros en AWS y GCP — desde serverless hasta contenedores, IaC con Terraform y pipelines CI/CD.",
+      "topics": ["AWS Lambda", "Cloud Run", "Terraform", "CI/CD", "VPC", "IAM"],
+      "level": "Intermediate",
+      "levelEs": "Intermedio",
+      "color": "#FF9900",
+      "icon": "☁️",
+      "status": "available"
     },
     {
-      "name": "HashiCorp Certified: Terraform Associate",
-      "issuer": "HashiCorp",
-      "year": "2023",
-      "color": "#7B42BC"
+      "title": "Generative AI Engineering",
+      "titleEs": "Ingeniería de IA Generativa",
+      "description": "Build real production AI systems: multi-agent architectures, RAG pipelines, and LLM orchestration using LangGraph, LlamaIndex, and Vertex AI.",
+      "descriptionEs": "Construye sistemas de IA reales en producción: arquitecturas multi-agente, pipelines RAG y orquestación de LLMs con LangGraph, LlamaIndex y Vertex AI.",
+      "topics": ["LangGraph", "LlamaIndex", "RAG", "Multi-Agent", "Vertex AI", "Prompt Engineering"],
+      "level": "Advanced",
+      "levelEs": "Avanzado",
+      "color": "#00A67E",
+      "icon": "🤖",
+      "status": "available"
     },
     {
-      "name": "Building LLM Apps with LangChain",
-      "issuer": "DeepLearning.AI",
-      "year": "2024",
-      "color": "#00A67E"
+      "title": "DevSecOps Essentials",
+      "titleEs": "Fundamentos de DevSecOps",
+      "description": "Implement secure CI/CD pipelines, Terraform governance, secret rotation, SAST/DAST scanning, and observability from day one.",
+      "descriptionEs": "Implementa pipelines CI/CD seguros, gobierno de Terraform, rotación de secretos, escaneo SAST/DAST y observabilidad desde el primer día.",
+      "topics": ["CI/CD", "Terraform", "Secret Management", "SAST/DAST", "Grafana", "Monitoring"],
+      "level": "Intermediate",
+      "levelEs": "Intermedio",
+      "color": "#7B42BC",
+      "icon": "🔐",
+      "status": "coming-soon"
     },
     {
-      "name": "Python for Data Engineering",
-      "issuer": "DataCamp",
-      "year": "2021",
-      "color": "#03EF62"
+      "title": "Event-Driven Systems",
+      "titleEs": "Sistemas Event-Driven",
+      "description": "Design resilient distributed systems using messaging patterns — SQS, SNS, Pub/Sub, Kafka — with idempotency, retries, and dead-letter queues.",
+      "descriptionEs": "Diseña sistemas distribuidos resilientes usando patrones de mensajería — SQS, SNS, Pub/Sub, Kafka — con idempotencia, retries y dead-letter queues.",
+      "topics": ["SQS/SNS", "Pub/Sub", "Kafka", "Idempotency", "Retries", "DLQ"],
+      "level": "Advanced",
+      "levelEs": "Avanzado",
+      "color": "#EC4899",
+      "icon": "⚡",
+      "status": "coming-soon"
     }
   ],
   "skillsDetailed": [
@@ -215,7 +245,7 @@
       "projects": "Selected Work",
       "freelance": "Freelance Projects (2016–2020)",
       "education": "Education",
-      "certifications": "Courses & Learning",
+      "courses": "Courses I Teach",
       "contact": "Get In Touch",
       "footer": "Designed for Scalability & Performance."
     },
@@ -385,7 +415,7 @@
       "projects": "Trabajo Seleccionado",
       "freelance": "Proyectos Freelance (2016–2020)",
       "education": "Educación",
-      "certifications": "Cursos & Aprendizaje",
+      "courses": "Cursos que Imparto",
       "contact": "Contacto",
       "footer": "Diseñado para Escalabilidad y Rendimiento."
     },
