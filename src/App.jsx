@@ -2,29 +2,32 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { CV_DATA, META, EDUCATION, LANGUAGES, COURSES, SKILLS_DETAILED, FREELANCE_PROJECTS, INDUSTRIES } from './data';
 
-// Instructor playbooks (raw markdown, imported at build time)
-import bpM1 from './content/playbooks/backend-python/m1-fastapi-foundations.md?raw';
-import bpM2 from './content/playbooks/backend-python/m2-api-design.md?raw';
-import bpM3 from './content/playbooks/backend-python/m3-clean-architecture.md?raw';
-import bpM4 from './content/playbooks/backend-python/m4-microservices-eda.md?raw';
-import awsM1 from './content/playbooks/aws/m1-foundations.md?raw';
-import awsM2 from './content/playbooks/aws/m2-serverless-containers.md?raw';
-import awsM3 from './content/playbooks/aws/m3-messaging-data.md?raw';
-import awsM4 from './content/playbooks/aws/m4-iac-cicd.md?raw';
-import gcpM1 from './content/playbooks/gcp/m1-foundations.md?raw';
-import gcpM2 from './content/playbooks/gcp/m2-serverless-containers.md?raw';
-import gcpM3 from './content/playbooks/gcp/m3-data-messaging.md?raw';
-import gcpM4 from './content/playbooks/gcp/m4-iac-cicd.md?raw';
-import genM1 from './content/playbooks/genai/m1-llm-fundamentals.md?raw';
-import genM2 from './content/playbooks/genai/m2-rag-pipelines.md?raw';
-import genM3 from './content/playbooks/genai/m3-multi-agent.md?raw';
-import genM4 from './content/playbooks/genai/m4-production-ai.md?raw';
-
-const PLAYBOOKS = {
-  'backend-python': { m1: bpM1, m2: bpM2, m3: bpM3, m4: bpM4 },
-  aws: { m1: awsM1, m2: awsM2, m3: awsM3, m4: awsM4 },
-  gcp: { m1: gcpM1, m2: gcpM2, m3: gcpM3, m4: gcpM4 },
-  genai: { m1: genM1, m2: genM2, m3: genM3, m4: genM4 },
+// Instructor playbooks — loaded on demand (not bundled in main chunk)
+const PLAYBOOK_MAP = {
+  'backend-python': {
+    m1: () => import('./content/playbooks/backend-python/m1-fastapi-foundations.md?raw'),
+    m2: () => import('./content/playbooks/backend-python/m2-api-design.md?raw'),
+    m3: () => import('./content/playbooks/backend-python/m3-clean-architecture.md?raw'),
+    m4: () => import('./content/playbooks/backend-python/m4-microservices-eda.md?raw'),
+  },
+  aws: {
+    m1: () => import('./content/playbooks/aws/m1-foundations.md?raw'),
+    m2: () => import('./content/playbooks/aws/m2-serverless-containers.md?raw'),
+    m3: () => import('./content/playbooks/aws/m3-messaging-data.md?raw'),
+    m4: () => import('./content/playbooks/aws/m4-iac-cicd.md?raw'),
+  },
+  gcp: {
+    m1: () => import('./content/playbooks/gcp/m1-foundations.md?raw'),
+    m2: () => import('./content/playbooks/gcp/m2-serverless-containers.md?raw'),
+    m3: () => import('./content/playbooks/gcp/m3-data-messaging.md?raw'),
+    m4: () => import('./content/playbooks/gcp/m4-iac-cicd.md?raw'),
+  },
+  genai: {
+    m1: () => import('./content/playbooks/genai/m1-llm-fundamentals.md?raw'),
+    m2: () => import('./content/playbooks/genai/m2-rag-pipelines.md?raw'),
+    m3: () => import('./content/playbooks/genai/m3-multi-agent.md?raw'),
+    m4: () => import('./content/playbooks/genai/m4-production-ai.md?raw'),
+  },
 };
 
 // Build a wa.me link with a pre-filled message
@@ -78,7 +81,7 @@ const PrintIcon = () => (
 
 // --- Instructor: Markdown Renderer ---
 
-const INSTRUCTOR_PASS = 'Admin360!';
+const INSTRUCTOR_PASS = import.meta.env.VITE_INSTRUCTOR_PASS || 'Admin360!';
 
 const parseBold = (text) => {
   const parts = text.split(/\*\*(.*?)\*\*/g);
@@ -164,9 +167,18 @@ const InstructorLogin = ({ onAuth }) => {
 const InstructorView = ({ lang }) => {
   const [selectedKey, setSelectedKey] = useState(null);
   const [selectedMod, setSelectedMod] = useState(null);
+  const [content, setContent] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const courses = COURSES.filter(c => c.playbookKey && PLAYBOOKS[c.playbookKey]);
-  const content = selectedKey && selectedMod ? PLAYBOOKS[selectedKey][selectedMod] : null;
+  const courses = COURSES.filter(c => c.playbookKey && PLAYBOOK_MAP[c.playbookKey]);
+
+  useEffect(() => {
+    if (!selectedKey || !selectedMod) { setContent(null); return; }
+    const loader = PLAYBOOK_MAP[selectedKey]?.[selectedMod];
+    if (!loader) { setContent(null); return; }
+    setLoading(true);
+    loader().then(mod => { setContent(mod.default); setLoading(false); });
+  }, [selectedKey, selectedMod]);
 
   return (
     <div className="instructor-view">
@@ -202,14 +214,16 @@ const InstructorView = ({ lang }) => {
         ))}
       </aside>
       <div className="instructor-content">
-        {content
-          ? <MarkdownRenderer content={content} />
-          : (
-            <div className="instructor-empty">
-              <span>📖</span>
-              <p>Select a course and module from the sidebar to view its playbook.</p>
-            </div>
-          )
+        {loading
+          ? <div className="instructor-empty"><span>⏳</span><p>Loading playbook...</p></div>
+          : content
+            ? <MarkdownRenderer content={content} />
+            : (
+              <div className="instructor-empty">
+                <span>📖</span>
+                <p>Select a course and module from the sidebar to view its playbook.</p>
+              </div>
+            )
         }
       </div>
     </div>
@@ -242,6 +256,8 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, t }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const isPortfolio = pathname === '/';
+  const isCourses = pathname === '/courses';
+  const isCoverLetter = pathname === '/cover-letter';
 
   return (
   <header>
@@ -250,14 +266,15 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, t }) => {
         href="#/"
         onClick={(e) => { e.preventDefault(); navigate('/'); }}
         className="brand"
-        dangerouslySetInnerHTML={{ __html: t.nav.brand }}
-      />
+      >
+        <span className="brand-code">&lt;/&gt;</span> ErickBárcenas
+      </a>
       <div className="nav-actions">
         <div className="toggle-group">
           <button className="toggle-btn" aria-label="Toggle Theme" onClick={toggleTheme}>
             {theme === 'light' ? '☀️' : '🌙'}
           </button>
-          <button className="toggle-btn" aria-label="Print" onClick={() => {
+          <button className="toggle-btn" aria-label="Print CV" onClick={() => {
             const oldTitle = document.title;
             const name = t.hero.profile.title || "Erick_Barcenas";
             document.title = `${name.replace(/\s+/g, '_')}_CV`;
@@ -270,26 +287,28 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, t }) => {
             {lang.toUpperCase()}
           </button>
         </div>
-        {!isPortfolio ? (
+        {!isPortfolio && (
           <button className="btn btn-outline nav-cv-btn" onClick={() => navigate('/')}>
-            <span className="cv-btn-label">{lang === 'en' ? '← Back' : '← Volver'}</span>
+            <span className="cv-btn-label">{lang === 'en' ? '← Portfolio' : '← Portfolio'}</span>
             <span className="cv-btn-short">←</span>
           </button>
-        ) : (
-          <>
-            <button className="btn btn-outline nav-cv-btn" onClick={() => navigate('/cover-letter')}>
-              <span className="cv-btn-label">{lang === 'en' ? 'Cover Letter' : 'Carta'}</span>
-              <span className="cv-btn-short">CV</span>
-            </button>
-            <button className="btn btn-outline nav-cv-btn" onClick={() => navigate('/courses')}>
-              <span className="cv-btn-label">{t.nav.courses}</span>
-              <span className="cv-btn-short">📚</span>
-            </button>
-            <button className="btn btn-outline nav-cv-btn instructor-nav-btn" onClick={() => navigate('/instructor')} title="Instructor area">
-              <span>⚙</span>
-            </button>
-          </>
         )}
+        {isPortfolio && (
+          <button
+            className={`btn btn-outline nav-cv-btn${isCoverLetter ? ' active' : ''}`}
+            onClick={() => navigate('/cover-letter')}
+          >
+            <span className="cv-btn-label">{lang === 'en' ? 'Cover Letter' : 'Carta'}</span>
+            <span className="cv-btn-short">CV</span>
+          </button>
+        )}
+        <button
+          className={`btn btn-outline nav-cv-btn${isCourses ? ' active' : ''}`}
+          onClick={() => navigate('/courses')}
+        >
+          <span className="cv-btn-label">{t.nav.courses}</span>
+          <span className="cv-btn-short">📚</span>
+        </button>
         <a
           href={waUrl(t.nav.whatsappMessage)}
           target="_blank"
@@ -354,26 +373,43 @@ const ProfileCard = ({ t }) => (
   </div>
 );
 
-const HeroStats = ({ t }) => (
-  <div className="card col-span-8 hero-card">
-    <div className="hero">
-      <div className="hero-eyebrow">Senior Backend &amp; GenAI Engineer · 8+ years</div>
-      <h1 dangerouslySetInnerHTML={{ __html: t.hero.title }} />
-      <p className="hero-tagline">{t.hero.profile.description}</p>
-      <div className="flex flex-wrap gap-3" style={{ marginTop: '1.25rem' }}>
-        {t.hero.chips.map((chip, i) => (
-          <span key={i} className="chip">{chip}</span>
-        ))}
-      </div>
-      <div className="hero-industries">
-        <span className="industries-label">{t.hero.industriesLabel}</span>
-        {INDUSTRIES.map((ind, i) => (
-          <span key={i} className="industry-chip">{ind.icon} {ind.name}</span>
-        ))}
+const HeroStats = ({ t }) => {
+  const navigate = useNavigate();
+  return (
+    <div className="card col-span-8 hero-card">
+      <div className="hero">
+        <div className="hero-eyebrow">{t.hero.eyebrow}</div>
+        <h1 dangerouslySetInnerHTML={{ __html: t.hero.title }} />
+        <p className="hero-tagline">{t.hero.tagline}</p>
+        <div className="flex flex-wrap gap-3" style={{ marginTop: '1.25rem' }}>
+          {t.hero.chips.map((chip, i) => (
+            <span key={i} className="chip">{chip}</span>
+          ))}
+        </div>
+        <div className="hero-cta-row">
+          <a
+            href={waUrl(t.nav.whatsappMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-whatsapp"
+          >
+            <WhatsAppIcon />
+            {t.actions.heroCtaPrimary}
+          </a>
+          <button className="btn btn-outline" onClick={() => navigate('/courses')}>
+            {t.actions.heroCtaSecondary} →
+          </button>
+        </div>
+        <div className="hero-industries">
+          <span className="industries-label">{t.hero.industriesLabel}</span>
+          {INDUSTRIES.map((ind, i) => (
+            <span key={i} className="industry-chip">{ind.icon} {ind.name}</span>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const STAT_ICONS = ['🚀', '🏢', '☁️', '🌐'];
 
@@ -612,16 +648,59 @@ const FloatingWhatsApp = ({ t }) => (
   </a>
 );
 
-const Footer = ({ t }) => (
-  <footer>
-    <p>
-      © {new Date().getFullYear()} Erick Iván Bárcenas Martínez.<br />
-      <span style={{ opacity: 0.6, fontSize: '0.8em' }}>{t.sections.footer}</span>
-    </p>
-  </footer>
-);
+const Footer = ({ t, lang }) => {
+  const navigate = useNavigate();
+  return (
+    <footer>
+      <div className="footer-grid">
+        <div className="footer-col">
+          <div className="footer-brand">
+            <span className="brand-code">&lt;/&gt;</span> ErickBárcenas
+          </div>
+          <p className="footer-bio">
+            {lang === 'en'
+              ? 'Senior Cloud Architect · GenAI Engineer. Based in Mexico City.'
+              : 'Arquitecto Cloud Senior · Ingeniero GenAI. Basado en Ciudad de México.'}
+          </p>
+          <div className="footer-socials">
+            <a href={META.linkedin} target="_blank" rel="noopener noreferrer" className="footer-social-link">LinkedIn</a>
+            <a href={META.github} target="_blank" rel="noopener noreferrer" className="footer-social-link">GitHub</a>
+          </div>
+        </div>
+        <div className="footer-col">
+          <div className="footer-col-title">{lang === 'en' ? 'Quick Links' : 'Navegación'}</div>
+          <nav className="footer-links">
+            <button className="footer-link" onClick={() => navigate('/')}>{lang === 'en' ? 'Portfolio' : 'Portfolio'}</button>
+            <button className="footer-link" onClick={() => navigate('/courses')}>{lang === 'en' ? 'Courses' : 'Cursos'}</button>
+            <button className="footer-link" onClick={() => navigate('/cover-letter')}>{lang === 'en' ? 'Cover Letter' : 'Carta de Presentación'}</button>
+          </nav>
+        </div>
+        <div className="footer-col">
+          <div className="footer-col-title">{lang === 'en' ? 'Contact' : 'Contacto'}</div>
+          <a href={`mailto:${META.email}`} className="footer-contact-item">
+            <MailIcon /> {META.email}
+          </a>
+          <a
+            href={waUrl(t.nav.whatsappMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-whatsapp footer-wa-btn"
+          >
+            <WhatsAppIcon />
+            {t.nav.letsTalk}
+          </a>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <span>© {new Date().getFullYear()} Erick Iván Bárcenas Martínez.</span>
+        <span className="footer-tagline">{t.sections.footer}</span>
+      </div>
+    </footer>
+  );
+};
 
 const CourseCard = ({ c, lang }) => {
+  const isAvailable = c.status === 'available';
   const [open, setOpen] = useState(false);
   return (
     <div className="course-card" style={{ borderTopColor: c.color }}>
@@ -631,7 +710,7 @@ const CourseCard = ({ c, lang }) => {
           <span className="course-level-badge" style={{ color: c.color, borderColor: c.color }}>
             {lang === 'en' ? c.level : c.levelEs}
           </span>
-          {c.status === 'coming-soon' && (
+          {!isAvailable && (
             <span className="course-status-badge">
               {lang === 'en' ? 'Coming Soon' : 'Próximamente'}
             </span>
@@ -646,19 +725,12 @@ const CourseCard = ({ c, lang }) => {
         ))}
       </div>
       {c.modules && c.modules.length > 0 && (
-        <div className="temario">
-          <button
-            className="temario-toggle"
-            style={{ color: c.color, borderColor: c.color }}
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-          >
-            {open
-              ? lang === 'en' ? '▲ Hide syllabus' : '▲ Ocultar temario'
-              : lang === 'en' ? '▼ View syllabus' : '▼ Ver temario'}
-          </button>
-          {open && (
-            <div className="temario-body">
+        isAvailable ? (
+          <div className="temario temario-open">
+            <div className="temario-heading" style={{ color: c.color }}>
+              {lang === 'en' ? '📚 Curriculum' : '📚 Temario'}
+            </div>
+            <div className="temario-grid">
               {c.modules.map((mod, mi) => (
                 <div key={mi} className="temario-module">
                   <div className="temario-module-title" style={{ color: c.color }}>
@@ -672,10 +744,45 @@ const CourseCard = ({ c, lang }) => {
                 </div>
               ))}
             </div>
-          )}
+          </div>
+        ) : (
+          <div className="temario">
+            <button
+              className="temario-toggle"
+              style={{ color: c.color, borderColor: c.color }}
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+            >
+              {open
+                ? lang === 'en' ? '▲ Hide syllabus' : '▲ Ocultar temario'
+                : lang === 'en' ? '▼ View syllabus' : '▼ Ver temario'}
+            </button>
+            {open && (
+              <div className="temario-body">
+                {c.modules.map((mod, mi) => (
+                  <div key={mi} className="temario-module">
+                    <div className="temario-module-title" style={{ color: c.color }}>
+                      {lang === 'en' ? mod.title : mod.titleEs}
+                    </div>
+                    <ul className="temario-lessons">
+                      {(lang === 'en' ? mod.lessons : mod.lessonsEs).map((lesson, li) => (
+                        <li key={li}>{lesson}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )
+      )}
+      {c.duration && (
+        <div className="course-meta-row">
+          <span className="course-meta-item">⏱ {lang === 'en' ? c.duration : c.durationEs}</span>
+          <span className="course-meta-item">🖥 {lang === 'en' ? c.format : c.formatEs}</span>
         </div>
       )}
-      {c.status === 'available' && (
+      {isAvailable && (
         <a
           href={waUrl(lang === 'en' ? c.whatsappMessage : c.whatsappMessageEs)}
           target="_blank"
@@ -683,30 +790,59 @@ const CourseCard = ({ c, lang }) => {
           className="course-cta"
           style={{ borderColor: c.color, color: c.color }}
         >
-          {lang === 'en' ? 'Get in touch →' : 'Contáctame →'}
+          {lang === 'en' ? 'Apply for next cohort →' : 'Unirse al próximo grupo →'}
         </a>
       )}
     </div>
   );
 };
 
-const CoursesView = ({ t, lang }) => (
-  <div className="courses-view">
-    <div className="courses-hero">
-      <h1 className="courses-title">{t.sections.courses}</h1>
-      <p className="courses-subtitle">
-        {lang === 'en'
-          ? "Practical courses on topics I've built production systems with — designed to help you learn by doing, not just by watching."
-          : 'Cursos prácticos sobre temas con los que he construido sistemas en producción — diseñados para aprender haciendo, no solo viendo.'}
-      </p>
+const WHY_ICONS = ['⚡', '🏗️', '🎯'];
+
+const CoursesView = ({ t, lang }) => {
+  const available = COURSES.filter(c => c.status === 'available');
+  const comingSoon = COURSES.filter(c => c.status === 'coming-soon');
+
+  return (
+    <div className="courses-view">
+      <div className="courses-hero">
+        <h1 className="courses-title">{t.sections.courses}</h1>
+        <p className="courses-subtitle">{t.sections.coursesSubtitle}</p>
+      </div>
+
+      <div className="courses-why">
+        <h2 className="courses-why-title">{t.sections.coursesWhyTitle}</h2>
+        <div className="courses-why-grid">
+          {t.sections.coursesWhy.map((point, i) => (
+            <div key={i} className="courses-why-item">
+              <span className="courses-why-icon">{WHY_ICONS[i]}</span>
+              <span>{point}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="courses-grid">
+        {available.map((c, i) => (
+          <CourseCard key={i} c={c} lang={lang} />
+        ))}
+      </div>
+
+      {comingSoon.length > 0 && (
+        <div className="courses-coming-soon-row">
+          <div className="coming-soon-label">
+            {lang === 'en' ? 'Coming Soon' : 'Próximamente'}
+          </div>
+          <div className="courses-grid courses-grid-sm">
+            {comingSoon.map((c, i) => (
+              <CourseCard key={i} c={c} lang={lang} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
-    <div className="courses-grid">
-      {COURSES.map((c, i) => (
-        <CourseCard key={i} c={c} lang={lang} />
-      ))}
-    </div>
-  </div>
-);
+  );
+};
 
 const PortfolioView = ({ t, lang }) => (
   <>
@@ -735,13 +871,13 @@ const CoverLetterView = ({ t, lang }) => (
       </div>
       <div className="letter-hero-info">
         <h1 className="letter-name">Erick Iván Bárcenas Martínez</h1>
-        <p className="letter-role">Senior MLOps · DevSecOps · Cloud/Data Architect</p>
+        <p className="letter-role">{t.hero.profile.subtitle}</p>
         <div className="letter-chips">
           <span className="chip">GCP</span>
           <span className="chip">AWS</span>
           <span className="chip">Python</span>
           <span className="chip">Terraform</span>
-          <span className="chip">MLOps</span>
+          <span className="chip">GenAI</span>
         </div>
         <div className="letter-contacts">
           <a href={`mailto:${META.email}`} className="letter-contact-item">
@@ -784,7 +920,7 @@ const CoverLetterView = ({ t, lang }) => (
           </p>
 
           <p>
-            I am what you might call a <strong>builder-architect</strong>: I don&apos;t just design on whiteboards — I write the Terraform, ship the pipelines, and stay through the incidents. At <strong>CXC</strong>, I was the first engineer on the team. I designed the GCP architecture from scratch, built end-to-end MLOps workflows with <strong>MLflow, LlamaIndex, and LangGraph</strong>, and established DevSecOps standards that are now the company&apos;s engineering foundation. At <strong>Rombo Logística</strong>, I led the AWS infrastructure modernization — migrating to microservices on ECS/EKS, implementing event-driven patterns with SQS/SNS, and cutting deployment times significantly with CodePipeline automation.
+            I am what you might call a <strong>builder-architect</strong>: I don&apos;t just design on whiteboards — I write the Terraform, ship the pipelines, and stay through the incidents. At <strong>CXC</strong>, I was the first engineer on the team. I designed the GCP architecture from scratch, built production multi-agent AI systems with <strong>LlamaIndex and LangGraph</strong>, and established DevSecOps standards that are now the company&apos;s engineering foundation. At <strong>Rombo Logística</strong>, I led the AWS infrastructure modernization — migrating to microservices on ECS/EKS, implementing event-driven patterns with SQS/SNS, and cutting deployment times significantly with CodePipeline automation.
           </p>
 
           <p>
@@ -794,7 +930,7 @@ const CoverLetterView = ({ t, lang }) => (
           <div className="letter-highlights">
             <div className="highlight-item"><span className="highlight-icon">⚡</span><span>Built MVPs from <strong>0→1</strong> at 3 different companies as first engineer</span></div>
             <div className="highlight-item"><span className="highlight-icon">🏗️</span><span>Deep expertise in <strong>GCP + AWS</strong> cloud architecture (8 years AWS, 2 years GCP)</span></div>
-            <div className="highlight-item"><span className="highlight-icon">🤖</span><span>Delivered production <strong>MLOps + AI agent</strong> systems (LlamaIndex, LangGraph, MLflow)</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🤖</span><span>Delivered production <strong>AI agent</strong> systems (LlamaIndex, LangGraph, MLflow)</span></div>
             <div className="highlight-item"><span className="highlight-icon">🔐</span><span>Strong <strong>DevSecOps</strong> background — IaC governance, secret rotation, SAST/DAST</span></div>
             <div className="highlight-item"><span className="highlight-icon">🧑‍🏫</span><span>Mentor and technical leader — raised engineering maturity at every team I&apos;ve joined</span></div>
           </div>
@@ -815,7 +951,7 @@ const CoverLetterView = ({ t, lang }) => (
           </p>
 
           <p>
-            Soy lo que se podría llamar un <strong>arquitecto-constructor</strong>: no solo diseño en pizarrones, también escribo el Terraform, entrego los pipelines y me quedo durante los incidentes. En <strong>CXC</strong> fui el primer ingeniero del equipo. Diseñé la arquitectura GCP desde cero, construí flujos MLOps end-to-end con <strong>MLflow, LlamaIndex y LangGraph</strong>, y establecí estándares DevSecOps que hoy son la base de ingeniería de la empresa. En <strong>Rombo Logística</strong> lideré la modernización de infraestructura AWS — migrando a microservicios en ECS/EKS, implementando patrones event-driven con SQS/SNS, y automatizando despliegues con CodePipeline.
+            Soy lo que se podría llamar un <strong>arquitecto-constructor</strong>: no solo diseño en pizarrones, también escribo el Terraform, entrego los pipelines y me quedo durante los incidentes. En <strong>CXC</strong> fui el primer ingeniero del equipo. Diseñé la arquitectura GCP desde cero, construí sistemas de agentes IA en producción con <strong>LlamaIndex y LangGraph</strong>, y establecí estándares DevSecOps que hoy son la base de ingeniería de la empresa. En <strong>Rombo Logística</strong> lideré la modernización de infraestructura AWS — migrando a microservicios en ECS/EKS, implementando patrones event-driven con SQS/SNS, y automatizando despliegues con CodePipeline.
           </p>
 
           <p>
@@ -825,7 +961,7 @@ const CoverLetterView = ({ t, lang }) => (
           <div className="letter-highlights">
             <div className="highlight-item"><span className="highlight-icon">⚡</span><span>Construí MVPs de <strong>0→1</strong> en 3 empresas distintas como primer ingeniero</span></div>
             <div className="highlight-item"><span className="highlight-icon">🏗️</span><span>Expertise profundo en <strong>GCP + AWS</strong> (8 años AWS, 2 años GCP)</span></div>
-            <div className="highlight-item"><span className="highlight-icon">🤖</span><span>Sistemas <strong>MLOps + agentes IA</strong> en producción (LlamaIndex, LangGraph, MLflow)</span></div>
+            <div className="highlight-item"><span className="highlight-icon">🤖</span><span>Sistemas de <strong>agentes IA</strong> en producción (LlamaIndex, LangGraph, MLflow)</span></div>
             <div className="highlight-item"><span className="highlight-icon">🔐</span><span>Sólido background en <strong>DevSecOps</strong> — IaC governance, rotación de secretos, SAST/DAST</span></div>
             <div className="highlight-item"><span className="highlight-icon">🧑‍🏫</span><span>Mentor y líder técnico — elevé la madurez de ingeniería en cada equipo</span></div>
           </div>
@@ -844,7 +980,7 @@ const CoverLetterView = ({ t, lang }) => (
         <img src="./assets/img/profile.png" alt="Erick" className="sig-avatar" />
         <div>
           <strong className="sig-name">Erick Iván Bárcenas Martínez</strong>
-          <span className="sig-title">Senior Cloud Architect · MLOps · DevSecOps</span>
+          <span className="sig-title">Senior Cloud Architect · GenAI Engineer · DevSecOps</span>
           <div className="sig-links">
             <a href={`mailto:${META.email}`} className="contact-link">{META.email}</a>
             <a href={waUrl(t.nav.whatsappMessage)} target="_blank" rel="noopener noreferrer" className="contact-link whatsapp">
@@ -906,7 +1042,7 @@ const App = () => {
           <Route path="*" element={<PortfolioView t={t} lang={lang} />} />
         </Routes>
       </main>
-      {pathname !== '/instructor' && <Footer t={t} />}
+      {pathname !== '/instructor' && <Footer t={t} lang={lang} />}
       <FloatingWhatsApp t={t} />
     </div>
   );

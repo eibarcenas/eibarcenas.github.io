@@ -2,7 +2,7 @@
 .container {
   width: min(100% - 2rem, var(--container-width));
   margin: 0 auto;
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
 }
 
 .flex {
@@ -118,7 +118,7 @@
 
 /* Layout Specifics */
 header {
-  width: min(100% - 2rem, 900px);
+  width: min(100% - 2rem, 1100px);
   margin: 1.5rem auto 2.5rem;
   padding: 0.75rem 1.5rem;
   position: sticky;
@@ -141,9 +141,7 @@ header {
 
 footer {
   margin-top: 6rem;
-  padding: 3rem 0;
   border-top: 1px solid var(--glass-border);
-  text-align: center;
   color: var(--text-secondary);
   font-size: 0.9rem;
 }
@@ -216,6 +214,7 @@ footer {
   .nav-cv-btn,
   .nav-cta,
   .contact-card,
+  .freelance-section,
   .skills-tech-grid,
   .edu-icon {
     display: none !important;
@@ -282,7 +281,7 @@ footer {
   /* Left column — experience */
   .experience-section {
     grid-column: 1 !important;
-    grid-row: 1 / span 3 !important;
+    grid-row: auto !important; /* override inline span-3 that causes blank gap in right col */
   }
 
   /* Right column — skills top, education below */
@@ -297,14 +296,8 @@ footer {
   }
 
   /* Full-width sections (page 2) */
-  .projects-section,
-  .freelance-section {
+  .projects-section {
     grid-column: 1 / -1 !important;
-  }
-
-  .freelance-section {
-    page-break-before: always;
-    break-before: page;
   }
 
   /* Always render domains (chip) view — ignore JS tab state */
@@ -570,6 +563,12 @@ footer {
   }
 
   .project-icon {
+    display: none !important;
+  }
+
+  /* Hide icon row (top) and "View Case Study →" row (bottom) in project cards */
+  .project-card > div:first-child,
+  .project-card > div:last-child {
     display: none !important;
   }
 

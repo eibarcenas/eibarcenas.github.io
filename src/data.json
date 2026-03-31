@@ -10,13 +10,34 @@
     "linkedin": "https://linkedin.com/in/erickbarcenas",
     "yearsExperience": 8,
     "industries": [
-      { "icon": "💰", "name": "Finance" },
-      { "icon": "🚛", "name": "Logistics" },
-      { "icon": "💘", "name": "Dating" },
-      { "icon": "🏥", "name": "Healthcare" },
-      { "icon": "🛍️", "name": "Retail" },
-      { "icon": "🎭", "name": "Entertainment" },
-      { "icon": "🎓", "name": "EdTech" }
+      {
+        "icon": "💰",
+        "name": "Finance"
+      },
+      {
+        "icon": "🚛",
+        "name": "Logistics"
+      },
+      {
+        "icon": "💘",
+        "name": "Dating"
+      },
+      {
+        "icon": "🏥",
+        "name": "Healthcare"
+      },
+      {
+        "icon": "🛍️",
+        "name": "Retail"
+      },
+      {
+        "icon": "🎭",
+        "name": "Entertainment"
+      },
+      {
+        "icon": "🎓",
+        "name": "EdTech"
+      }
     ]
   },
   "education": {
@@ -25,8 +46,14 @@
     "graduation": "2022"
   },
   "languages": [
-    { "name": "Spanish", "level": "Native" },
-    { "name": "English", "level": "B2 Upper Intermediate" }
+    {
+      "name": "Spanish",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "B2 Upper Intermediate"
+    }
   ],
   "courses": [
     {
@@ -34,171 +61,382 @@
       "titleEs": "Arquitectura Backend con Python",
       "description": "Design and build production-grade REST & GraphQL APIs, microservices, and event-driven systems using Python, FastAPI, and clean architecture patterns.",
       "descriptionEs": "Diseña y construye APIs REST y GraphQL, microservicios y sistemas event-driven en Python, FastAPI y patrones de arquitectura limpia.",
-      "topics": ["FastAPI", "RESTful APIs", "GraphQL", "Microservices", "DDD", "EDA"],
+      "topics": [
+        "FastAPI",
+        "RESTful APIs",
+        "GraphQL",
+        "Microservices",
+        "DDD",
+        "EDA"
+      ],
       "level": "Intermediate",
       "levelEs": "Intermedio",
       "color": "#3B82F6",
       "icon": "🐍",
       "status": "available",
       "playbookKey": "backend-python",
-      "whatsappMessage": "Hi Erick! I'm interested in your Backend Architecture with Python course. Could you share more details?",
-      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Backend con Python. ¿Podrías compartirme más detalles?",
+      "whatsappMessage": "Hi Erick! I'm interested in your Backend Architecture with Python course. Could you share more details about the next cohort?",
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Backend con Python. ¿Podrías compartirme más detalles sobre el próximo grupo?",
       "modules": [
         {
           "title": "Module 1 — FastAPI Foundations",
           "titleEs": "Módulo 1 — Fundamentos de FastAPI",
-          "lessons": ["Project structure & virtual envs", "Pydantic models & validation", "Async/await & dependency injection", "Error handling & middleware"],
-          "lessonsEs": ["Estructura de proyecto y entornos virtuales", "Modelos Pydantic y validación", "Async/await e inyección de dependencias", "Manejo de errores y middleware"]
+          "lessons": [
+            "Project structure & virtual envs",
+            "Pydantic models & validation",
+            "Async/await & dependency injection",
+            "Error handling & middleware"
+          ],
+          "lessonsEs": [
+            "Estructura de proyecto y entornos virtuales",
+            "Modelos Pydantic y validación",
+            "Async/await e inyección de dependencias",
+            "Manejo de errores y middleware"
+          ]
         },
         {
           "title": "Module 2 — API Design (REST & GraphQL)",
           "titleEs": "Módulo 2 — Diseño de APIs (REST y GraphQL)",
-          "lessons": ["REST best practices & versioning", "Authentication with OAuth2 & JWT", "GraphQL with Strawberry", "Rate limiting & caching"],
-          "lessonsEs": ["Buenas prácticas REST y versionado", "Autenticación con OAuth2 y JWT", "GraphQL con Strawberry", "Rate limiting y caché"]
+          "lessons": [
+            "REST best practices & versioning",
+            "Authentication with OAuth2 & JWT",
+            "GraphQL with Strawberry",
+            "Rate limiting & caching"
+          ],
+          "lessonsEs": [
+            "Buenas prácticas REST y versionado",
+            "Autenticación con OAuth2 y JWT",
+            "GraphQL con Strawberry",
+            "Rate limiting y caché"
+          ]
         },
         {
           "title": "Module 3 — Clean Architecture",
           "titleEs": "Módulo 3 — Arquitectura Limpia",
-          "lessons": ["Domain-Driven Design (DDD) basics", "Hexagonal / Ports & Adapters", "Repository & Unit of Work patterns", "Dependency inversion in Python"],
-          "lessonsEs": ["Fundamentos de Domain-Driven Design", "Hexagonal / Puertos y Adaptadores", "Patrones Repository y Unit of Work", "Inversión de dependencias en Python"]
+          "lessons": [
+            "Domain-Driven Design (DDD) basics",
+            "Hexagonal / Ports & Adapters",
+            "Repository & Unit of Work patterns",
+            "Dependency inversion in Python"
+          ],
+          "lessonsEs": [
+            "Fundamentos de Domain-Driven Design",
+            "Hexagonal / Puertos y Adaptadores",
+            "Patrones Repository y Unit of Work",
+            "Inversión de dependencias en Python"
+          ]
         },
         {
           "title": "Module 4 — Microservices & Event-Driven",
           "titleEs": "Módulo 4 — Microservicios y Event-Driven",
-          "lessons": ["Microservice communication patterns", "Event-driven with RabbitMQ / Kafka", "Saga pattern & CQRS", "Observability: logs, metrics, traces"],
-          "lessonsEs": ["Patrones de comunicación entre microservicios", "Event-driven con RabbitMQ / Kafka", "Patrón Saga y CQRS", "Observabilidad: logs, métricas, trazas"]
+          "lessons": [
+            "Microservice communication patterns",
+            "Event-driven with RabbitMQ / Kafka",
+            "Saga pattern & CQRS",
+            "Observability: logs, metrics, traces"
+          ],
+          "lessonsEs": [
+            "Patrones de comunicación entre microservicios",
+            "Event-driven con RabbitMQ / Kafka",
+            "Patrón Saga y CQRS",
+            "Observabilidad: logs, métricas, trazas"
+          ]
         }
-      ]
+      ],
+      "duration": "8 weeks",
+      "durationEs": "8 semanas",
+      "format": "Live online · small group",
+      "formatEs": "En vivo online · grupo pequeño"
     },
     {
       "title": "Cloud Architecture on AWS",
       "titleEs": "Arquitectura Cloud en AWS",
       "description": "Build scalable, secure cloud-native systems on AWS — serverless with Lambda, containers on ECS/EKS, event-driven with SQS/SNS, and infrastructure as code with Terraform.",
       "descriptionEs": "Construye sistemas cloud-native escalables y seguros en AWS — serverless con Lambda, contenedores en ECS/EKS, event-driven con SQS/SNS e infraestructura como código con Terraform.",
-      "topics": ["Lambda", "ECS / EKS", "API Gateway", "SQS / SNS", "Terraform", "IAM"],
+      "topics": [
+        "Lambda",
+        "ECS / EKS",
+        "API Gateway",
+        "SQS / SNS",
+        "Terraform",
+        "IAM"
+      ],
       "level": "Intermediate",
       "levelEs": "Intermedio",
       "color": "#FF9900",
       "icon": "🟠",
       "status": "available",
       "playbookKey": "aws",
-      "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on AWS course. Could you share more details?",
-      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en AWS. ¿Podrías compartirme más detalles?",
+      "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on AWS course. Could you share more details about the next cohort?",
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en AWS. ¿Podrías compartirme más detalles sobre el próximo grupo?",
       "modules": [
         {
           "title": "Module 1 — AWS Foundations",
           "titleEs": "Módulo 1 — Fundamentos de AWS",
-          "lessons": ["IAM: users, roles & policies", "VPC, subnets & security groups", "S3, CloudFront & static hosting", "AWS CLI & SDK basics"],
-          "lessonsEs": ["IAM: usuarios, roles y políticas", "VPC, subredes y grupos de seguridad", "S3, CloudFront y hosting estático", "AWS CLI y SDK básico"]
+          "lessons": [
+            "IAM: users, roles & policies",
+            "VPC, subnets & security groups",
+            "S3, CloudFront & static hosting",
+            "AWS CLI & SDK basics"
+          ],
+          "lessonsEs": [
+            "IAM: usuarios, roles y políticas",
+            "VPC, subredes y grupos de seguridad",
+            "S3, CloudFront y hosting estático",
+            "AWS CLI y SDK básico"
+          ]
         },
         {
           "title": "Module 2 — Serverless & Containers",
           "titleEs": "Módulo 2 — Serverless y Contenedores",
-          "lessons": ["Lambda: triggers, layers & cold starts", "API Gateway: REST & HTTP APIs", "ECS with Fargate & task definitions", "EKS cluster setup & Helm basics"],
-          "lessonsEs": ["Lambda: triggers, layers y cold starts", "API Gateway: REST y HTTP APIs", "ECS con Fargate y definiciones de tareas", "Configuración de cluster EKS y Helm básico"]
+          "lessons": [
+            "Lambda: triggers, layers & cold starts",
+            "API Gateway: REST & HTTP APIs",
+            "ECS with Fargate & task definitions",
+            "EKS cluster setup & Helm basics"
+          ],
+          "lessonsEs": [
+            "Lambda: triggers, layers y cold starts",
+            "API Gateway: REST y HTTP APIs",
+            "ECS con Fargate y definiciones de tareas",
+            "Configuración de cluster EKS y Helm básico"
+          ]
         },
         {
           "title": "Module 3 — Messaging & Data",
           "titleEs": "Módulo 3 — Mensajería y Datos",
-          "lessons": ["SQS: queues, DLQ & visibility timeout", "SNS: topics, subscriptions & fan-out", "DynamoDB: modeling & access patterns", "RDS & Aurora: multi-AZ & read replicas"],
-          "lessonsEs": ["SQS: colas, DLQ y visibility timeout", "SNS: topics, suscripciones y fan-out", "DynamoDB: modelado y patrones de acceso", "RDS y Aurora: multi-AZ y réplicas de lectura"]
+          "lessons": [
+            "SQS: queues, DLQ & visibility timeout",
+            "SNS: topics, subscriptions & fan-out",
+            "DynamoDB: modeling & access patterns",
+            "RDS & Aurora: multi-AZ & read replicas"
+          ],
+          "lessonsEs": [
+            "SQS: colas, DLQ y visibility timeout",
+            "SNS: topics, suscripciones y fan-out",
+            "DynamoDB: modelado y patrones de acceso",
+            "RDS y Aurora: multi-AZ y réplicas de lectura"
+          ]
         },
         {
           "title": "Module 4 — IaC & CI/CD on AWS",
           "titleEs": "Módulo 4 — IaC y CI/CD en AWS",
-          "lessons": ["Terraform with AWS provider", "CloudFormation & CDK basics", "CodePipeline & CodeBuild", "GitOps with GitHub Actions on AWS"],
-          "lessonsEs": ["Terraform con el proveedor AWS", "Fundamentos de CloudFormation y CDK", "CodePipeline y CodeBuild", "GitOps con GitHub Actions en AWS"]
+          "lessons": [
+            "Terraform with AWS provider",
+            "CloudFormation & CDK basics",
+            "CodePipeline & CodeBuild",
+            "GitOps with GitHub Actions on AWS"
+          ],
+          "lessonsEs": [
+            "Terraform con el proveedor AWS",
+            "Fundamentos de CloudFormation y CDK",
+            "CodePipeline y CodeBuild",
+            "GitOps con GitHub Actions en AWS"
+          ]
         }
-      ]
+      ],
+      "duration": "8 weeks",
+      "durationEs": "8 semanas",
+      "format": "Live online · small group",
+      "formatEs": "En vivo online · grupo pequeño"
     },
     {
       "title": "Cloud Architecture on GCP",
       "titleEs": "Arquitectura Cloud en GCP",
       "description": "Design and deploy cloud-native applications on Google Cloud — serverless with Cloud Run, Kubernetes on GKE, async messaging with Pub/Sub, analytics with BigQuery, and IaC with Terraform.",
       "descriptionEs": "Diseña y despliega aplicaciones cloud-native en Google Cloud — serverless con Cloud Run, Kubernetes en GKE, mensajería asíncrona con Pub/Sub, analítica con BigQuery e IaC con Terraform.",
-      "topics": ["Cloud Run", "GKE", "Pub/Sub", "BigQuery", "Terraform", "IAM"],
+      "topics": [
+        "Cloud Run",
+        "GKE",
+        "Pub/Sub",
+        "BigQuery",
+        "Terraform",
+        "IAM"
+      ],
       "level": "Intermediate",
       "levelEs": "Intermedio",
       "color": "#4285F4",
       "icon": "🔵",
       "status": "available",
       "playbookKey": "gcp",
-      "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on GCP course. Could you share more details?",
-      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en GCP. ¿Podrías compartirme más detalles?",
+      "whatsappMessage": "Hi Erick! I'm interested in your Cloud Architecture on GCP course. Could you share more details about the next cohort?",
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Arquitectura Cloud en GCP. ¿Podrías compartirme más detalles sobre el próximo grupo?",
       "modules": [
         {
           "title": "Module 1 — GCP Foundations",
           "titleEs": "Módulo 1 — Fundamentos de GCP",
-          "lessons": ["GCP projects, billing & IAM", "VPC, firewall rules & Cloud DNS", "Cloud Storage & lifecycle policies", "gcloud CLI & service accounts"],
-          "lessonsEs": ["Proyectos GCP, facturación e IAM", "VPC, reglas de firewall y Cloud DNS", "Cloud Storage y políticas de ciclo de vida", "gcloud CLI y cuentas de servicio"]
+          "lessons": [
+            "GCP projects, billing & IAM",
+            "VPC, firewall rules & Cloud DNS",
+            "Cloud Storage & lifecycle policies",
+            "gcloud CLI & service accounts"
+          ],
+          "lessonsEs": [
+            "Proyectos GCP, facturación e IAM",
+            "VPC, reglas de firewall y Cloud DNS",
+            "Cloud Storage y políticas de ciclo de vida",
+            "gcloud CLI y cuentas de servicio"
+          ]
         },
         {
           "title": "Module 2 — Serverless & Containers",
           "titleEs": "Módulo 2 — Serverless y Contenedores",
-          "lessons": ["Cloud Run: deploy & scaling", "Cloud Functions (1st & 2nd gen)", "GKE: cluster setup & workloads", "Artifact Registry & container security"],
-          "lessonsEs": ["Cloud Run: despliegue y escalado", "Cloud Functions (1.ª y 2.ª generación)", "GKE: configuración de cluster y cargas de trabajo", "Artifact Registry y seguridad de contenedores"]
+          "lessons": [
+            "Cloud Run: deploy & scaling",
+            "Cloud Functions (1st & 2nd gen)",
+            "GKE: cluster setup & workloads",
+            "Artifact Registry & container security"
+          ],
+          "lessonsEs": [
+            "Cloud Run: despliegue y escalado",
+            "Cloud Functions (1.ª y 2.ª generación)",
+            "GKE: configuración de cluster y cargas de trabajo",
+            "Artifact Registry y seguridad de contenedores"
+          ]
         },
         {
           "title": "Module 3 — Data & Messaging",
           "titleEs": "Módulo 3 — Datos y Mensajería",
-          "lessons": ["Pub/Sub: topics, subscriptions & push/pull", "BigQuery: tables, partitions & SQL analytics", "Firestore & Datastore patterns", "Dataflow basics for streaming"],
-          "lessonsEs": ["Pub/Sub: topics, suscripciones y push/pull", "BigQuery: tablas, particiones y SQL analítico", "Patrones con Firestore y Datastore", "Fundamentos de Dataflow para streaming"]
+          "lessons": [
+            "Pub/Sub: topics, subscriptions & push/pull",
+            "BigQuery: tables, partitions & SQL analytics",
+            "Firestore & Datastore patterns",
+            "Dataflow basics for streaming"
+          ],
+          "lessonsEs": [
+            "Pub/Sub: topics, suscripciones y push/pull",
+            "BigQuery: tablas, particiones y SQL analítico",
+            "Patrones con Firestore y Datastore",
+            "Fundamentos de Dataflow para streaming"
+          ]
         },
         {
           "title": "Module 4 — IaC & CI/CD on GCP",
           "titleEs": "Módulo 4 — IaC y CI/CD en GCP",
-          "lessons": ["Terraform with Google provider", "Cloud Build pipelines & triggers", "GitOps with GitHub Actions on GCP", "Secret Manager & workload identity"],
-          "lessonsEs": ["Terraform con el proveedor Google", "Pipelines y triggers de Cloud Build", "GitOps con GitHub Actions en GCP", "Secret Manager e identidad de cargas de trabajo"]
+          "lessons": [
+            "Terraform with Google provider",
+            "Cloud Build pipelines & triggers",
+            "GitOps with GitHub Actions on GCP",
+            "Secret Manager & workload identity"
+          ],
+          "lessonsEs": [
+            "Terraform con el proveedor Google",
+            "Pipelines y triggers de Cloud Build",
+            "GitOps con GitHub Actions en GCP",
+            "Secret Manager e identidad de cargas de trabajo"
+          ]
         }
-      ]
+      ],
+      "duration": "8 weeks",
+      "durationEs": "8 semanas",
+      "format": "Live online · small group",
+      "formatEs": "En vivo online · grupo pequeño"
     },
     {
       "title": "Generative AI Engineering",
       "titleEs": "Ingeniería de IA Generativa",
       "description": "Build real production AI systems: multi-agent architectures, RAG pipelines, and LLM orchestration using LangGraph, LlamaIndex, and Vertex AI.",
       "descriptionEs": "Construye sistemas de IA reales en producción: arquitecturas multi-agente, pipelines RAG y orquestación de LLMs con LangGraph, LlamaIndex y Vertex AI.",
-      "topics": ["LangGraph", "LlamaIndex", "RAG", "Multi-Agent", "Vertex AI", "Prompt Engineering"],
+      "topics": [
+        "LangGraph",
+        "LlamaIndex",
+        "RAG",
+        "Multi-Agent",
+        "Vertex AI",
+        "Prompt Engineering"
+      ],
       "level": "Advanced",
       "levelEs": "Avanzado",
       "color": "#00A67E",
       "icon": "🤖",
       "status": "available",
       "playbookKey": "genai",
-      "whatsappMessage": "Hi Erick! I'm interested in your Generative AI Engineering course. Could you share more details?",
-      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Ingeniería de IA Generativa. ¿Podrías compartirme más detalles?",
+      "whatsappMessage": "Hi Erick! I'm interested in your Generative AI Engineering course. Could you share more details about the next cohort?",
+      "whatsappMessageEs": "¡Hola Erick! Me interesa tu curso de Ingeniería de IA Generativa. ¿Podrías compartirme más detalles sobre el próximo grupo?",
       "modules": [
         {
           "title": "Module 1 — LLM Fundamentals",
           "titleEs": "Módulo 1 — Fundamentos de LLMs",
-          "lessons": ["How LLMs work: tokens, context & temperature", "Prompt engineering patterns", "OpenAI & Anthropic SDK basics", "Structured outputs & function calling"],
-          "lessonsEs": ["Cómo funcionan los LLMs: tokens, contexto y temperatura", "Patrones de prompt engineering", "Fundamentos de OpenAI y Anthropic SDK", "Salidas estructuradas y function calling"]
+          "lessons": [
+            "How LLMs work: tokens, context & temperature",
+            "Prompt engineering patterns",
+            "OpenAI & Anthropic SDK basics",
+            "Structured outputs & function calling"
+          ],
+          "lessonsEs": [
+            "Cómo funcionan los LLMs: tokens, contexto y temperatura",
+            "Patrones de prompt engineering",
+            "Fundamentos de OpenAI y Anthropic SDK",
+            "Salidas estructuradas y function calling"
+          ]
         },
         {
           "title": "Module 2 — RAG Pipelines",
           "titleEs": "Módulo 2 — Pipelines RAG",
-          "lessons": ["Embeddings & vector databases (Pinecone, pgvector)", "Document loaders & chunking strategies", "Retrieval strategies: semantic, hybrid & re-ranking", "RAG evaluation & tracing with LlamaIndex"],
-          "lessonsEs": ["Embeddings y bases de datos vectoriales (Pinecone, pgvector)", "Carga de documentos y estrategias de chunking", "Estrategias de retrieval: semántico, híbrido y re-ranking", "Evaluación y trazabilidad de RAG con LlamaIndex"]
+          "lessons": [
+            "Embeddings & vector databases (Pinecone, pgvector)",
+            "Document loaders & chunking strategies",
+            "Retrieval strategies: semantic, hybrid & re-ranking",
+            "RAG evaluation & tracing with LlamaIndex"
+          ],
+          "lessonsEs": [
+            "Embeddings y bases de datos vectoriales (Pinecone, pgvector)",
+            "Carga de documentos y estrategias de chunking",
+            "Estrategias de retrieval: semántico, híbrido y re-ranking",
+            "Evaluación y trazabilidad de RAG con LlamaIndex"
+          ]
         },
         {
           "title": "Module 3 — Multi-Agent Systems",
           "titleEs": "Módulo 3 — Sistemas Multi-Agente",
-          "lessons": ["Agent architectures: ReAct, Plan-and-Execute", "LangGraph: nodes, edges & state machines", "Tool use & custom tool creation", "Memory: short-term, long-term & episodic"],
-          "lessonsEs": ["Arquitecturas de agentes: ReAct, Plan-and-Execute", "LangGraph: nodos, aristas y máquinas de estado", "Uso de herramientas y creación de herramientas personalizadas", "Memoria: corto plazo, largo plazo y episódica"]
+          "lessons": [
+            "Agent architectures: ReAct, Plan-and-Execute",
+            "LangGraph: nodes, edges & state machines",
+            "Tool use & custom tool creation",
+            "Memory: short-term, long-term & episodic"
+          ],
+          "lessonsEs": [
+            "Arquitecturas de agentes: ReAct, Plan-and-Execute",
+            "LangGraph: nodos, aristas y máquinas de estado",
+            "Uso de herramientas y creación de herramientas personalizadas",
+            "Memoria: corto plazo, largo plazo y episódica"
+          ]
         },
         {
           "title": "Module 4 — Production AI Systems",
           "titleEs": "Módulo 4 — Sistemas de IA en Producción",
-          "lessons": ["Vertex AI: model deployment & endpoints", "Evaluation: faithfulness, relevance & groundedness", "Observability: LangSmith, cost & latency tracking", "Security: prompt injection & guardrails"],
-          "lessonsEs": ["Vertex AI: despliegue de modelos y endpoints", "Evaluación: fidelidad, relevancia y fundamentación", "Observabilidad: LangSmith, costos y latencia", "Seguridad: prompt injection y guardrails"]
+          "lessons": [
+            "Vertex AI: model deployment & endpoints",
+            "Evaluation: faithfulness, relevance & groundedness",
+            "Observability: LangSmith, cost & latency tracking",
+            "Security: prompt injection & guardrails"
+          ],
+          "lessonsEs": [
+            "Vertex AI: despliegue de modelos y endpoints",
+            "Evaluación: fidelidad, relevancia y fundamentación",
+            "Observabilidad: LangSmith, costos y latencia",
+            "Seguridad: prompt injection y guardrails"
+          ]
         }
-      ]
+      ],
+      "duration": "6 weeks",
+      "durationEs": "6 semanas",
+      "format": "Live online · small group",
+      "formatEs": "En vivo online · grupo pequeño"
     },
     {
       "title": "DevSecOps Essentials",
       "titleEs": "Fundamentos de DevSecOps",
       "description": "Implement secure CI/CD pipelines, Terraform governance, secret rotation, SAST/DAST scanning, and observability from day one.",
       "descriptionEs": "Implementa pipelines CI/CD seguros, gobierno de Terraform, rotación de secretos, escaneo SAST/DAST y observabilidad desde el primer día.",
-      "topics": ["CI/CD", "Terraform", "Secret Management", "SAST/DAST", "Grafana", "Monitoring"],
+      "topics": [
+        "CI/CD",
+        "Terraform",
+        "Secret Management",
+        "SAST/DAST",
+        "Grafana",
+        "Monitoring"
+      ],
       "level": "Intermediate",
       "levelEs": "Intermedio",
       "color": "#7B42BC",
@@ -210,7 +448,14 @@
       "titleEs": "Sistemas Event-Driven",
       "description": "Design resilient distributed systems using messaging patterns — SQS, SNS, Pub/Sub, Kafka — with idempotency, retries, and dead-letter queues.",
       "descriptionEs": "Diseña sistemas distribuidos resilientes usando patrones de mensajería — SQS, SNS, Pub/Sub, Kafka — con idempotencia, retries y dead-letter queues.",
-      "topics": ["SQS/SNS", "Pub/Sub", "Kafka", "Idempotency", "Retries", "DLQ"],
+      "topics": [
+        "SQS/SNS",
+        "Pub/Sub",
+        "Kafka",
+        "Idempotency",
+        "Retries",
+        "DLQ"
+      ],
       "level": "Advanced",
       "levelEs": "Avanzado",
       "color": "#EC4899",
@@ -222,121 +467,357 @@
     {
       "category": "Programming Languages",
       "items": [
-        { "name": "Python", "years": 8 },
-        { "name": "JavaScript", "years": 8 },
-        { "name": "SQL (Postgres, MySQL, BigQuery)", "years": 8 },
-        { "name": "Bash / Shell Scripting", "years": 8 },
-        { "name": "TypeScript", "years": 4 },
-        { "name": "Java", "years": 1 },
-        { "name": "Elixir", "years": 1 }
+        {
+          "name": "Python",
+          "years": 8
+        },
+        {
+          "name": "JavaScript",
+          "years": 8
+        },
+        {
+          "name": "SQL (Postgres, MySQL, BigQuery)",
+          "years": 8
+        },
+        {
+          "name": "Bash / Shell Scripting",
+          "years": 8
+        },
+        {
+          "name": "TypeScript",
+          "years": 4
+        },
+        {
+          "name": "Java",
+          "years": 1
+        },
+        {
+          "name": "Elixir",
+          "years": 1
+        }
       ]
     },
     {
       "category": "Backend Architecture & API Design",
       "items": [
-        { "name": "RESTful APIs", "years": 8 },
-        { "name": "GraphQL APIs", "years": 4 },
-        { "name": "FastAPI / Python Backend", "years": 6 },
-        { "name": "Node.js Backend", "years": 4 },
-        { "name": "Elixir / Phoenix", "years": 1 },
-        { "name": "Microservices Architecture", "years": 6 },
-        { "name": "Event-Driven Architecture (EDA)", "years": 4 },
-        { "name": "Hexagonal / Clean Architecture", "years": 4 },
-        { "name": "Domain-Driven Design (DDD)", "years": 3 },
-        { "name": "Multi-Tenant SaaS Design", "years": 4 },
-        { "name": "PostgreSQL / Cloud SQL", "years": 6 },
-        { "name": "DynamoDB / Firestore / DocumentDB", "years": 4 },
-        { "name": "OAuth2 / JWT / RBAC", "years": 4 },
-        { "name": "Cursor-based pagination & caching", "years": 3 }
+        {
+          "name": "RESTful APIs",
+          "years": 8
+        },
+        {
+          "name": "GraphQL APIs",
+          "years": 4
+        },
+        {
+          "name": "FastAPI / Python Backend",
+          "years": 6
+        },
+        {
+          "name": "Node.js Backend",
+          "years": 4
+        },
+        {
+          "name": "Elixir / Phoenix",
+          "years": 1
+        },
+        {
+          "name": "Microservices Architecture",
+          "years": 6
+        },
+        {
+          "name": "Event-Driven Architecture (EDA)",
+          "years": 4
+        },
+        {
+          "name": "Hexagonal / Clean Architecture",
+          "years": 4
+        },
+        {
+          "name": "Domain-Driven Design (DDD)",
+          "years": 3
+        },
+        {
+          "name": "Multi-Tenant SaaS Design",
+          "years": 4
+        },
+        {
+          "name": "PostgreSQL / Cloud SQL",
+          "years": 6
+        },
+        {
+          "name": "DynamoDB / Firestore / DocumentDB",
+          "years": 4
+        },
+        {
+          "name": "OAuth2 / JWT / RBAC",
+          "years": 4
+        },
+        {
+          "name": "Cursor-based pagination & caching",
+          "years": 3
+        }
       ]
     },
     {
       "category": "Cloud Architecture (AWS)",
       "items": [
-        { "name": "AWS Lambda", "years": 8 },
-        { "name": "ECS (Fargate & EC2)", "years": 8 },
-        { "name": "EKS (Kubernetes on AWS)", "years": 8 },
-        { "name": "EC2", "years": 8 },
-        { "name": "API Gateway (REST & HTTP)", "years": 8 },
-        { "name": "Route53", "years": 8 },
-        { "name": "CloudFront", "years": 8 },
-        { "name": "IAM", "years": 8 },
-        { "name": "Code Pipeline", "years": 8 },
-        { "name": "SNS (Pub/Sub)", "years": 4 },
-        { "name": "SQS (Queues & message patterns)", "years": 4 },
-        { "name": "EventBridge", "years": 4 },
-        { "name": "Step Function", "years": 4 }
+        {
+          "name": "AWS Lambda",
+          "years": 8
+        },
+        {
+          "name": "ECS (Fargate & EC2)",
+          "years": 8
+        },
+        {
+          "name": "EKS (Kubernetes on AWS)",
+          "years": 8
+        },
+        {
+          "name": "EC2",
+          "years": 8
+        },
+        {
+          "name": "API Gateway (REST & HTTP)",
+          "years": 8
+        },
+        {
+          "name": "Route53",
+          "years": 8
+        },
+        {
+          "name": "CloudFront",
+          "years": 8
+        },
+        {
+          "name": "IAM",
+          "years": 8
+        },
+        {
+          "name": "Code Pipeline",
+          "years": 8
+        },
+        {
+          "name": "SNS (Pub/Sub)",
+          "years": 4
+        },
+        {
+          "name": "SQS (Queues & message patterns)",
+          "years": 4
+        },
+        {
+          "name": "EventBridge",
+          "years": 4
+        },
+        {
+          "name": "Step Function",
+          "years": 4
+        }
       ]
     },
     {
       "category": "Cloud Architecture (GCP)",
       "items": [
-        { "name": "Cloud Run", "years": 2 },
-        { "name": "GKE (GPU/CPU workloads)", "years": 2 },
-        { "name": "VPC / Serverless VPC Access", "years": 2 },
-        { "name": "Secret Manager", "years": 2 },
-        { "name": "IAM / IAP", "years": 2 },
-        { "name": "Artifact Registry", "years": 2 },
-        { "name": "Load Balancers (NEGs, Cloud Armor)", "years": 2 }
+        {
+          "name": "Cloud Run",
+          "years": 2
+        },
+        {
+          "name": "GKE (GPU/CPU workloads)",
+          "years": 2
+        },
+        {
+          "name": "VPC / Serverless VPC Access",
+          "years": 2
+        },
+        {
+          "name": "Secret Manager",
+          "years": 2
+        },
+        {
+          "name": "IAM / IAP",
+          "years": 2
+        },
+        {
+          "name": "Artifact Registry",
+          "years": 2
+        },
+        {
+          "name": "Load Balancers (NEGs, Cloud Armor)",
+          "years": 2
+        }
       ]
     },
     {
       "category": "IaC / DevOps / DevSecOps",
       "items": [
-        { "name": "Terraform", "years": 4 },
-        { "name": "GitLab CI/CD", "years": 4 },
-        { "name": "Cloud Build", "years": 4 },
-        { "name": "Code Pipeline & Code Build", "years": 4 },
-        { "name": "Buildah / Kaniko", "years": 4 },
-        { "name": "Monitoring (Grafana, Prometheus)", "years": 4 },
-        { "name": "SAST / DAST scanning", "years": 1 },
-        { "name": "Secret Rotation / Governance", "years": 1 },
-        { "name": "Datadog", "years": 1 }
+        {
+          "name": "Terraform",
+          "years": 4
+        },
+        {
+          "name": "GitLab CI/CD",
+          "years": 4
+        },
+        {
+          "name": "Cloud Build",
+          "years": 4
+        },
+        {
+          "name": "Code Pipeline & Code Build",
+          "years": 4
+        },
+        {
+          "name": "Buildah / Kaniko",
+          "years": 4
+        },
+        {
+          "name": "Monitoring (Grafana, Prometheus)",
+          "years": 4
+        },
+        {
+          "name": "SAST / DAST scanning",
+          "years": 1
+        },
+        {
+          "name": "Secret Rotation / Governance",
+          "years": 1
+        },
+        {
+          "name": "Datadog",
+          "years": 1
+        }
       ]
     },
     {
       "category": "Generative AI Engineering",
       "items": [
-        { "name": "LlamaIndex", "years": 1 },
-        { "name": "LangGraph", "years": 1 },
-        { "name": "Multi-Agent Systems", "years": 1 },
-        { "name": "RAG Pipelines", "years": 1 },
-        { "name": "Vertex AI (inference & deployment)", "years": 1 },
-        { "name": "Prompt Engineering", "years": 1 },
-        { "name": "Vector Databases (ChromaDB, Weaviate)", "years": 1 },
-        { "name": "AI Orchestration & State Management", "years": 1 }
+        {
+          "name": "LlamaIndex",
+          "years": 1
+        },
+        {
+          "name": "LangGraph",
+          "years": 1
+        },
+        {
+          "name": "Multi-Agent Systems",
+          "years": 1
+        },
+        {
+          "name": "RAG Pipelines",
+          "years": 1
+        },
+        {
+          "name": "Vertex AI (inference & deployment)",
+          "years": 1
+        },
+        {
+          "name": "Prompt Engineering",
+          "years": 1
+        },
+        {
+          "name": "Vector Databases (ChromaDB, Weaviate)",
+          "years": 1
+        },
+        {
+          "name": "AI Orchestration & State Management",
+          "years": 1
+        }
       ]
     },
     {
       "category": "Data Engineering",
       "items": [
-        { "name": "BigQuery", "years": 1 },
-        { "name": "Dataflow (Beam)", "years": 1 },
-        { "name": "GCS Data Lake", "years": 1 },
-        { "name": "ETL/ELT Pipelines (GCP)", "years": 1 },
-        { "name": "Data Modeling (OLTP/OLAP)", "years": 1 },
-        { "name": "Airbyte", "years": 1 }
+        {
+          "name": "BigQuery",
+          "years": 1
+        },
+        {
+          "name": "Dataflow (Beam)",
+          "years": 1
+        },
+        {
+          "name": "GCS Data Lake",
+          "years": 1
+        },
+        {
+          "name": "ETL/ELT Pipelines (GCP)",
+          "years": 1
+        },
+        {
+          "name": "Data Modeling (OLTP/OLAP)",
+          "years": 1
+        },
+        {
+          "name": "Airbyte",
+          "years": 1
+        }
       ]
     },
     {
       "category": "Messaging",
       "items": [
-        { "name": "SQS/SNS (AWS)", "years": 4 },
-        { "name": "Pub/Sub (GCP)", "years": 2 },
-        { "name": "RabbitMQ", "years": 2 },
-        { "name": "Kafka", "years": 1 }
+        {
+          "name": "SQS/SNS (AWS)",
+          "years": 4
+        },
+        {
+          "name": "Pub/Sub (GCP)",
+          "years": 2
+        },
+        {
+          "name": "RabbitMQ",
+          "years": 2
+        },
+        {
+          "name": "Kafka",
+          "years": 1
+        }
       ]
     }
   ],
   "freelanceProjects": [
-    { "name": "Grupo Chong S.A DE C.V.", "work": "Frontend application development (React).", "url": "https://www.grupochong.mx" },
-    { "name": "IIMAS", "work": "Frontend application development (React). RESTful service development (Python/Django).", "url": null },
-    { "name": "DRPROMED S.A DE C.V.", "work": "Frontend application development (React).", "url": "https://drpromed.com.mx" },
-    { "name": "Servicios Total Show S.A. de C.V.", "work": "Frontend application development (React). RESTful service development (Python/Django).", "url": "https://www.totalshow.mx" },
-    { "name": "Yamblet", "work": "Frontend application development (React). Chatbot development (Python).", "url": null },
-    { "name": "USECAD", "work": "Frontend application development (React). RESTful service development (Python/Django).", "url": null },
-    { "name": "PROTECO", "work": "Frontend applications instructor (Angular/React). RESTful service development (Python/Django).", "url": null },
-    { "name": "Asimov Ingeniería", "work": "Frontend application development (Angular/React). RESTful service development (Python/Django).", "url": null }
+    {
+      "name": "Grupo Chong S.A DE C.V.",
+      "work": "Frontend application development (React).",
+      "url": "https://www.grupochong.mx"
+    },
+    {
+      "name": "IIMAS",
+      "work": "Frontend application development (React). RESTful service development (Python/Django).",
+      "url": null
+    },
+    {
+      "name": "DRPROMED S.A DE C.V.",
+      "work": "Frontend application development (React).",
+      "url": "https://drpromed.com.mx"
+    },
+    {
+      "name": "Servicios Total Show S.A. de C.V.",
+      "work": "Frontend application development (React). RESTful service development (Python/Django).",
+      "url": "https://www.totalshow.mx"
+    },
+    {
+      "name": "Yamblet",
+      "work": "Frontend application development (React). Chatbot development (Python).",
+      "url": null
+    },
+    {
+      "name": "USECAD",
+      "work": "Frontend application development (React). RESTful service development (Python/Django).",
+      "url": null
+    },
+    {
+      "name": "PROTECO",
+      "work": "Frontend applications instructor (Angular/React). RESTful service development (Python/Django).",
+      "url": null
+    },
+    {
+      "name": "Asimov Ingeniería",
+      "work": "Frontend application development (Angular/React). RESTful service development (Python/Django).",
+      "url": null
+    }
   ],
   "en": {
     "nav": {
@@ -348,7 +829,14 @@
     },
     "hero": {
       "title": "Architecting Scalable <br> <span class=\"text-accent\">Cloud Platforms</span>",
-      "chips": ["GCP & AWS Architect", "Backend APIs", "Microservices", "Generative AI", "DevSecOps", "Python"],
+      "chips": [
+        "GCP & AWS Architect",
+        "Backend APIs",
+        "Microservices",
+        "Generative AI",
+        "DevSecOps",
+        "Python"
+      ],
       "industriesLabel": "Industries:",
       "profile": {
         "title": "Erick Bárcenas",
@@ -359,13 +847,27 @@
         "linkedin": "LinkedIn",
         "github": "GitHub",
         "whatsapp": "WhatsApp"
-      }
+      },
+      "eyebrow": "Senior Cloud Architect · GenAI Engineer · 8+ yrs",
+      "tagline": "I design and ship cloud infrastructure, Python APIs, and AI systems that survive real production traffic."
     },
     "stats": [
-      { "value": "8+", "label": "Years Experience" },
-      { "value": "4+", "label": "Companies" },
-      { "value": "GCP+AWS", "label": "Cloud Platforms" },
-      { "value": "10+", "label": "Live Projects" }
+      {
+        "value": "8+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "4+",
+        "label": "Companies"
+      },
+      {
+        "value": "GCP+AWS",
+        "label": "Cloud Platforms"
+      },
+      {
+        "value": "10+",
+        "label": "Live Projects"
+      }
     ],
     "sections": {
       "skills": "Architectural Domains",
@@ -376,39 +878,81 @@
       "education": "Education",
       "courses": "Courses I Teach",
       "contact": "Get In Touch",
-      "footer": "Designed for Scalability & Performance."
+      "footer": "Designed for Scalability & Performance.",
+      "coursesSubtitle": "For engineers who want to stop watching tutorials and start building real systems. Taught by someone who has shipped production infrastructure at scale — not just slides.",
+      "coursesWhyTitle": "Why learn from me?",
+      "coursesWhy": [
+        "8+ years building production systems on AWS & GCP — not just certifications",
+        "Founding engineer at 3 companies: 0→1 MVPs, real enterprise clients, real traffic",
+        "I teach the patterns I use daily: IaC, microservices, GenAI, event-driven"
+      ]
     },
     "actions": {
-      "viewProject": "View Case Study",
+      "viewProject": "Visit Site",
       "contact": "Contact Me",
-      "whatsappCta": "Chat on WhatsApp"
+      "whatsappCta": "Chat on WhatsApp",
+      "heroCtaPrimary": "Let's Work Together",
+      "heroCtaSecondary": "Explore Courses"
     },
     "data": {
       "skills": [
         {
           "title": "Cloud Architecture (GCP & AWS)",
           "description": "Designing scalable, secure, multi-environment systems.",
-          "tags": ["Cloud Run", "GKE", "VPC", "IAM", "Networking", "Load Balancing"]
+          "tags": [
+            "Cloud Run",
+            "GKE",
+            "VPC",
+            "IAM",
+            "Networking",
+            "Load Balancing"
+          ]
         },
         {
           "title": "Platform & DevSecOps",
           "description": "Standardizing CI/CD, Terraform governance, and reusable blueprints.",
-          "tags": ["CI/CD Standards", "Terraform", "Governance", "Blueprints", "Guardrails"]
+          "tags": [
+            "CI/CD Standards",
+            "Terraform",
+            "Governance",
+            "Blueprints",
+            "Guardrails"
+          ]
         },
         {
           "title": "Backend Architecture & APIs",
           "description": "Designing robust, scalable backend systems and API layers.",
-          "tags": ["RESTful APIs", "GraphQL", "Microservices", "EDA", "DDD", "Multi-Tenant SaaS"]
+          "tags": [
+            "RESTful APIs",
+            "GraphQL",
+            "Microservices",
+            "EDA",
+            "DDD",
+            "Multi-Tenant SaaS"
+          ]
         },
         {
           "title": "Generative AI Engineering",
           "description": "Building intelligent multi-agent systems and RAG pipelines for production.",
-          "tags": ["LlamaIndex", "LangGraph", "RAG", "Multi-Agent", "Vertex AI", "Prompt Engineering"]
+          "tags": [
+            "LlamaIndex",
+            "LangGraph",
+            "RAG",
+            "Multi-Agent",
+            "Vertex AI",
+            "Prompt Engineering"
+          ]
         },
         {
           "title": "Observability & Reliability",
           "description": "Ensuring system health with comprehensive metrics, logs, and SLOs.",
-          "tags": ["Grafana", "Cloud Monitoring", "SLOs", "Tracing", "Metrics"]
+          "tags": [
+            "Grafana",
+            "Cloud Monitoring",
+            "SLOs",
+            "Tracing",
+            "Metrics"
+          ]
         }
       ],
       "experience": [
@@ -515,7 +1059,14 @@
     },
     "hero": {
       "title": "Diseñando Plataformas <br> <span class=\"text-accent\">Cloud Escalables</span>",
-      "chips": ["Arquitecto GCP & AWS", "APIs Backend", "Microservicios", "IA Generativa", "DevSecOps", "Python"],
+      "chips": [
+        "Arquitecto GCP & AWS",
+        "APIs Backend",
+        "Microservicios",
+        "IA Generativa",
+        "DevSecOps",
+        "Python"
+      ],
       "industriesLabel": "Industrias:",
       "profile": {
         "title": "Erick Bárcenas",
@@ -526,13 +1077,27 @@
         "linkedin": "LinkedIn",
         "github": "GitHub",
         "whatsapp": "WhatsApp"
-      }
+      },
+      "eyebrow": "Arquitecto Cloud Senior · Ingeniero GenAI · 8+ años",
+      "tagline": "Diseño y entrego infraestructura cloud, APIs Python y sistemas de IA que sobreviven el tráfico real de producción."
     },
     "stats": [
-      { "value": "8+", "label": "Años de Experiencia" },
-      { "value": "4+", "label": "Empresas" },
-      { "value": "GCP+AWS", "label": "Plataformas Cloud" },
-      { "value": "10+", "label": "Proyectos Activos" }
+      {
+        "value": "8+",
+        "label": "Años de Experiencia"
+      },
+      {
+        "value": "4+",
+        "label": "Empresas"
+      },
+      {
+        "value": "GCP+AWS",
+        "label": "Plataformas Cloud"
+      },
+      {
+        "value": "10+",
+        "label": "Proyectos Activos"
+      }
     ],
     "sections": {
       "skills": "Dominios Arquitectónicos",
@@ -543,39 +1108,81 @@
       "education": "Educación",
       "courses": "Cursos que Imparto",
       "contact": "Contacto",
-      "footer": "Diseñado para Escalabilidad y Rendimiento."
+      "footer": "Diseñado para Escalabilidad y Rendimiento.",
+      "coursesSubtitle": "Para ingenieros que quieren dejar de ver tutoriales y empezar a construir sistemas reales. Impartido por alguien que ha entregado infraestructura de producción a escala — no solo diapositivas.",
+      "coursesWhyTitle": "¿Por qué aprender conmigo?",
+      "coursesWhy": [
+        "8+ años construyendo sistemas de producción en AWS y GCP — no solo certificaciones",
+        "Ingeniero fundador en 3 empresas: MVPs 0→1, clientes enterprise reales, tráfico real",
+        "Enseño los patrones que uso a diario: IaC, microservicios, GenAI, event-driven"
+      ]
     },
     "actions": {
-      "viewProject": "Ver Caso de Estudio",
+      "viewProject": "Ver Sitio",
       "contact": "Contáctame",
-      "whatsappCta": "Chatear por WhatsApp"
+      "whatsappCta": "Chatear por WhatsApp",
+      "heroCtaPrimary": "Trabajemos Juntos",
+      "heroCtaSecondary": "Ver Cursos"
     },
     "data": {
       "skills": [
         {
           "title": "Arquitectura Cloud (GCP & AWS)",
           "description": "Diseño de sistemas escalables, seguros y multi-ambiente.",
-          "tags": ["Cloud Run", "GKE", "VPC", "IAM", "Networking", "Balanceo de Carga"]
+          "tags": [
+            "Cloud Run",
+            "GKE",
+            "VPC",
+            "IAM",
+            "Networking",
+            "Balanceo de Carga"
+          ]
         },
         {
           "title": "Plataforma & DevSecOps",
           "description": "Estandarización de CI/CD, gobierno de Terraform y blueprints reutilizables.",
-          "tags": ["Estándares CI/CD", "Terraform", "Gobierno", "Blueprints", "Guardrails"]
+          "tags": [
+            "Estándares CI/CD",
+            "Terraform",
+            "Gobierno",
+            "Blueprints",
+            "Guardrails"
+          ]
         },
         {
           "title": "Arquitectura Backend & APIs",
           "description": "Diseño de sistemas backend robustos, escalables y capas de API.",
-          "tags": ["APIs RESTful", "GraphQL", "Microservicios", "EDA", "DDD", "SaaS Multi-Tenant"]
+          "tags": [
+            "APIs RESTful",
+            "GraphQL",
+            "Microservicios",
+            "EDA",
+            "DDD",
+            "SaaS Multi-Tenant"
+          ]
         },
         {
           "title": "Ingeniería de IA Generativa",
           "description": "Construcción de sistemas multi-agente inteligentes y pipelines RAG para producción.",
-          "tags": ["LlamaIndex", "LangGraph", "RAG", "Multi-Agente", "Vertex AI", "Prompt Engineering"]
+          "tags": [
+            "LlamaIndex",
+            "LangGraph",
+            "RAG",
+            "Multi-Agente",
+            "Vertex AI",
+            "Prompt Engineering"
+          ]
         },
         {
           "title": "Observabilidad & Confiabilidad",
           "description": "Asegurando la salud del sistema con métricas, logs y SLOs integrales.",
-          "tags": ["Grafana", "Cloud Monitoring", "SLOs", "Tracing", "Métricas"]
+          "tags": [
+            "Grafana",
+            "Cloud Monitoring",
+            "SLOs",
+            "Tracing",
+            "Métricas"
+          ]
         }
       ],
       "experience": [
