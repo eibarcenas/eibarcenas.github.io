@@ -28,3 +28,17 @@ dist-ssr
 .env
 .env.test
 .env.production
+
+# Playwright
+.playwright-mcp/
+
+# CV
+CV.pdf
+
+# Screenshots
+*.png
+*.jpeg
+*.jpg
+*.webp
+*.gif
+*.svg
