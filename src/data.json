@@ -9,6 +9,14 @@
     "github": "https://github.com/erickbarcenas",
     "linkedin": "https://linkedin.com/in/erickbarcenas",
     "yearsExperience": 8,
+    "portfolio": "eibarcenas.github.io",
+    "portfolioUrl": "https://eibarcenas.github.io",
+    "workPreferences": ["Remote", "Hybrid (CDMX)", "Open to Relocation"],
+    "keyImpact": [
+      "Founding engineer × 3 companies — 0→1 MVPs to enterprise clients",
+      "~70% deployment time reduction via AI/CI-CD pipelines",
+      "99.9% availability architectures across GCP & AWS"
+    ],
     "industries": [
       {
         "icon": "💰",

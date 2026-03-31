@@ -241,13 +241,27 @@ const PrintHeader = ({ t }) => (
     {t.hero.profile.summary && (
       <p className="print-summary">{t.hero.profile.summary}</p>
     )}
+    {META.keyImpact && (
+      <ul className="print-impact">
+        {META.keyImpact.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    )}
     <div className="print-skills-bar">
       {PRINT_SKILLS.map((s) => (
         <span key={s} className="print-skill-tag">{s}</span>
       ))}
     </div>
+    {META.workPreferences && (
+      <div className="print-modality">
+        {META.workPreferences.map((p) => (
+          <span key={p} className="print-modality-tag">{p}</span>
+        ))}
+      </div>
+    )}
     <div className="print-contact">
-      <span>{META.email}</span> • <span>{META.phone}</span> • <span>{META.location}</span> • <span>{META.github.replace('https://', '')}</span> • <span>{META.linkedin.replace('https://www.', '').replace('https://', '')}</span>
+      {META.portfolio && <span>{META.portfolio}</span>}{META.portfolio && ' • '}<span>{META.email}</span> • <span>{META.phone}</span> • <span>{META.location}</span> • <span>{META.github.replace('https://', '')}</span> • <span>{META.linkedin.replace('https://www.', '').replace('https://', '')}</span>
     </div>
   </div>
 );

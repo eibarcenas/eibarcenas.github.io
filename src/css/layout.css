@@ -214,7 +214,7 @@ footer {
   .nav-cv-btn,
   .nav-cta,
   .contact-card,
-  .freelance-section,
+  .projects-section,
   .skills-tech-grid,
   .edu-icon {
     display: none !important;
@@ -612,5 +612,40 @@ footer {
     font-size: 8pt !important;
     color: #475569 !important;
     line-height: 1.4 !important;
+  }
+
+  /* ══════════════════════════════════════════
+     KEY IMPACT
+  ══════════════════════════════════════════ */
+  .print-impact {
+    margin: 0.35rem 0 0.5rem;
+    padding-left: 1.1rem;
+    font-size: 9pt;
+  }
+
+  .print-impact li {
+    color: #374151 !important;
+    margin-bottom: 1pt;
+    line-height: 1.45;
+  }
+
+  /* ══════════════════════════════════════════
+     WORK MODALITY CHIPS
+  ══════════════════════════════════════════ */
+  .print-modality {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin: 0.4rem 0 0.5rem;
+  }
+
+  .print-modality-tag {
+    font-size: 7.5pt;
+    font-weight: 700;
+    border: 1pt solid #2563eb;
+    color: #2563eb !important;
+    padding: 1pt 6pt;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
 }
