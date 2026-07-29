@@ -262,42 +262,52 @@ footer {
   }
 
   /* ══════════════════════════════════════════
-     GRID — 2-column layout: 2fr | 1fr
+     GRID — single-column linear flow (ATS-safe)
+     A 2-column layout is a known ATS hazard: most
+     PDF text extractors sort text primarily by
+     vertical position, so two boxes occupying the
+     same Y-range (side-by-side columns) get their
+     lines interleaved in the extracted text. Keeping
+     everything in one column with non-overlapping
+     Y-ranges guarantees a clean, linear read order.
   ══════════════════════════════════════════ */
   .bento-grid {
     display: grid !important;
-    grid-template-columns: 2fr 1fr !important;
-    gap: 1.25rem 1.75rem !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
     margin-top: 0 !important;
   }
 
-  /* Override col-span utilities for print 2-col grid */
+  /* Force every section into the single column */
   .col-span-4,
   .col-span-8,
   .col-span-12 {
-    grid-column: auto !important;
+    grid-column: 1 !important;
   }
 
-  /* Left column — experience */
+  /* Explicit read order: Experience → Skills → Education → Freelance.
+     Experience leads because it's the priority section for recruiters
+     and ATS keyword-matchers; order (not source order) also determines
+     the box's Y-position, so this stays a single, non-overlapping flow. */
   .experience-section {
     grid-column: 1 !important;
-    grid-row: auto !important; /* override inline span-3 that causes blank gap in right col */
+    order: 1 !important; /* override inline span-3 that assumed the 2-col layout */
+    grid-row: auto !important;
   }
 
-  /* Right column — skills top, education below */
   .skills-section {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
+    grid-column: 1 !important;
+    order: 2 !important;
   }
 
   .edu-card {
-    grid-column: 2 !important;
-    grid-row: 2 !important;
+    grid-column: 1 !important;
+    order: 3 !important;
   }
 
-  /* Full-width sections (page 2) */
-  .projects-section {
-    grid-column: 1 / -1 !important;
+  .freelance-section {
+    grid-column: 1 !important;
+    order: 4 !important;
   }
 
   /* Always render domains (chip) view — ignore JS tab state */
@@ -588,7 +598,7 @@ footer {
      FREELANCE
   ══════════════════════════════════════════ */
   .freelance-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important; /* avoid side-by-side items: same ATS Y-overlap risk as the main grid */
     gap: 0.4rem !important;
   }
 

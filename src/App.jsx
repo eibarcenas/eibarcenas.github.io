@@ -232,7 +232,7 @@ const InstructorView = ({ lang }) => {
 
 // --- Components ---
 
-const PRINT_SKILLS = ['GCP', 'AWS', 'Python', 'Terraform', 'FastAPI', 'LangGraph', 'LlamaIndex', 'Vertex AI', 'Docker', 'Kubernetes', 'GitLab CI/CD', 'BigQuery', 'Dataflow', 'Cloud Run', 'DevSecOps', 'Microservices', 'REST APIs', 'GraphQL'];
+const PRINT_SKILLS = ['AWS', 'MCP', 'Agent Skills', 'GCP', 'Python', 'Terraform', 'FastAPI', 'LangGraph', 'LlamaIndex', 'Vertex AI', 'Docker', 'Kubernetes', 'GitLab CI/CD', 'BigQuery', 'Dataflow', 'Cloud Run', 'DevSecOps', 'Microservices', 'REST APIs', 'GraphQL'];
 
 const PrintHeader = ({ t }) => (
   <div className="print-only print-header">
@@ -551,6 +551,9 @@ const EducationSection = ({ t, lang }) => (
         <div className="edu-degree">{EDUCATION.degree}</div>
         <div className="edu-school">{EDUCATION.school}</div>
         <div className="edu-year">{lang === 'es' ? 'Egresado' : 'Graduated'} {EDUCATION.graduation}</div>
+        {EDUCATION.description && (
+          <div className="edu-description">{lang === 'es' ? EDUCATION.descriptionEs : EDUCATION.description}</div>
+        )}
       </div>
     </div>
     <div className="lang-list">
