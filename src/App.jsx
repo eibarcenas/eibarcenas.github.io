@@ -299,8 +299,10 @@ const Header = ({ theme, toggleTheme, lang, toggleLang, t }) => {
           </button>
           <button className="toggle-btn" aria-label="Print CV" onClick={() => {
             const oldTitle = document.title;
-            const name = t.hero.profile.title || "Erick_Barcenas";
-            document.title = `${name.replace(/\s+/g, '_')}_CV`;
+            const clean = (s) => (s || '').replace(/[^\p{L}\p{N}]+/gu, '_').replace(/^_+|_+$/g, '');
+            const name = t.hero.profile.title || 'Erick Barcenas';
+            const role = (t.hero.profile.subtitle || '').split(/[·|]/)[0].trim();
+            document.title = `${clean(name)}_${clean(role)}_CV_${lang.toUpperCase()}`;
             window.print();
             document.title = oldTitle;
           }}>
