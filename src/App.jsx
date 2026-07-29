@@ -551,6 +551,9 @@ const EducationSection = ({ t, lang }) => (
         <div className="edu-degree">{EDUCATION.degree}</div>
         <div className="edu-school">{EDUCATION.school}</div>
         <div className="edu-year">{lang === 'es' ? 'Egresado' : 'Graduated'} {EDUCATION.graduation}</div>
+        {EDUCATION.description && (
+          <div className="edu-description">{lang === 'es' ? EDUCATION.descriptionEs : EDUCATION.description}</div>
+        )}
       </div>
     </div>
     <div className="lang-list">

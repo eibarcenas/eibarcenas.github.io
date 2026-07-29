@@ -695,6 +695,13 @@
   margin-top: 0.15rem;
 }
 
+.edu-description {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
 .lang-list {
   border-top: 1px solid var(--glass-border);
   padding-top: 1rem;

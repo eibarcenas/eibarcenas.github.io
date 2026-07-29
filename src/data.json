@@ -1,11 +1,11 @@
 {
   "meta": {
     "name": "Erick Iván Bárcenas Martínez",
-    "title": "Senior Cloud Architect & GenAI Engineer | GCP · AWS · Python · Terraform",
+    "title": "Staff Product Engineer | AI Platform & Agent Tooling | AWS · MCP · Agent Skills",
     "email": "erick.barcenas.mtz@gmail.com",
     "phone": "+52 55 44 71 25 75",
     "whatsapp": "525544712575",
-    "location": "Chalco, Estado de México",
+    "location": "Ciudad de México, México",
     "github": "https://github.com/erickbarcenas",
     "linkedin": "https://linkedin.com/in/erickbarcenas",
     "yearsExperience": 8,
@@ -51,7 +51,9 @@
   "education": {
     "degree": "Bachelor's in Mechatronic Engineering",
     "school": "UNAM",
-    "graduation": "2022"
+    "graduation": "2022",
+    "description": "Mechatronic Engineer with a focus in computing. Graduated with a 9.07 GPA. Technical foundation in embedded systems, algorithms, data structures, and software development.",
+    "descriptionEs": "Ingeniero en Mecatrónica con especialidad en computación. Titulado con promedio 9.07. Base técnica en sistemas embebidos, algoritmos, estructuras de datos y desarrollo de software."
   },
   "languages": [
     {
@@ -838,26 +840,26 @@
     "hero": {
       "title": "Architecting Scalable <br> <span class=\"text-accent\">Cloud Platforms</span>",
       "chips": [
-        "GCP & AWS Architect",
-        "Backend APIs",
-        "Microservices",
-        "Generative AI",
+        "AI Platform Engineer",
+        "MCP / Agent Tooling",
+        "Cloud Architecture",
+        "Multi-Agent Systems",
         "DevSecOps",
-        "Python"
+        "AWS & GCP"
       ],
       "industriesLabel": "Industries:",
       "profile": {
         "title": "Erick Bárcenas",
-        "subtitle": "Senior Cloud Architect & GenAI Engineer | GCP · AWS · Python · Terraform",
-        "summary": "Senior Cloud Architect & Python Engineer with 8+ years building distributed systems on GCP and AWS. Expert in Generative AI engineering, DevSecOps automation, Terraform IaC, and scalable cloud-native architectures — from design to production.",
-        "description": "Senior Backend and Cloud Architect with 8+ years designing scalable systems — RESTful & GraphQL APIs, microservices, event-driven architectures, and Generative AI applications — deployed on GCP and AWS. Passionate about building robust backends and intelligent systems that solve real problems.",
+        "subtitle": "Staff Product Engineer · AI Platform & Agent Tooling | AWS · MCP · Agent Skills",
+        "summary": "Staff Product Engineer with 8+ years designing cloud-native systems on AWS and GCP, now focused on AI-assisted engineering tooling. I build MCP-based systems that ground generative code output in an organization's real codebase, and design production-grade Agent Skills hardened well beyond prototype level.",
+        "description": "Staff Product Engineer with 8+ years designing scalable systems on AWS and GCP — RESTful/GraphQL APIs, microservices, event-driven architectures, and production Generative AI systems. Currently at Podemos Progresar building MCP-based AI code-generation tooling and hardened Agent Skills.",
         "status": "Available for Consulting",
         "linkedin": "LinkedIn",
         "github": "GitHub",
         "whatsapp": "WhatsApp"
       },
-      "eyebrow": "Senior Cloud Architect · GenAI Engineer · 8+ yrs",
-      "tagline": "I design and ship cloud infrastructure, Python APIs, and AI systems that survive real production traffic."
+      "eyebrow": "Staff Product Engineer @ Podemos Progresar · 8+ yrs · AI Platform & Agent Tooling",
+      "tagline": "I design and ship cloud infrastructure, agent tooling, and AI systems that survive real production traffic."
     },
     "stats": [
       {
@@ -865,7 +867,7 @@
         "label": "Years Experience"
       },
       {
-        "value": "4+",
+        "value": "5+",
         "label": "Companies"
       },
       {
@@ -965,10 +967,22 @@
       ],
       "experience": [
         {
-          "role": "Cloud Architect & GenAI Engineer",
-          "company": "Tecnología en cuentas por cobrar",
-          "period": "Jan 2024 — Present",
-          "description": "Architecting DevSecOps, Generative AI, and Data Engineering Cloud Architectures.",
+          "role": "Staff Product Engineer",
+          "company": "Podemos Progresar",
+          "period": "Jul 2026 — Present",
+          "description": "Building MCP-based AI code-generation tooling and hardened Agent Skills for engineering teams.",
+          "techStack": "AWS, Model Context Protocol (MCP), Agent Skills, Python",
+          "details": [
+            "Building MCP servers that ground AI-driven code generation in the company's existing repositories, turning internal codebase context into reusable generative tooling for engineering teams.",
+            "Designing production-grade Agent Skills with hardened harnesses — validation, guardrails, and failure handling that make agent-generated code safe to ship, not just fast to produce.",
+            "Delivering feature/value roughly 10x faster than the prior baseline through this AI-assisted engineering tooling."
+          ]
+        },
+        {
+          "role": "Software Architect & GenAI Engineer",
+          "company": "CXC",
+          "period": "Jul 2025 — Jun 2026",
+          "description": "Founding Engineer leading cloud architecture, GenAI, and DevSecOps on a financial technology platform.",
           "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager), Terraform, Python, FastAPI, GitLab CI/CD, Docker, LangGraph, LlamaIndex, Vertex AI",
           "details": [
             "Founding engineer — designed the GCP architecture and delivered the company's first production MVP, enabling onboarding of multiple enterprise clients.",
@@ -983,7 +997,7 @@
         {
           "role": "Senior Python AWS Engineer",
           "company": "Rombo Logística",
-          "period": "Aug 2023 — Dec 2024",
+          "period": "Aug 2023 — Jan 2025",
           "description": "Designing scalable backend services and event-driven architectures.",
           "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2, Kinesis Firehose, CodePipeline, CloudWatch, CloudFormation, CloudFront, VPC, IAM), Python, Node.js, FastAPI, Serverless, SCRUM & Jira",
           "details": [
@@ -1004,22 +1018,28 @@
           "details": [
             "Provided technical leadership as a Tech Lead, guiding the team in frontend development using React and GraphQL.",
             "Orchestrated the creation of proxies with Apollo and GraphQL to streamline data fetching and management in frontend applications.",
-            "Prototyped mockups and wireframes using Figma, enabling visualization and validation of design concepts."
+            "Prototyped mockups and wireframes using Figma, enabling visualization and validation of design concepts.",
+            "Implemented testing suite with React Testing Library and Jest, raising code quality coverage.",
+            "Trained team members in React, GraphQL, and TanStack, accelerating the learning curve.",
+            "Recognition: Bravo Team Awards for team contributions."
           ]
         },
         {
           "role": "Full Stack Developer",
-          "company": "Sugar App",
+          "company": "Shugar App",
           "period": "Apr 2020 — Sep 2022",
           "description": "Designed Scalable Serverless Architectures & Data-Driven Microservices.",
-          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, Fast API, Serverless, SCRUM & Jira",
+          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, Fast API, Java (Spring), Serverless, SCRUM & Jira",
           "details": [
             "Led frontend and backend development across multiple product teams, delivering full-stack features on tight release cycles.",
             "Designed relational database schemas with ER diagrams for a dating/social platform with complex relationship and matching data models.",
             "Developed serverless microservices on AWS Lambda — event-driven, auto-scaling, and cost-optimized for variable user traffic.",
             "Built public-facing REST and GraphQL APIs with JWT/OAuth2 auth, rate limiting, cursor pagination, and JSON:API standards.",
+            "Also built and maintained backend services in Java with Spring, complementing the primary Python/Node.js stack.",
             "Established CI/CD pipelines (CodePipeline + GitHub Actions) cutting manual release effort by ~50%.",
-            "Implemented RESTful and GraphQL integration layer between React frontend and Python/Node.js backend services."
+            "Implemented RESTful and GraphQL integration layer between React frontend and Python/Node.js backend services.",
+            "Integrated Paypal/Stripe payment gateway and designed the Dating App shugarapp.com with React.",
+            "Implemented Machine Learning microservices (Python/Flask/FastAPI) and conversational chatbots."
           ]
         }
       ],
@@ -1068,26 +1088,26 @@
     "hero": {
       "title": "Diseñando Plataformas <br> <span class=\"text-accent\">Cloud Escalables</span>",
       "chips": [
-        "Arquitecto GCP & AWS",
-        "APIs Backend",
-        "Microservicios",
-        "IA Generativa",
+        "AI Platform Engineer",
+        "MCP / Agent Tooling",
+        "Arquitectura Cloud",
+        "Sistemas Multi-Agente",
         "DevSecOps",
-        "Python"
+        "AWS & GCP"
       ],
       "industriesLabel": "Industrias:",
       "profile": {
         "title": "Erick Bárcenas",
-        "subtitle": "Arquitecto Cloud Senior & Ingeniero GenAI | GCP · AWS · Python · Terraform",
-        "summary": "Arquitecto Cloud & Ingeniero Python Senior con 8+ años construyendo sistemas distribuidos en GCP y AWS. Especialista en ingeniería de IA Generativa, automatización DevSecOps, IaC con Terraform y arquitecturas cloud-native escalables — del diseño a producción.",
-        "description": "Arquitecto Backend y Cloud Senior con 8+ años diseñando sistemas escalables — APIs RESTful y GraphQL, microservicios, arquitecturas event-driven y aplicaciones de IA Generativa — desplegados en GCP y AWS. Apasionado por construir backends robustos y sistemas inteligentes que resuelven problemas reales.",
+        "subtitle": "Staff Product Engineer · AI Platform & Agent Tooling | AWS · MCP · Agent Skills",
+        "summary": "Staff Product Engineer con 8+ años diseñando sistemas cloud-native en AWS y GCP, enfocado hoy en tooling de ingeniería asistido por IA. Construyo sistemas basados en MCP que fundamentan la generación de código en el codebase real de la organización, y diseño Agent Skills de nivel producción con harnesses robustos.",
+        "description": "Staff Product Engineer con 8+ años diseñando sistemas escalables en AWS y GCP — APIs RESTful/GraphQL, microservicios, arquitecturas event-driven y sistemas de IA Generativa en producción real. Actualmente en Podemos Progresar construyendo tooling de generación de código con IA basado en MCP y Agent Skills robustos.",
         "status": "Disponible para Consultoría",
         "linkedin": "LinkedIn",
         "github": "GitHub",
         "whatsapp": "WhatsApp"
       },
-      "eyebrow": "Arquitecto Cloud Senior · Ingeniero GenAI · 8+ años",
-      "tagline": "Diseño y entrego infraestructura cloud, APIs Python y sistemas de IA que sobreviven el tráfico real de producción."
+      "eyebrow": "Staff Product Engineer @ Podemos Progresar · 8+ años · AI Platform & Agent Tooling",
+      "tagline": "Diseño y entrego infraestructura cloud, agent tooling y sistemas de IA que sobreviven el tráfico real de producción."
     },
     "stats": [
       {
@@ -1095,7 +1115,7 @@
         "label": "Años de Experiencia"
       },
       {
-        "value": "4+",
+        "value": "5+",
         "label": "Empresas"
       },
       {
@@ -1195,10 +1215,22 @@
       ],
       "experience": [
         {
-          "role": "Arquitecto Cloud & Ingeniero GenAI",
-          "company": "Tecnología en cuentas por cobrar",
-          "period": "Ene 2024 — Presente",
-          "description": "Arquitectura DevSecOps, IA Generativa e Ingeniería de Datos en la Nube.",
+          "role": "Staff Product Engineer",
+          "company": "Podemos Progresar",
+          "period": "Jul 2026 — Presente",
+          "description": "Construyo tooling de generación de código con IA basado en MCP y Agent Skills robustos para equipos de ingeniería.",
+          "techStack": "AWS, Model Context Protocol (MCP), Agent Skills, Python",
+          "details": [
+            "Construyo servidores MCP que fundamentan la generación de código impulsada por IA en los repositorios existentes de la empresa, convirtiendo el contexto del código interno en herramientas generativas reutilizables para los equipos de ingeniería.",
+            "Diseño Agent Skills de nivel producción con harnesses robustos — validación, guardrails y manejo de fallos que hacen que el código generado por agentes sea seguro de desplegar, no solo rápido de producir.",
+            "Entrego valor de features aproximadamente 10x más rápido que el baseline anterior gracias a este tooling de ingeniería asistido por IA."
+          ]
+        },
+        {
+          "role": "Software Architect & GenAI Engineer",
+          "company": "CXC · Ciudad de México",
+          "period": "Jul 2025 — Jun 2026",
+          "description": "Ingeniero Fundador liderando arquitectura cloud, GenAI y DevSecOps en plataforma de tecnología financiera.",
           "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager), Terraform, Python, FastAPI, GitLab CI/CD, Docker, LangGraph, LlamaIndex, Vertex AI",
           "details": [
             "Ingeniero fundador — diseñé la arquitectura GCP y entregué el primer MVP en producción, habilitando el onboarding de múltiples clientes enterprise.",
@@ -1213,7 +1245,7 @@
         {
           "role": "Senior Python AWS Engineer",
           "company": "Rombo Logística",
-          "period": "Ago 2023 — Dic 2024",
+          "period": "Ago 2023 — Ene 2025",
           "description": "Diseño de servicios backend escalables y arquitecturas event-driven.",
           "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2, Kinesis Firehose, CodePipeline, CloudWatch, CloudFormation, CloudFront, VPC), Python, NodeJs, FastAPI, Serverless, SCRUM & Jira",
           "details": [
@@ -1234,22 +1266,28 @@
           "details": [
             "Liderazgo técnico como Tech Lead, guiando al equipo en desarrollo frontend con React y GraphQL.",
             "Orquesté la creación de proxies con Apollo y GraphQL para optimizar la obtención y gestión de datos.",
-            "Prototipé mockups y wireframes en Figma para visualización y validación de conceptos de diseño."
+            "Prototipé mockups y wireframes en Figma para visualización y validación de conceptos de diseño.",
+            "Implementé suite de pruebas con React Testing Library y Jest, elevando la cobertura de calidad del código.",
+            "Formé a miembros del equipo en React, GraphQL y TanStack, acelerando la curva de aprendizaje.",
+            "Reconocimiento: Bravo Team Awards por contribuciones al equipo."
           ]
         },
         {
           "role": "Full Stack Developer",
-          "company": "Sugar App",
+          "company": "Shugar App",
           "period": "Abr 2020 — Sep 2022",
           "description": "Diseño de Arquitecturas Serverless Escalables y Microservicios Data-Driven.",
-          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, FastAPI, Serverless",
+          "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, FastAPI, Java (Spring), Serverless",
           "details": [
             "Lideré el desarrollo frontend y backend en múltiples equipos de producto, entregando features full-stack en ciclos cortos de release.",
             "Diseñé esquemas de base de datos relacionales con diagramas ER para una plataforma social con modelos de datos complejos.",
             "Desarrollé microservicios serverless en AWS Lambda — event-driven, auto-escalables y optimizados en costo para tráfico variable.",
             "Construí APIs REST y GraphQL públicas con auth JWT/OAuth2, rate limiting, paginación cursor y estándares JSON:API.",
+            "También construí y mantuve servicios backend en Java con Spring, complementando el stack principal de Python/Node.js.",
             "Establecí pipelines CI/CD (CodePipeline + GitHub Actions) reduciendo el esfuerzo de release manual en ~50%.",
-            "Implementé capa de integración RESTful y GraphQL entre el frontend React y los servicios backend Python/Node.js."
+            "Implementé capa de integración RESTful y GraphQL entre el frontend React y los servicios backend Python/Node.js.",
+            "Integré pasarela de pagos Paypal/Stripe y diseñé la Dating App shugarapp.com con React.",
+            "Implementé microservicios de Machine Learning (Python/Flask/FastAPI) y chatbots conversacionales."
           ]
         }
       ],
