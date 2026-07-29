@@ -970,11 +970,14 @@
           "role": "Staff Product Engineer",
           "company": "Podemos Progresar",
           "period": "Jul 2026 — Present",
-          "description": "Building MCP-based AI code-generation tooling and hardened Agent Skills for engineering teams.",
-          "techStack": "AWS, Model Context Protocol (MCP), Agent Skills, Python",
+          "description": "Building MCP-based AI code-generation tooling, agent rules, vector search, and memory for engineering teams.",
+          "techStack": "AWS, Model Context Protocol (MCP), Agent Skills, Vector Search & Embeddings, Python",
           "details": [
             "Building MCP servers that ground AI-driven code generation in the company's existing repositories, turning internal codebase context into reusable generative tooling for engineering teams.",
             "Designing production-grade Agent Skills with hardened harnesses — validation, guardrails, and failure handling that make agent-generated code safe to ship, not just fast to produce.",
+            "Defining the rules that govern agent behavior in production — constraining what agents can generate and how, so autonomy doesn't come at the cost of control.",
+            "Building a semantic search layer over the company's repositories using vector embeddings, so agents retrieve real internal context instead of generating code blind to prior implementation.",
+            "Designing memory for coding agents so multi-step tasks retain context across turns, moving them from single-shot completions to sustained, context-aware collaboration.",
             "Delivering feature/value roughly 10x faster than the prior baseline through this AI-assisted engineering tooling."
           ]
         },
@@ -1218,11 +1221,14 @@
           "role": "Staff Product Engineer",
           "company": "Podemos Progresar",
           "period": "Jul 2026 — Presente",
-          "description": "Construyo tooling de generación de código con IA basado en MCP y Agent Skills robustos para equipos de ingeniería.",
-          "techStack": "AWS, Model Context Protocol (MCP), Agent Skills, Python",
+          "description": "Construyo tooling de generación de código con IA basado en MCP, reglas para agentes, búsqueda vectorial y memoria para equipos de ingeniería.",
+          "techStack": "AWS, Model Context Protocol (MCP), Agent Skills, Vector Search & Embeddings, Python",
           "details": [
             "Construyo servidores MCP que fundamentan la generación de código impulsada por IA en los repositorios existentes de la empresa, convirtiendo el contexto del código interno en herramientas generativas reutilizables para los equipos de ingeniería.",
             "Diseño Agent Skills de nivel producción con harnesses robustos — validación, guardrails y manejo de fallos que hacen que el código generado por agentes sea seguro de desplegar, no solo rápido de producir.",
+            "Defino las reglas que gobiernan el comportamiento de los agentes en producción — delimitando qué pueden generar y cómo, para que la autonomía no sacrifique el control.",
+            "Construyo una capa de búsqueda semántica sobre los repositorios de la empresa usando embeddings vectoriales, para que los agentes recuperen contexto interno real en vez de generar código a ciegas.",
+            "Diseño memoria para agentes de código para que las tareas de varios pasos conserven contexto entre turnos, pasando de completions de un solo disparo a colaboración sostenida y consciente del contexto.",
             "Entrego valor de features aproximadamente 10x más rápido que el baseline anterior gracias a este tooling de ingeniería asistido por IA."
           ]
         },
