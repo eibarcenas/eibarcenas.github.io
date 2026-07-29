@@ -1004,7 +1004,7 @@
             "Founding engineer — designed and delivered the company's first logistics platform MVP on AWS, enabling the first 3 enterprise client onboardings.",
             "Architected AWS cloud infrastructure using CloudFormation and C4 methodology for 99.9% availability across ECS, RDS, Lambda, and API Gateway.",
             "Built multi-tenant SaaS backend using hexagonal architecture and DDD — with cursor-based pagination, caching, and JWT/OAuth2 auth.",
-            "Developed RESTful microservices on ECS/EC2, DynamoDB, SNS, SQS, and S3 handling high-throughput logistics event streams.",
+            "Built RESTful microservices on ECS/EC2, DynamoDB, SNS, SQS, and S3 to handle high-throughput logistics event streams reliably.",
             "Reduced deployment cycle by ~60% by establishing CodeBuild + CodePipeline CI/CD with automated Pytest and Locust load-test gates.",
             "Mentored 3 backend engineers on AWS, clean architecture, and test-driven development practices."
           ]
@@ -1013,14 +1013,14 @@
           "role": "Engineering Lead",
           "company": "Persistent Systems",
           "period": "Sep 2022 — Jun 2023",
-          "description": "Engineering Lead for Frontend Architecture & GraphQL Integration.",
+          "description": "Engineering Lead setting frontend architecture and GraphQL standards that the team adopted org-wide.",
           "techStack": "React, GraphQL, Apollo Client, Figma, Node.js, TypeScript, SCRUM & Jira",
           "details": [
-            "Provided technical leadership as a Tech Lead, guiding the team in frontend development using React and GraphQL.",
-            "Orchestrated the creation of proxies with Apollo and GraphQL to streamline data fetching and management in frontend applications.",
-            "Prototyped mockups and wireframes using Figma, enabling visualization and validation of design concepts.",
-            "Implemented testing suite with React Testing Library and Jest, raising code quality coverage.",
-            "Trained team members in React, GraphQL, and TanStack, accelerating the learning curve.",
+            "Set technical direction as Tech Lead for frontend architecture, replacing scattered, ad hoc data-fetching patterns with a single React/GraphQL approach the team standardized on.",
+            "Designed a GraphQL proxy layer with Apollo Client that decoupled frontend components from inconsistent backend data shapes, removing duplicated fetching and caching logic scattered across the codebase.",
+            "Introduced a Figma prototyping step ahead of implementation, catching design/data-model mismatches before they became engineering rework.",
+            "Established a React Testing Library/Jest testing standard for the frontend, moving core user flows from untested to covered and enforced in review.",
+            "Mentored team members in React, GraphQL, and TanStack, shortening ramp-up time for engineers new to the stack and reducing their dependence on senior review.",
             "Recognition: Bravo Team Awards for team contributions."
           ]
         },
@@ -1031,15 +1031,15 @@
           "description": "Designed Scalable Serverless Architectures & Data-Driven Microservices.",
           "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, Fast API, Java (Spring), Serverless, SCRUM & Jira",
           "details": [
-            "Led frontend and backend development across multiple product teams, delivering full-stack features on tight release cycles.",
-            "Designed relational database schemas with ER diagrams for a dating/social platform with complex relationship and matching data models.",
-            "Developed serverless microservices on AWS Lambda — event-driven, auto-scaling, and cost-optimized for variable user traffic.",
-            "Built public-facing REST and GraphQL APIs with JWT/OAuth2 auth, rate limiting, cursor pagination, and JSON:API standards.",
-            "Also built and maintained backend services in Java with Spring, complementing the primary Python/Node.js stack.",
+            "Led full-stack delivery across multiple product teams, owning features end-to-end from schema design through deployment under tight release cycles.",
+            "Designed the relational schema (ER-modeled) behind the platform's matching and relationship logic — the core data model every downstream service built on.",
+            "Architected event-driven serverless microservices on AWS Lambda so infrastructure scaled with highly variable user traffic instead of running over-provisioned and idle.",
+            "Designed the public-facing REST and GraphQL API contract — auth, rate limiting, cursor pagination, JSON:API conventions — that external and internal clients integrated against.",
+            "Extended the backend into Java/Spring where existing integrations required it, keeping those services maintained alongside the primary Python/Node.js stack.",
             "Established CI/CD pipelines (CodePipeline + GitHub Actions) cutting manual release effort by ~50%.",
-            "Implemented RESTful and GraphQL integration layer between React frontend and Python/Node.js backend services.",
-            "Integrated Paypal/Stripe payment gateway and designed the Dating App shugarapp.com with React.",
-            "Implemented Machine Learning microservices (Python/Flask/FastAPI) and conversational chatbots."
+            "Built the integration layer connecting the React frontend to Python/Node.js backend services, giving frontend and backend teams a stable contract to ship against independently.",
+            "Took the product's core monetization path from concept to production — integrating PayPal/Stripe payments and designing the shugarapp.com React frontend end-to-end.",
+            "Designed and shipped ML-backed microservices (Python/Flask/FastAPI) powering conversational chatbot features, extending the platform beyond CRUD into applied ML."
           ]
         }
       ],
@@ -1252,7 +1252,7 @@
             "Ingeniero fundador — diseñé y entregué el primer MVP de la plataforma logística en AWS, habilitando los primeros 3 clientes enterprise.",
             "Arquitecté infraestructura AWS con CloudFormation y metodología C4 para 99.9% de disponibilidad en ECS, RDS, Lambda y API Gateway.",
             "Construí backend SaaS multi-tenant con arquitectura hexagonal y DDD — paginación cursor-based, caché y autenticación JWT/OAuth2.",
-            "Desarrollé microservicios RESTful en ECS/EC2, DynamoDB, SNS, SQS y S3 para flujos de eventos logísticos de alto volumen.",
+            "Construí microservicios RESTful en ECS/EC2, DynamoDB, SNS, SQS y S3 para manejar flujos de eventos logísticos de alto volumen de forma confiable.",
             "Reduje el ciclo de despliegue en ~60% implementando CI/CD con CodeBuild + CodePipeline con gates automáticos de Pytest y Locust.",
             "Mentoría a 3 ingenieros backend en AWS, arquitectura limpia y desarrollo orientado a pruebas."
           ]
@@ -1261,14 +1261,14 @@
           "role": "Engineering Lead",
           "company": "Persistent Systems",
           "period": "Sep 2022 — Jun 2023",
-          "description": "Liderazgo de Ingeniería para Arquitectura Frontend & Integración GraphQL.",
+          "description": "Engineering Lead estableciendo arquitectura frontend y estándares GraphQL adoptados por todo el equipo.",
           "techStack": "React, GraphQL, Apollo Client, Figma, Node.js, TypeScript, SCRUM & Jira",
           "details": [
-            "Liderazgo técnico como Tech Lead, guiando al equipo en desarrollo frontend con React y GraphQL.",
-            "Orquesté la creación de proxies con Apollo y GraphQL para optimizar la obtención y gestión de datos.",
-            "Prototipé mockups y wireframes en Figma para visualización y validación de conceptos de diseño.",
-            "Implementé suite de pruebas con React Testing Library y Jest, elevando la cobertura de calidad del código.",
-            "Formé a miembros del equipo en React, GraphQL y TanStack, acelerando la curva de aprendizaje.",
+            "Definí la dirección técnica como Tech Lead de arquitectura frontend, reemplazando patrones de fetching de datos dispersos y ad hoc por un único enfoque React/GraphQL que el equipo estandarizó.",
+            "Diseñé una capa de proxies GraphQL con Apollo Client que desacopló los componentes frontend de formas de datos inconsistentes del backend, eliminando lógica de fetching y caché duplicada en todo el código.",
+            "Introduje un paso de prototipado en Figma previo a la implementación, detectando incompatibilidades entre diseño y modelo de datos antes de que se convirtieran en retrabajo de ingeniería.",
+            "Establecí un estándar de pruebas con React Testing Library y Jest, llevando los flujos de usuario principales de no probados a cubiertos y exigidos en revisión de código.",
+            "Mentoricé a miembros del equipo en React, GraphQL y TanStack, acortando el tiempo de adaptación de ingenieros nuevos en el stack y reduciendo su dependencia de revisión senior.",
             "Reconocimiento: Bravo Team Awards por contribuciones al equipo."
           ]
         },
@@ -1279,15 +1279,15 @@
           "description": "Diseño de Arquitecturas Serverless Escalables y Microservicios Data-Driven.",
           "techStack": "AWS (Lambda, EKS, ECS, API Gateway, SNS, SQS, EC2), Python, NodeJs, FastAPI, Java (Spring), Serverless",
           "details": [
-            "Lideré el desarrollo frontend y backend en múltiples equipos de producto, entregando features full-stack en ciclos cortos de release.",
-            "Diseñé esquemas de base de datos relacionales con diagramas ER para una plataforma social con modelos de datos complejos.",
-            "Desarrollé microservicios serverless en AWS Lambda — event-driven, auto-escalables y optimizados en costo para tráfico variable.",
-            "Construí APIs REST y GraphQL públicas con auth JWT/OAuth2, rate limiting, paginación cursor y estándares JSON:API.",
-            "También construí y mantuve servicios backend en Java con Spring, complementando el stack principal de Python/Node.js.",
+            "Lideré la entrega full-stack en múltiples equipos de producto, siendo dueño de features de punta a punta desde el diseño del esquema hasta el despliegue, en ciclos cortos de release.",
+            "Diseñé el esquema relacional (modelado con ER) detrás de la lógica de matching y relaciones de la plataforma — el modelo de datos central sobre el que se construyó cada servicio downstream.",
+            "Arquitecté microservicios serverless event-driven en AWS Lambda para que la infraestructura escalara con tráfico de usuarios altamente variable en lugar de operar sobreaprovisionada e inactiva.",
+            "Diseñé el contrato de API REST y GraphQL público — auth, rate limiting, paginación cursor, convenciones JSON:API — contra el que integraron clientes externos e internos.",
+            "Extendí el backend a Java/Spring donde las integraciones existentes lo requerían, manteniendo esos servicios junto al stack principal de Python/Node.js.",
             "Establecí pipelines CI/CD (CodePipeline + GitHub Actions) reduciendo el esfuerzo de release manual en ~50%.",
-            "Implementé capa de integración RESTful y GraphQL entre el frontend React y los servicios backend Python/Node.js.",
-            "Integré pasarela de pagos Paypal/Stripe y diseñé la Dating App shugarapp.com con React.",
-            "Implementé microservicios de Machine Learning (Python/Flask/FastAPI) y chatbots conversacionales."
+            "Construí la capa de integración entre el frontend React y los servicios backend Python/Node.js, dando a los equipos de frontend y backend un contrato estable para desarrollar de forma independiente.",
+            "Llevé el camino de monetización central del producto de concepto a producción — integrando pagos de PayPal/Stripe y diseñando de punta a punta el frontend de shugarapp.com en React.",
+            "Diseñé y entregué microservicios de Machine Learning (Python/Flask/FastAPI) que impulsaban funciones de chatbot conversacional, extendiendo la plataforma más allá de CRUD hacia ML aplicado."
           ]
         }
       ],

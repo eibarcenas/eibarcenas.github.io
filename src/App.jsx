@@ -232,7 +232,7 @@ const InstructorView = ({ lang }) => {
 
 // --- Components ---
 
-const PRINT_SKILLS = ['GCP', 'AWS', 'Python', 'Terraform', 'FastAPI', 'LangGraph', 'LlamaIndex', 'Vertex AI', 'Docker', 'Kubernetes', 'GitLab CI/CD', 'BigQuery', 'Dataflow', 'Cloud Run', 'DevSecOps', 'Microservices', 'REST APIs', 'GraphQL'];
+const PRINT_SKILLS = ['AWS', 'MCP', 'Agent Skills', 'GCP', 'Python', 'Terraform', 'FastAPI', 'LangGraph', 'LlamaIndex', 'Vertex AI', 'Docker', 'Kubernetes', 'GitLab CI/CD', 'BigQuery', 'Dataflow', 'Cloud Run', 'DevSecOps', 'Microservices', 'REST APIs', 'GraphQL'];
 
 const PrintHeader = ({ t }) => (
   <div className="print-only print-header">
