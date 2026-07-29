@@ -985,7 +985,7 @@
           "role": "Software Architect & GenAI Engineer",
           "company": "CXC",
           "period": "Jan 2025 — Jun 2026",
-          "description": "Founding Engineer leading cloud architecture, GenAI, and DevSecOps on a financial technology platform.",
+          "description": "Founding Engineer and Tech Lead leading cloud architecture, GenAI, and DevSecOps on a financial technology platform.",
           "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager), Terraform, Python, FastAPI, GitLab CI/CD, Docker, LangGraph, LlamaIndex, Vertex AI",
           "details": [
             "Founding engineer — designed the GCP architecture and delivered the company's first production MVP, enabling onboarding of multiple enterprise clients.",
@@ -994,7 +994,7 @@
             "Built real-time and batch ETL/ELT pipelines using Dataflow (Apache Beam), Pub/Sub, Cloud Functions and Composer serving millions of daily events.",
             "Delivered full IaC coverage with Terraform modules (Cloud Run, VPC, IAM, Secret Manager, Serverless VPC connectors) — zero manual infra provisioning.",
             "Established company-wide DevSecOps standards: CI/CD boilerplates, secret rotation, SAST/DAST scanning, and naming conventions adopted across all teams.",
-            "Mentored 4+ engineers on GCP, Terraform, and GenAI architecture; raised overall team engineering maturity level."
+            "Progressed from secondary Tech Lead (first 6 months) to primary Tech Lead for the engineering team, holding technical leadership and architecture ownership concurrently — mentoring 4+ engineers on GCP, Terraform, and GenAI architecture and raising overall team engineering maturity."
           ]
         },
         {
@@ -1236,7 +1236,7 @@
           "role": "Software Architect & GenAI Engineer",
           "company": "CXC · Ciudad de México",
           "period": "Ene 2025 — Jun 2026",
-          "description": "Ingeniero Fundador liderando arquitectura cloud, GenAI y DevSecOps en plataforma de tecnología financiera.",
+          "description": "Ingeniero Fundador y Tech Lead liderando arquitectura cloud, GenAI y DevSecOps en plataforma de tecnología financiera.",
           "techStack": "GCP (BigQuery, Dataflow, Pub/Sub, Composer, Cloud Run, Cloud Functions, GKE, VPC, Secret Manager), Terraform, Python, FastAPI, GitLab CI/CD, Docker, LangGraph, LlamaIndex, Vertex AI",
           "details": [
             "Ingeniero fundador — diseñé la arquitectura GCP y entregué el primer MVP en producción, habilitando el onboarding de múltiples clientes enterprise.",
@@ -1245,7 +1245,7 @@
             "Construí pipelines ETL/ELT en tiempo real y batch usando Dataflow (Apache Beam), Pub/Sub, Cloud Functions y Composer — millones de eventos diarios.",
             "Implementé cobertura IaC completa con Terraform (Cloud Run, VPC, IAM, Secret Manager, conectores VPC serverless) — cero aprovisionamiento manual.",
             "Establecí estándares DevSecOps: plantillas CI/CD, rotación de secretos, escaneo SAST/DAST y convenciones adoptadas en todos los equipos.",
-            "Mentoría a 4+ ingenieros en GCP, Terraform y arquitectura GenAI; elevando el nivel de madurez técnica del equipo."
+            "Progresé de Tech Lead secundario (primeros 6 meses) a Tech Lead principal del equipo de ingeniería, ejerciendo liderazgo técnico y arquitectura de forma concurrente — mentoría a 4+ ingenieros en GCP, Terraform y arquitectura GenAI, elevando el nivel de madurez técnica del equipo."
           ]
         },
         {
