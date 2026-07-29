@@ -26,7 +26,7 @@ jobs:
 
       - run: npm run build
         env:
-          VITE_INSTRUCTOR_PASS: ${{ secrets.VITE_INSTRUCTOR_PASS }}
+          VITE_INSTRUCTOR_PASS_HASH: ${{ secrets.VITE_INSTRUCTOR_PASS_HASH }}
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0

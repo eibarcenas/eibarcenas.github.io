@@ -81,7 +81,15 @@ const PrintIcon = () => (
 
 // --- Instructor: Markdown Renderer ---
 
-const INSTRUCTOR_PASS = import.meta.env.VITE_INSTRUCTOR_PASS || 'Admin360!';
+const INSTRUCTOR_PASS_HASH = import.meta.env.VITE_INSTRUCTOR_PASS_HASH || '';
+
+const sha256Hex = async (text) => {
+  const data = new TextEncoder().encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+};
 
 const parseBold = (text) => {
   const parts = text.split(/\*\*(.*?)\*\*/g);
@@ -130,9 +138,10 @@ const InstructorLogin = ({ onAuth }) => {
   const [pw, setPw] = useState('');
   const [err, setErr] = useState(false);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    if (pw === INSTRUCTOR_PASS) {
+    const hash = await sha256Hex(pw);
+    if (INSTRUCTOR_PASS_HASH && hash === INSTRUCTOR_PASS_HASH) {
       sessionStorage.setItem('instructor_auth', '1');
       onAuth();
     } else {
